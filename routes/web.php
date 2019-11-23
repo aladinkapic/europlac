@@ -15,3 +15,6 @@ Route::prefix('/')->group(function (){
     Route::get('/',                  'HomeController@index')->name('login-page');
 });
 
+Route::prefix('/kontaktirajte-nas/')->group(function (){
+    Route::get('/',                  'ContactController@index')->name('contact-us');
+});
