@@ -30,8 +30,7 @@
 {{--<div id="loading-gif">--}}
 {{--    {!! Html::image(asset('/images/icons/loading.gif')) !!}--}}
 {{--</div>--}}
-
-
+@include('layout/menu/top-menu')
 
 <script src="{{asset('/js/app.js')}}"></script>
 @yield('second_js_scripts')
