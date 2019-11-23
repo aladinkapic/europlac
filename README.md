@@ -12,4 +12,4 @@ Stranica treba biti dinamična, auto responsive. Fiksne dimenzije se kreću u ok
     - 90% final 
 
 ## License
-This project is open-sourced software licensed under the [live4science](https://live4science.com).
+This project is open-sourced software licensed under the [live4science](https://live4science.com) licence.
