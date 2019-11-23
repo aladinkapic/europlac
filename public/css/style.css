@@ -1,3 +1,12 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
 #top-menu {
   position: absolute;
   left: 0px;
@@ -30,7 +39,7 @@
   position: relative;
   left: 0px;
   top: 0px;
-  width: 300px;
+  width: 18px;
   height: 100%;
 }
 
@@ -47,5 +56,20 @@
   top: 0px;
   width: calc(100% - 500px);
   height: 100%;
+  display: -webkit-inline-box;
+  display: inline-flex;
+}
+
+#top-menu #submenu-top #menu-links .links-part .single-link {
+  position: relative;
+  height: 40px;
+  margin-top: 25px;
+  padding: 0px 15px;
+}
+
+#top-menu #submenu-top #menu-links .links-part .single-link a {
+  display: block;
+  margin-top: 9px;
+  font-weight: bold;
 }
 

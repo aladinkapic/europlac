@@ -24,7 +24,7 @@
                 position:relative;
                 left:0px;
                 top:0px;
-                width:300px;
+                width:18-0px;
                 height:100%;
                 img{
                     position:absolute;
@@ -39,6 +39,18 @@
                 top:0px;
                 width:calc(100% - 500px);
                 height:100%;
+                display:inline-flex;
+                .single-link{
+                    position:relative;
+                    height:40px;
+                    margin-top:25px;
+                    padding:0px 15px;
+                    a{
+                        display:block;
+                        margin-top:9px;
+                        font-weight:bold;
+                    }
+                }
             }
         }
     }

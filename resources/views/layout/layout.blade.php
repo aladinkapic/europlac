@@ -26,13 +26,14 @@
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
 <body>
-{{--<!-- Loading gifs that covers most of page -->--}}
-{{--<div id="loading-gif">--}}
-{{--    {!! Html::image(asset('/images/icons/loading.gif')) !!}--}}
-{{--</div>--}}
-@include('layout/menu/top-menu')
+    {{--<!-- Loading gifs that covers most of page -->--}}
+    {{--<div id="loading-gif">--}}
+    {{--    {!! Html::image(asset('/images/icons/loading.gif')) !!}--}}
+    {{--</div>--}}
+    @include('layout/menu/top-menu')
+    @yield('content')
 
-<script src="{{asset('/js/app.js')}}"></script>
-@yield('second_js_scripts')
+    <script src="{{asset('/js/app.js')}}"></script>
+    @yield('second_js_scripts')
 </body>
 </html>
