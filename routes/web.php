@@ -11,9 +11,6 @@
 |
 */
 
-Route::prefix('/')->group(function (){
-    Route::get('/',                  'HomeController@index')->name('home');
-
-    /** Login and register of users **/
-    Route::post('/login',            'HomeController@login')->name('login');
+Route::get('/', function () {
+    return view('welcome');
 });
