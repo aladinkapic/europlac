@@ -1,6 +1,24 @@
 body{
     font-family: 'Nunito', sans-serif;
+    margin:0px;
+    padding:0px;
 }
 a{text-decoration: none; color:#222;}
+::-webkit-scrollbar {
+    width: 8px;
+    height:0px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00C0CD;
+    outline: 1px solid slategrey;
+    border-radius: 3px;
+}
+
 
 @import "layout/menu";
+@import "pages/home/home";

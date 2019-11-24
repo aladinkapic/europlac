@@ -1,7 +1,7 @@
 <html lang="BS">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 {{--    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/images/icons/chip.ico')}}"/>--}}
 
@@ -9,6 +9,7 @@
 
     <!--                       FONTS                            -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cdf2a0a58b.js"></script>
 
     <!--

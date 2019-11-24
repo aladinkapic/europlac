@@ -16,6 +16,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * allows your team to easily build robust real-time web applications.
  */
 
+try {
+    // window.Popper = require('popper.js').default;
+    window.$ = window.jQuery = require('jquery');
+} catch (e) {}
+
 // import Echo from 'laravel-echo';
 
 // window.Pusher = require('pusher-js');

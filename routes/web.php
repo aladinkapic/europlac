@@ -12,7 +12,7 @@
 */
 
 Route::prefix('/')->group(function (){
-    Route::get('/',                  'HomeController@index')->name('login-page');
+    Route::get('/',                  'HomeController@index')->name('home');
 });
 
 Route::prefix('/kontaktirajte-nas/')->group(function (){
