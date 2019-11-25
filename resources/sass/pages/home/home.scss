@@ -4,15 +4,59 @@
     top:0px;
     width:100%;
     overflow:hidden;
-    img{
-        position:relative;
-        left:0px;
-        top:0px;
-        width:100%;
-        @media screen and (max-width: 1000px) {
-            position:absolute;
-            left:-300px;
-            width:calc(100% + 600px);
+
+    .swiper-container{
+        position:relative; top:0px; width:100%; height:auto;
+        background:#fff;
+        .swiper-wrapper{
+            position:relative; left:0px; top:0px; width:100%; height:auto;
+            background:#fff;
+            .swiper-slide{
+                position:relative; left:0px; top:0px; width:100%; height:auto;
+                img{
+                    position:relative;
+                    left:0px;
+                    top:0px;
+                    width:100%;
+                }
+                background:#fff;
+            }
+        }
+
+        .swiper-button-next{
+            //top:95px !important;
+            right:30px !important;
+            height:50px;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%2300C0CD'%2F%3E%3C%2Fsvg%3E") !important;
+        }
+        .swiper-button-prev{
+            //top:95px !important;
+            left:30px !important;
+            height:50px;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2300C0CD'%2F%3E%3C%2Fsvg%3E") !important;
+        }
+
+        .swiper-pagination {
+            .swiper-pagination-bullet{
+                background:#00C0CD;
+                width:22px;
+                border-radius:0px;
+                height:5px;
+            }
         }
     }
+
+
+
+    //img{
+    //    position:relative;
+    //    left:0px;
+    //    top:0px;
+    //    width:100%;
+    //    @media screen and (max-width: 1000px) {
+    //        position:absolute;
+    //        left:-300px;
+    //        width:calc(100% + 600px);
+    //    }
+    //}
 }

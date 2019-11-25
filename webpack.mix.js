@@ -13,8 +13,12 @@ const mix = require('laravel-mix');
 
 mix.js([
     'resources/js/app.js',
-    'resources/js/menu/menu.js'
+    'resources/js/menu/menu.js',
 ], 'public/js')
+
+// mix.js([
+//     'resources/js/libraries/swiper.js',
+// ], 'public/js/libraries.js')
 
 
 .sass('resources/sass/style.scss', 'public/css/style.css');
