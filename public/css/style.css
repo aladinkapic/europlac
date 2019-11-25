@@ -43,6 +43,29 @@ a {
   display: inline-flex;
 }
 
+@media screen and (max-width: 1500px) {
+  #top-menu #menu-links {
+    left: calc(50% - 600px);
+    width: 1200px;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #top-menu #menu-links {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #top-menu #menu-links {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
 #top-menu #menu-links .logo-wrapper {
   position: relative;
   left: 0px;
@@ -62,10 +85,16 @@ a {
   position: relative;
   left: 0px;
   top: 0px;
-  width: calc(100% - 480px);
+  width: calc(100% - 320px);
   height: 100%;
   display: -webkit-inline-box;
   display: inline-flex;
+}
+
+@media screen and (max-width: 1000px) {
+  #top-menu #menu-links .links-part {
+    display: none;
+  }
 }
 
 #top-menu #menu-links .links-part .single-link {
@@ -86,7 +115,7 @@ a {
   position: relative;
   left: 0px;
   top: 0px;
-  width: 300px;
+  width: 180px;
   height: 100%;
 }
 
@@ -95,6 +124,40 @@ a {
   display: block;
   margin-top: 33px;
   color: #00C0CD;
+}
+
+#top-menu #menu-links .sign-up .mobile-menu-icon {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #00C0CD;
+  top: 30px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+#top-menu #menu-links .sign-up .mobile-menu-icon i {
+  color: #fff;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 1000px) {
+  #top-menu #menu-links .sign-up {
+    width: 140px;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    display: -webkit-inline-box;
+    display: inline-flex;
+  }
+
+  #top-menu #menu-links .sign-up a span {
+    display: none;
+  }
+
+  #top-menu #menu-links .sign-up .mobile-menu-icon {
+    display: block;
+  }
 }
 
 /*** Search console ***/
@@ -108,12 +171,50 @@ a {
   height: 61px;
 }
 
+@media screen and (max-width: 1000px) {
+  #search-console {
+    height: 160px;
+  }
+}
+
+#search-console .just-line {
+  position: absolute;
+  bottom: 0px;
+  height: 1px;
+  background: #d5d9dd;
+  display: none;
+  left: calc(50% - 700px);
+  width: 1400px;
+}
+
+@media screen and (max-width: 1500px) {
+  #search-console .just-line {
+    left: calc(50% - 600px);
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #search-console .just-line {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #search-console .just-line {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
 .rest-of-search-options {
   position: relative;
   left: 0px;
   top: 0px;
   width: 100%;
   background: #efefef;
+  height: 0px;
   overflow: hidden;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -128,6 +229,30 @@ a {
   /******************************************* CHECK BUTTONS ****************************************************/
 }
 
+@media screen and (max-width: 1500px) {
+  #search-console .search-wrapper,
+  .rest-of-search-options .search-wrapper {
+    left: calc(50% - 600px);
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #search-console .search-wrapper,
+  .rest-of-search-options .search-wrapper {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #search-console .search-wrapper,
+  .rest-of-search-options .search-wrapper {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
 #search-console .search-wrapper .search-row,
 .rest-of-search-options .search-wrapper .search-row {
   position: relative;
@@ -140,6 +265,14 @@ a {
   -webkit-box-pack: justify;
           justify-content: space-between;
   /****************************************** CUSTOM SELECT *************************************************/
+}
+
+@media screen and (max-width: 1000px) {
+  #search-console .search-wrapper .search-row,
+  .rest-of-search-options .search-wrapper .search-row {
+    flex-wrap: wrap;
+    height: auto;
+  }
 }
 
 #search-console .search-wrapper .search-row input,
@@ -162,12 +295,19 @@ a {
   position: relative;
   left: 0px;
   top: 10px;
-  width: calc(50% - 20px);
+  width: calc(50% - 15px);
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 2px;
   overflow: hidden;
   background: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  #search-console .search-wrapper .search-row .top-first,
+  .rest-of-search-options .search-wrapper .search-row .top-first {
+    width: 100%;
+  }
 }
 
 #search-console .search-wrapper .search-row .top-first input,
@@ -195,13 +335,21 @@ a {
 #search-console .search-wrapper .search-row .other-first,
 .rest-of-search-options .search-wrapper .search-row .other-first {
   position: relative;
-  width: calc(25% - 30px);
+  width: calc(25% - 20px);
   top: 10px;
   height: 40px;
   left: 0px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 2px;
   background: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  #search-console .search-wrapper .search-row .other-first,
+  .rest-of-search-options .search-wrapper .search-row .other-first {
+    width: 100%;
+    margin-top: 5px;
+  }
 }
 
 #search-console .search-wrapper .search-row .other-custon,
@@ -222,6 +370,13 @@ a {
   text-align: center;
 }
 
+@media screen and (max-width: 1000px) {
+  #search-console .search-wrapper .search-row .other-custon .search-button,
+  .rest-of-search-options .search-wrapper .search-row .other-custon .search-button {
+    width: calc(100% - 120px);
+  }
+}
+
 #search-console .search-wrapper .search-row .other-custon .search-button p,
 .rest-of-search-options .search-wrapper .search-row .other-custon .search-button p {
   color: #fff;
@@ -240,6 +395,13 @@ a {
   background: #CCCCCC;
   text-align: center;
   border-radius: 3px;
+}
+
+@media screen and (max-width: 1000px) {
+  #search-console .search-wrapper .search-row .other-custon .other-searches-button,
+  .rest-of-search-options .search-wrapper .search-row .other-custon .other-searches-button {
+    width: 100px;
+  }
 }
 
 #search-console .search-wrapper .search-row .other-custon .other-searches-button i,
@@ -351,7 +513,7 @@ a {
   left: 0px;
   width: 100%;
   top: 0px;
-  height: 300px;
+  padding-bottom: 30px;
   background: #fff;
   margin-top: 20px;
   margin-bottom: 14px;
@@ -379,12 +541,19 @@ a {
   top: 0px;
   margin-top: 10px;
   width: calc(100% - 40px);
-  height: 200px;
-  background: red;
+  height: 30px;
   display: -webkit-inline-box;
   display: inline-flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+  #search-console .search-wrapper .check-boxes .check-boxed-body,
+  .rest-of-search-options .search-wrapper .check-boxes .check-boxed-body {
+    flex-wrap: wrap;
+    height: auto;
+  }
 }
 
 #search-console .search-wrapper .check-boxes .check-boxed-body .check-wrapper,
@@ -394,7 +563,56 @@ a {
   top: 0px;
   width: calc(25% - 15px);
   height: 40px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+}
+
+@media screen and (max-width: 1000px) {
+  #search-console .search-wrapper .check-boxes .check-boxed-body .check-wrapper,
+  .rest-of-search-options .search-wrapper .check-boxes .check-boxed-body .check-wrapper {
+    width: 100%;
+  }
+}
+
+#search-console .search-wrapper .check-boxes .check-boxed-body .check-wrapper .check-place,
+.rest-of-search-options .search-wrapper .check-boxes .check-boxed-body .check-wrapper .check-place {
+  position: relative;
+  left: 0px;
+  width: 18px;
+  height: 18px;
+  top: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
   background: #fff;
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#search-console .search-wrapper .check-boxes .check-boxed-body .check-wrapper .check-place i,
+.rest-of-search-options .search-wrapper .check-boxes .check-boxed-body .check-wrapper .check-place i {
+  color: #fff;
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+#search-console .search-wrapper .check-boxes .check-boxed-body .check-wrapper p,
+.rest-of-search-options .search-wrapper .check-boxes .check-boxed-body .check-wrapper p {
+  margin-top: 11px;
+  font-size: 12px;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+#search-console .search-wrapper .check-boxes .check-boxed-body .check-wrapper:hover,
+.rest-of-search-options .search-wrapper .check-boxes .check-boxed-body .check-wrapper:hover {
+  cursor: pointer;
+}
+
+#search-console .search-wrapper .check-boxes .check-boxed-body .check-wrapper:hover .check-place,
+.rest-of-search-options .search-wrapper .check-boxes .check-boxed-body .check-wrapper:hover .check-place {
+  background: #efefef;
 }
 
 #search-console .search-wrapper {
@@ -406,7 +624,7 @@ a {
   left: 0px;
   top: 0px;
   width: 100%;
-  height: auto;
+  overflow: hidden;
 }
 
 .slider-container img {
@@ -414,5 +632,13 @@ a {
   left: 0px;
   top: 0px;
   width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .slider-container img {
+    position: absolute;
+    left: -300px;
+    width: calc(100% + 600px);
+  }
 }
 

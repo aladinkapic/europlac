@@ -13,6 +13,23 @@
         width:1400px;
         height:100%;
         display:inline-flex;
+
+        @media screen and (max-width: 1500px) {
+            left:calc(50% - 600px);
+            width:1200px;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 1260px) {
+            left:50px;
+            width:calc(100% - 100px);
+        }
+
+        @media screen and (max-width: 800px) {
+            left: 20px;
+            width:calc(100% - 40px);
+        }
+
         .logo-wrapper{
             position:relative;
             left:0px;
@@ -30,9 +47,14 @@
             position:relative;
             left:0px;
             top:0px;
-            width:calc(100% - 480px);
+            width:calc(100% - 320px);
             height:100%;
             display:inline-flex;
+
+            @media screen and (max-width: 1000px) {
+                display:none;
+            }
+
             .single-link{
                 position:relative;
                 height:40px;
@@ -50,13 +72,39 @@
             position:relative;
             left:0px;
             top:0px;
-            width:300px;
+            width:180px;
             height:100%;
             a{
                 font-weight:bold;
                 display:block;
                 margin-top:33px;
                 color:#00C0CD;
+            }
+            .mobile-menu-icon{
+                display:none;
+                position:relative;
+                width:30px;
+                height:30px;
+                background:#00C0CD;
+                top:30px;
+                text-align: center;
+                border-radius:3px;
+                i{
+                    color:#fff;
+                    margin-top:6px;
+                }
+            }
+
+            @media screen and (max-width: 1000px) {
+                width: 140px;
+
+                justify-content: space-between;
+                display: inline-flex;
+
+                a{
+                    span{display: none;}
+                }
+                .mobile-menu-icon{display: block;}
             }
         }
     }
@@ -72,6 +120,29 @@
     top:0px;
     width:100%;
     height:61px;
+
+    @media screen and (max-width: 1000px) {
+        height:160px;
+    }
+
+    .just-line{
+        position:absolute; bottom:0px; height:1px; background:#d5d9dd;
+        display:none;
+        left:calc(50% - 700px);
+        width:1400px;
+        @media screen and (max-width: 1500px) {
+            left:calc(50% - 600px);
+            width:1200px;
+        }
+        @media screen and (max-width: 1260px) {
+            left:50px;
+            width:calc(100% - 100px);
+        }
+        @media screen and (max-width: 800px) {
+            left:20px;
+            width:calc(100% - 40px);
+        }
+    }
 }
 
 .rest-of-search-options{
@@ -80,16 +151,33 @@
     top:0px;
     width:100%;
     background: #efefef;
-    //height:0px;
+    height:0px;
     overflow:hidden;
     transition:all 0.2s;
 }
+
 #search-console, .rest-of-search-options{
     .search-wrapper{
         position:relative;
         left:calc(50% - 700px);
         width:1400px;
         height:auto;
+
+        @media screen and (max-width: 1500px) {
+            left:calc(50% - 600px);
+            width:1200px;
+        }
+
+        @media screen and (max-width: 1260px) {
+            left:50px;
+            width:calc(100% - 100px);
+        }
+
+        @media screen and (max-width: 800px) {
+            left:20px;
+            width:calc(100% - 40px);
+        }
+
         .search-row{
             position:relative;
             left:0px;
@@ -98,6 +186,11 @@
             height:50px;
             display:inline-flex;
             justify-content: space-between;
+
+            @media screen and (max-width: 1000px) {
+                flex-wrap: wrap;
+                height:auto;
+            }
 
             input{ // Change input property for all of menu inputs
                 position:relative;
@@ -117,12 +210,17 @@
                 position:relative;
                 left:0px;
                 top:10px;
-                width:calc(50% - 20px);
+                width:calc(50% - 15px);
                 height:40px;
                 border:1px solid rgba(0,0,0,0.15);
                 border-radius:2px;
                 overflow:hidden;
                 background:#fff;
+
+                @media screen and (max-width: 1000px) {
+                    width:100%;
+                }
+
                 input{
                     left:40px;
                     width:calc(100% - 40px);
@@ -142,13 +240,18 @@
             }
             .other-first{ // 25% width
                 position:relative;
-                width:calc(25% - 30px);
+                width:calc(25% - 20px);
                 top:10px;
                 height:40px;
                 left:0px;
                 border:1px solid rgba(0,0,0,0.15);
                 border-radius:2px;
                 background:#fff;
+
+                @media screen and (max-width: 1000px) {
+                    width:100%;
+                    margin-top:5px;
+                }
             }
             .other-custon{ // Search button and expand button
                 background:none;
@@ -163,6 +266,10 @@
                     background:#00C0CD;
                     border-radius:3px;
                     text-align: center;
+
+                    @media screen and (max-width: 1000px) {
+                        width:calc(100% - 120px);
+                    }
                     p{
                         color:#fff;
                         margin-top:11px;
@@ -179,6 +286,9 @@
                     background:#CCCCCC;
                     text-align:center;
                     border-radius:3px;
+                    @media screen and (max-width: 1000px) {
+                        width:100px;
+                    }
                     i{
                         margin-top:12px;
                         color: #fff;
@@ -266,7 +376,7 @@
             left:0px;
             width:100%;
             top:0px;
-            height:300px;
+            padding-bottom:30px;
             background:#fff;
             margin-top:20px;
             margin-bottom:14px;
@@ -287,17 +397,55 @@
                 top:0px;
                 margin-top:10px;
                 width:calc(100% - 40px);
-                height:200px;
-                background:red;
+                height:30px;
                 display:inline-flex;
                 justify-content: space-between;
+
+                @media screen and (max-width: 1000px) {
+                    flex-wrap: wrap;
+                    height:auto;
+                }
+
                 .check-wrapper{
                     position:relative;
                     left:0px;
                     top:0px;
                     width:calc(25% - 15px);
                     height:40px;
-                    background:#fff;
+                    display:inline-flex;
+
+                    @media screen and (max-width: 1000px) {
+                        width:100%;
+                    }
+
+                    .check-place{
+                        position:relative;
+                        left:0px;
+                        width:18px;
+                        height:18px;
+                        top:9px;
+                        border:1px solid rgba(0,0,0,0.15);
+                        border-radius:2px;
+                        background:#fff;
+                        text-align:center;
+                        transition:all 0.2s;
+                        i{
+                            color:#fff;
+                            margin-top:4px;
+                            font-size:10px;
+                        }
+                    }
+                    p{
+                        margin-top:11px;
+                        font-size:12px;
+                        margin-left:10px;
+                        font-weight:bold;
+                        color:#333;
+                    }
+                }
+                .check-wrapper:hover{
+                    cursor:pointer;
+                    .check-place{background:#efefef;}
                 }
             }
         }

@@ -29954,20 +29954,41 @@ $(document).ready(function () {
       $("#search-console").css("border-bottom", "0px");
       $(".rest-of-search-options").css("border-bottom", "1px solid #d5d9dd");
       $(".rest-of-search-options").css("padding-bottom", "14px");
-      var height = 20;
+      var height = 50;
       $(".rest-of-search-options").find(".search-row").each(function () {
         height += $(this).height();
       });
       height += $(".check-boxes").height();
-      -$(".rest-of-search-options").css("height", height + "px");
-      $("#search-console").find(".search-wrapper").css("border-bottom", "1px solid #d5d9dd");
+      $(".rest-of-search-options").css("height", height + "px"); // $("#search-console").find(".search-wrapper").css("border-bottom", "1px solid #d5d9dd");
+
+      $("#search-console").find(".just-line").css("display", "block");
     } else {
       rest_menu_open = 0;
       $("#search-console").css("border-bottom", "1px solid #d5d9dd");
       $(".rest-of-search-options").css("border-bottom", "0px");
       $(".rest-of-search-options").css("padding-bottom", "0px");
-      $(".rest-of-search-options").css("height", "0px");
-      $("#search-console").find(".search-wrapper").css("border-bottom", "0px");
+      $(".rest-of-search-options").css("height", "0px"); // $("#search-console").find(".search-wrapper").css("border-bottom", "0px");
+
+      $("#search-console").find(".just-line").css("display", "none");
+    }
+  });
+  /*******************************************************************************************************************
+   *
+   *      Checkbox action ::
+   *          1. Set check icon
+   *          2. Set value Da - Ne
+   *
+   ******************************************************************************************************************/
+
+  $(".check-wrapper").click(function () {
+    if ($(this).attr('value') === 'Ne') {
+      $(this).find(".check-place").append('<i class="fas fa-check"></i>');
+      $(this).find(".check-place").css("background", "#00C0CD");
+      $(this).attr('value', 'Da');
+    } else {
+      $(this).find(".check-place").empty();
+      $(this).find(".check-place").css("background", "#fff");
+      $(this).attr('value', 'Ne');
     }
   });
   /*******************************************************************************************************************

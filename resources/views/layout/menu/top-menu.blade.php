@@ -23,8 +23,11 @@
         </div>
         <div class="sign-up">
             <a href="">
-                Forma / Prijavite se
+                <span>Forma /</span> Prijavite se
             </a>
+            <div class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </div>
 </div>
@@ -65,6 +68,8 @@
             </div>
         </div>
     </div>
+
+    <div class="just-line"></div>
 </div>
 <div class="rest-of-search-options">
     <div class="search-wrapper">
@@ -209,19 +214,108 @@
 
             <!-- elements -->
             <div class="check-boxed-body">
-                <div class="check-wrapper">
-
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Priključak vode</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Priključak struje</p>
                 </div>
                 <div class="check-wrapper">
-
+                    <div class="check-place"></div>
+                    <p>Priključak interneta</p>
                 </div>
-                <div class="check-wrapper">
-
-                </div>
-                <div class="check-wrapper">
-
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Priključak plina</p>
                 </div>
             </div>
+
+            <!------------------------------------------>
+
+            <div class="check-boxed-body">
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Kanalizacija</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Garaža</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Instalisan klima uređaj</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Parking mjesto</p>
+                </div>
+            </div>
+
+            <!------------------------------------------>
+
+            <div class="check-boxed-body">
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Jedan sprat</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Dva sprata</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Tri sprata</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Više spratova</p>
+                </div>
+            </div>
+
+            <!------------------------------------------>
+
+            <div class="check-boxed-body">
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Jezgro grada</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Pogled na grad</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Pogled na more</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>U blizini rijeke</p>
+                </div>
+            </div>
+
+            <!------------------------------------------>
+
+            <div class="check-boxed-body">
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Bazen</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Sauna</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Jacuzzi</p>
+                </div>
+                <div class="check-wrapper" value="Ne">
+                    <div class="check-place"></div>
+                    <p>Kuhinja sa šankom</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
