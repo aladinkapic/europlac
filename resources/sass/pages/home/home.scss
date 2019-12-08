@@ -188,3 +188,290 @@
     //    }
     //}
 }
+
+/***************************************************** NUMBERS ********************************************************/
+
+.numbers{
+    position:relative;
+    left:calc(50% - 700px);
+    width:1400px;
+    min-height: 200px;
+    display: inline-flex;
+    justify-content: space-between;
+    .one-number{
+        position:relative;
+        left:0px;
+        top:0px;
+        width:33%;
+        text-align: center;
+        height:240px;
+        h3{
+            font-size:80px;
+            margin:0px;
+            margin-top:30px;
+            color:grey;
+        }
+        p{
+            font-size:30px;
+            margin:0px;
+        }
+    }
+}
+
+
+/************************************************** THREE ESTATES *****************************************************/
+
+.home-estates{
+    margin-top:80px;
+    position:relative;
+    left:calc(50% - 700px);
+    top:0px;
+    width:1400px;
+    min-height:400px;
+    height:auto;
+    display:inline-flex;
+    justify-content: space-between;
+    .first-one{
+        position:relative;
+        left:0px;
+        top:0px;
+        height:596px;
+        width:930px;
+        img{
+            position:relative;
+            left:0px;
+            top:0px;
+            height:100%;
+            width: 100%;
+        }
+    }
+    .second-one{
+        position:relative;
+        left:0px;
+        top:0px;
+        height:596px;
+        width:450px;
+        display: inline-flex;
+        flex-wrap: wrap;
+        .second-image{
+            position:relative;
+            left:0px;
+            top:0px;
+            width:100%;
+            height:calc(50% - 10px);
+            img{
+                position:relative;
+                left:0px;
+                top:0px;
+                width:100%;
+                height: 100%;
+            }
+        }
+        .second-image:last-child{
+            margin-top:20px;
+        }
+    }
+    .first-one, .second-one{
+        .wrapper{
+            position:absolute;
+            left:0px;
+            top:0px;
+            width:100%;
+            height:100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.75) 100%);
+
+            .status{
+                position:absolute;
+                right:15px;
+                top:15px;
+                height:26px;
+                background: #00C0CD;
+                padding-left:15px;
+                padding-right:15px;
+                border-radius:3px;
+                p{
+                    color:#fff;
+                    font-weight:bold;
+                    margin:0px;
+                    font-size:14px;
+                    padding-top:4px;
+                }
+            }
+            .sell{
+                background: #F6B753;
+            }
+            .rent{
+                background: #0097D6;
+            }
+            .sold{
+                background: #FF6501;
+            }
+            .details-about{
+                position:absolute;
+                left:15px;
+                bottom:28px;
+                width:calc(100% - 200px);
+                h4{
+                    color:#fff;
+                    font-size:24px;
+                    width:calc(100% + 180px);
+                    margin:0px;
+                    padding:0px;
+                    left:0px;
+                }
+                p{
+                    color:#fff;
+                    margin:0px;
+                }
+                .button-wrap{
+                    position:relative;
+                    width:100%;
+                    display: inline-flex;
+                    margin-top:10px;
+                    .button{
+                        padding-left:20px;
+                        padding-right:20px;
+                        border-radius:3px;
+                        position:relative;
+                        height:30px;
+                        background:#00C0CD;
+                        color:#fff;
+                        p{
+                            margin:0px;
+                            font-weight:bold;
+                            padding-top:4px;
+                        }
+                    }
+                }
+            }
+            .analytics-wrapper{
+                position:absolute;
+                right:15px;
+                bottom:10px;
+                height:40px;
+                width:160px;
+                display:inline-flex;
+                justify-content: space-between;
+                .single-analytics{
+                    position:relative;
+                    left:0px;
+                    top:0px;
+                    width:34px;
+                    height:34px;
+                    background: #000;
+                    border-radius:3px;
+                    text-align:center;
+                    i{
+                        color:#fff;
+                        margin-top:9px;
+                    }
+                }
+                .single-analytics:hover{cursor: pointer;}
+
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .numbers{
+        left:50px;
+        width:calc(100% - 100px);
+        .one-number{
+            height:200px;
+            h3{
+                font-size:60px;
+            }
+            p{
+                font-size:24px;
+                margin:0px;
+            }
+        }
+    }
+    .home-estates{
+        left:calc(50% - 600px);
+        width:1200px;
+        .first-one {
+            position: relative;
+            height: 530px;
+            width:790px;
+        }
+        .second-one{
+            height: 530px;
+            width:390px;
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+    .home-estates{
+        left:50px;
+        width:calc(100% - 100px);
+        height:auto;
+        .first-one {
+            position: relative;
+            width:65%;
+        }
+        .second-one{
+            width:32%;
+        }
+    }
+}
+@media screen and (max-width: 1000px){
+    .home-estates{
+        flex-wrap: wrap;
+        height:auto;
+        .first-one {
+            position: relative;
+            width:100%;
+            height:auto;
+            img{
+                height:auto;
+            }
+        }
+        .second-one{
+            margin-top:20px;
+            width:100%;
+            height:auto;
+            flex-wrap: wrap;
+            .second-image{
+                width:100%;
+                height:auto;
+                margin:0px;
+                img{
+                    position:relative;
+                    margin:0px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .numbers{
+        margin-top:20px;
+        left:20px;
+        margin-bottom:20px;
+        width:calc(100% - 40px);
+        flex-wrap: wrap;
+        .one-number{
+            width:100%;
+            height:120px;
+            h3{
+                font-size:44px;
+                margin-top:10px;
+            }
+            p{
+                font-size:22px;
+                margin:0px;
+            }
+        }
+    }
+    .home-estates{
+        left:20px;
+        width:calc(100% - 40px);
+    }
+}
+
+
+.just-line{position:relative; left:0px; top:0px; width:100%; border-bottom:1px solid rgba(0,0,0,0.1);}

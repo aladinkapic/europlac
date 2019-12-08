@@ -832,6 +832,364 @@ a {
   height: 5px;
 }
 
+/***************************************************** NUMBERS ********************************************************/
+
+.numbers {
+  position: relative;
+  left: calc(50% - 700px);
+  width: 1400px;
+  min-height: 200px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.numbers .one-number {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 33%;
+  text-align: center;
+  height: 240px;
+}
+
+.numbers .one-number h3 {
+  font-size: 80px;
+  margin: 0px;
+  margin-top: 30px;
+  color: grey;
+}
+
+.numbers .one-number p {
+  font-size: 30px;
+  margin: 0px;
+}
+
+/************************************************** THREE ESTATES *****************************************************/
+
+.home-estates {
+  margin-top: 80px;
+  position: relative;
+  left: calc(50% - 700px);
+  top: 0px;
+  width: 1400px;
+  min-height: 400px;
+  height: auto;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.home-estates .first-one {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  height: 596px;
+  width: 930px;
+}
+
+.home-estates .first-one img {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.home-estates .second-one {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  height: 596px;
+  width: 450px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.home-estates .second-one .second-image {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: calc(50% - 10px);
+}
+
+.home-estates .second-one .second-image img {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.home-estates .second-one .second-image:last-child {
+  margin-top: 20px;
+}
+
+.home-estates .first-one .wrapper,
+.home-estates .second-one .wrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(45%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.home-estates .first-one .wrapper .status,
+.home-estates .second-one .wrapper .status {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 26px;
+  background: #00C0CD;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3px;
+}
+
+.home-estates .first-one .wrapper .status p,
+.home-estates .second-one .wrapper .status p {
+  color: #fff;
+  font-weight: bold;
+  margin: 0px;
+  font-size: 14px;
+  padding-top: 4px;
+}
+
+.home-estates .first-one .wrapper .sell,
+.home-estates .second-one .wrapper .sell {
+  background: #F6B753;
+}
+
+.home-estates .first-one .wrapper .rent,
+.home-estates .second-one .wrapper .rent {
+  background: #0097D6;
+}
+
+.home-estates .first-one .wrapper .sold,
+.home-estates .second-one .wrapper .sold {
+  background: #FF6501;
+}
+
+.home-estates .first-one .wrapper .details-about,
+.home-estates .second-one .wrapper .details-about {
+  position: absolute;
+  left: 15px;
+  bottom: 28px;
+  width: calc(100% - 200px);
+}
+
+.home-estates .first-one .wrapper .details-about h4,
+.home-estates .second-one .wrapper .details-about h4 {
+  color: #fff;
+  font-size: 24px;
+  width: calc(100% + 180px);
+  margin: 0px;
+  padding: 0px;
+  left: 0px;
+}
+
+.home-estates .first-one .wrapper .details-about p,
+.home-estates .second-one .wrapper .details-about p {
+  color: #fff;
+  margin: 0px;
+}
+
+.home-estates .first-one .wrapper .details-about .button-wrap,
+.home-estates .second-one .wrapper .details-about .button-wrap {
+  position: relative;
+  width: 100%;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+.home-estates .first-one .wrapper .details-about .button-wrap .button,
+.home-estates .second-one .wrapper .details-about .button-wrap .button {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 3px;
+  position: relative;
+  height: 30px;
+  background: #00C0CD;
+  color: #fff;
+}
+
+.home-estates .first-one .wrapper .details-about .button-wrap .button p,
+.home-estates .second-one .wrapper .details-about .button-wrap .button p {
+  margin: 0px;
+  font-weight: bold;
+  padding-top: 4px;
+}
+
+.home-estates .first-one .wrapper .analytics-wrapper,
+.home-estates .second-one .wrapper .analytics-wrapper {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  height: 40px;
+  width: 160px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.home-estates .first-one .wrapper .analytics-wrapper .single-analytics,
+.home-estates .second-one .wrapper .analytics-wrapper .single-analytics {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 34px;
+  height: 34px;
+  background: #000;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.home-estates .first-one .wrapper .analytics-wrapper .single-analytics i,
+.home-estates .second-one .wrapper .analytics-wrapper .single-analytics i {
+  color: #fff;
+  margin-top: 9px;
+}
+
+.home-estates .first-one .wrapper .analytics-wrapper .single-analytics:hover,
+.home-estates .second-one .wrapper .analytics-wrapper .single-analytics:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .numbers {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+
+  .numbers .one-number {
+    height: 200px;
+  }
+
+  .numbers .one-number h3 {
+    font-size: 60px;
+  }
+
+  .numbers .one-number p {
+    font-size: 24px;
+    margin: 0px;
+  }
+
+  .home-estates {
+    left: calc(50% - 600px);
+    width: 1200px;
+  }
+
+  .home-estates .first-one {
+    position: relative;
+    height: 530px;
+    width: 790px;
+  }
+
+  .home-estates .second-one {
+    height: 530px;
+    width: 390px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .home-estates {
+    left: 50px;
+    width: calc(100% - 100px);
+    height: auto;
+  }
+
+  .home-estates .first-one {
+    position: relative;
+    width: 65%;
+  }
+
+  .home-estates .second-one {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home-estates {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .home-estates .first-one {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .home-estates .first-one img {
+    height: auto;
+  }
+
+  .home-estates .second-one {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .home-estates .second-one .second-image {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .home-estates .second-one .second-image img {
+    position: relative;
+    margin: 0px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .numbers {
+    margin-top: 20px;
+    left: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    flex-wrap: wrap;
+  }
+
+  .numbers .one-number {
+    width: 100%;
+    height: 120px;
+  }
+
+  .numbers .one-number h3 {
+    font-size: 44px;
+    margin-top: 10px;
+  }
+
+  .numbers .one-number p {
+    font-size: 22px;
+    margin: 0px;
+  }
+
+  .home-estates {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
+.just-line {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 /**
  * Swiper 4.4.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions

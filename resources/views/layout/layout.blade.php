@@ -34,6 +34,10 @@
     @include('layout/menu/top-menu')
     @yield('content')
 
+
+
+    <div style="height:500px"></div>
+
     <script src="{{asset('/js/app.js')}}"></script>
     @yield('second_js_scripts')
 </body>
