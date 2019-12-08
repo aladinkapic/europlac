@@ -374,6 +374,35 @@
     }
 }
 
+/*************************************************** SMALL INTRO ******************************************************/
+
+.small-intro{
+    position:relative;
+    left:0px;
+    top:0px;
+    width:100%;
+    min-height:300px;
+    text-align:center;
+    background:#EFEFEF;
+    margin-top:80px;
+    .inside-intro{
+        position:relative;
+        left:calc(50% - 700px);
+        top:0px;
+        width:1400px;
+        h2{
+            padding-top:80px;
+            margin:0px;
+            font-size:45px;
+        }
+        p{
+            font-size:18px;
+            padding-bottom:80px;
+            margin-bottom:0px;
+        }
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .numbers{
         left:50px;
@@ -402,6 +431,13 @@
             width:390px;
         }
     }
+
+    .small-intro{
+        .inside-intro{
+            left:calc(50% - 600px);
+            width:1200px;
+        }
+    }
 }
 @media screen and (max-width: 1200px){
     .home-estates{
@@ -414,6 +450,12 @@
         }
         .second-one{
             width:32%;
+        }
+    }
+    .small-intro{
+        .inside-intro{
+            left:50px;
+            width:calc(100% - 100px);
         }
     }
 }
@@ -468,8 +510,26 @@
         }
     }
     .home-estates{
+        margin-top:50px;
         left:20px;
         width:calc(100% - 40px);
+    }
+
+    .small-intro{
+        margin-top:50px;
+        .inside-intro{
+            left:20px;
+            width:calc(100% - 40px);
+
+            h2{
+                font-size:26px;
+                padding-top:40px;
+            }
+            p{
+                font-size:16px;
+                padding-bottom:40px;
+            }
+        }
     }
 }
 
