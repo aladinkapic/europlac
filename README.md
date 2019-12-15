@@ -3,13 +3,23 @@
 
 ## Developer mode
 
-### Design
-Stranica treba biti dinamična, auto responsive. Fiksne dimenzije se kreću u okviru :
-    
-    - 1400 px ( za rezolucije > 1500 px)
-    - 1200 px ( > 1300px & < 1500 px)
-    - 800  px ( < 900px  & < 1300 px)
-    - 90% final 
+### Content
+
+This app contains couple of pages such as :
+
+    - Home
+    - All estates 
+    - Estate preview
+    - About us
+    - Contact us
+
+- As you are able to see, menu is synchronised with filters (dynamically created queries) for PHP. It caches data via storage[variables]. 
+
+- Google maps is used to display location of objects.
+
+- Swiper is used for slider preview of images
+
+- Nearby places are connected and displayed over google map
 
 ## License
 This project is open-sourced software licensed under the [live4science](https://live4science.com) licence.
