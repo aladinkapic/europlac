@@ -14,11 +14,8 @@ This app contains couple of pages such as :
     - Contact us
 
 - As you are able to see, menu is synchronised with filters (dynamically created queries) for PHP. It caches data via storage[variables]. 
-
 - Google maps is used to display location of objects.
-
 - Swiper is used for slider preview of images
-
 - Nearby places are connected and displayed over google map
 
 ## License
