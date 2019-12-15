@@ -1,15 +1,17 @@
 <!------------------------------------------------- Top menu ---------------------------------------------------------->
 <div id="top-menu">
     <div id="menu-links">
-        <div class="logo-wrapper">
-            {!! Html::image(asset('/images/logo.png')) !!}
-        </div>
+        <a href="{{route('home')}}">
+            <div class="logo-wrapper">
+                {!! Html::image(asset('/images/logo.png')) !!}
+            </div>
+        </a>
         <div class="links-part">
             <div class="single-link">
                 <a href="{{route('home')}}">Naslovna strana</a>
             </div>
             <div class="single-link">
-                <a href="">Nekretnine</a>
+                <a href="{{route('all-estates')}}">Nekretnine</a>
             </div>
             <div class="single-link">
                 <a href="">Usluge</a>

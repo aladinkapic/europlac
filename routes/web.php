@@ -15,6 +15,11 @@ Route::prefix('/')->group(function (){
     Route::get('/',                  'HomeController@index')->name('home');
 });
 
+Route::prefix('/nekretnine/')->group(function (){
+    Route::get('/',                  'EstateController@index')->name('all-estates');
+});
+
+
 Route::prefix('/kontaktirajte-nas/')->group(function (){
     Route::get('/',                  'ContactController@index')->name('contact-us');
 });

@@ -234,6 +234,4 @@
             </p>
         </div>
     </div>
-
-    @include('pages.includes.footer.footer')
 @endsection
