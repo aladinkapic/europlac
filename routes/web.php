@@ -16,7 +16,8 @@ Route::prefix('/')->group(function (){
 });
 
 Route::prefix('/nekretnine/')->group(function (){
-    Route::get('/',                  'EstateController@index')->name('all-estates');
+    Route::get('/',                          'EstateController@index')->name('all-estates');
+    Route::get('pregled-nekretnine',         'EstateController@preview')->name('estate-preview');
 });
 
 

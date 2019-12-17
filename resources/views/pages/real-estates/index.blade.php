@@ -22,7 +22,7 @@
     </div>
 
     <div class="all-estates">
-        <div class="single-estate">
+        <div class="single-estate" id-value="1">
             <div class="image-part">
                 <img src="{{asset('/images/slider/estate-2.jpg')}}" alt="">
                 <div class="details">

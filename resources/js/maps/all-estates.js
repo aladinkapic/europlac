@@ -66,4 +66,12 @@ $(document).ready(function() {
             })
         }
     }) ;
+
+
+
+    $(".single-estate").click(function () {
+        let url = $(this).attr('id-value');
+
+        window.location = '/nekretnine/pregled-nekretnine';
+    });
 });
