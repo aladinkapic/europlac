@@ -121,9 +121,9 @@
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="rest-of-it">
-                    <p>Karakteristike</p>
-                    <p>Dokumenti</p>
-                    <p>Video</p>
+                    <a href="#estate-features"><p>Karakteristike</p></a>
+                    <a href="#estate-files"><p>Dokumenti</p></a>
+                    <a href="#estate-video"><p>Video</p></a>
                     <p>U Blizini</p>
                     <p>Lokacija</p>
                     <p>Kontakt</p>
@@ -138,7 +138,7 @@
             </div>
 
             <!-- Features -->
-            <div class="features-header">
+            <div class="features-header" id="estate-features">
                 <h4>Karakteristike nekretnine</h4>
             </div>
             <div class="features">
@@ -175,7 +175,7 @@
             </div>
 
             <!-- Files -->
-            <div class="features-header">
+            <div class="features-header" id="estate-files">
                 <h4>Privici / Dokumenti</h4>
             </div>
             <div class="files">
@@ -198,6 +198,15 @@
                     </div>
                 </a>
             </div>
+
+            <!-- Video -->
+            <div class="features-header" id="estate-video">
+                <h4>Video</h4>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/P8ksPxR62Ag"></iframe>
+            </div>
+
         </div>
         <div class="sidebar">
 
