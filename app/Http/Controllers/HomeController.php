@@ -9,4 +9,8 @@ class HomeController extends Controller{
 
         return view('pages.home');
     }
+
+    public function signIn(){
+        return view('layout.includes/sign-in');
+    }
 }

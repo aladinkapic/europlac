@@ -24,9 +24,17 @@ mix.js([
     'resources/js/maps/single-estate.js'
 ], 'public/js/maps/single-estate.js')
 
+// Admini files
+mix.js([
+    'resources/js/app.js',
+    'resources/js/administracija/main.js',
+], 'public/js/administracija/app.js')
+
+
 // mix.js([
 //     'resources/js/libraries/swiper.js',
 // ], 'public/js/libraries.js')
 
 
-.sass('resources/sass/style.scss', 'public/css/style.css');
+.sass('resources/sass/style.scss', 'public/css/style.css')
+.sass('resources/sass/administracija/style.scss', 'public/css/administracija/style.css');

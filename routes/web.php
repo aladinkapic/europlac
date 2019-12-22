@@ -13,6 +13,7 @@
 
 Route::prefix('/')->group(function (){
     Route::get('/',                  'HomeController@index')->name('home');
+    Route::get('/prijavite-se',      'HomeController@signIn')->name('sign-in');
 });
 
 Route::prefix('/nekretnine/')->group(function (){
@@ -23,4 +24,15 @@ Route::prefix('/nekretnine/')->group(function (){
 
 Route::prefix('/kontaktirajte-nas/')->group(function (){
     Route::get('/',                  'ContactController@index')->name('contact-us');
+});
+
+
+Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/'], function(){
+    Route::get('/',                               'AdministracijaController@index')->name('admin');
+
+    Route::get('pregled-sifarnika',               'AdministracijaController@allKeywords')->name('admin.all-keywords');
+
+    // Estates
+    Route::get('dodajte-nekretninu',              'AdministracijaController@addEstate')->name('admin.add-estate');
+
 });

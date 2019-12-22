@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -29836,6 +29836,162 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/administracija/main.js":
+/*!*********************************************!*\
+  !*** ./resources/js/administracija/main.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  /*******************************************************************************************************************
+   *
+   *      Here we work with menu - moving left or right. If we click once, it will close big menu part, twice close
+   *      left menu completely.
+   *
+   ******************************************************************************************************************/
+  var leftMenu = $(".left-menu");
+  var contentWrapper = $(".content-wrapper");
+
+  if (localStorage['menu-set'] !== 'set') {
+    if (window.innerWidth < 1300 && window.innerWidth >= 800) {
+      leftMenu.addClass("left-menu-first-stage").removeClass("left-menu-second-stage");
+      contentWrapper.addClass("content-wrapper-first-stage").removeClass("content-wrapper-second-stage");
+    }
+
+    if (window.innerWidth < 800) {
+      leftMenu.addClass("left-menu-second-stage").removeClass("left-menu-first-stage");
+      contentWrapper.addClass("content-wrapper-second-stage").removeClass("content-wrapper-first-stage");
+    }
+  } else {
+    if (localStorage['menu-state'] === 'partially-open') {
+      leftMenu.addClass("left-menu-first-stage").removeClass("left-menu-second-stage");
+      contentWrapper.addClass("content-wrapper-first-stage").removeClass("content-wrapper-second-stage");
+    }
+
+    if (localStorage['menu-state'] === 'closed') {
+      leftMenu.addClass("left-menu-second-stage").removeClass("left-menu-first-stage");
+      contentWrapper.addClass("content-wrapper-second-stage").removeClass("content-wrapper-first-stage");
+    }
+  }
+
+  $(".left-menu-icon").click(function () {
+    localStorage['menu-set'] = 'set';
+
+    if (localStorage['menu-state'] === 'fully-open') {
+      localStorage['menu-state'] = 'partially-open';
+      leftMenu.addClass("left-menu-first-stage").removeClass("left-menu-second-stage");
+      contentWrapper.addClass("content-wrapper-first-stage").removeClass("content-wrapper-second-stage");
+    } else if (localStorage['menu-state'] === 'partially-open') {
+      localStorage['menu-state'] = 'closed';
+      leftMenu.addClass("left-menu-second-stage").removeClass("left-menu-first-stage");
+      contentWrapper.addClass("content-wrapper-second-stage").removeClass("content-wrapper-first-stage");
+    } else {
+      localStorage['menu-state'] = 'fully-open';
+      leftMenu.removeClass("left-menu-second-stage").removeClass("left-menu-first-stage");
+      contentWrapper.removeClass("content-wrapper-second-stage").removeClass("content-wrapper-first-stage");
+    }
+
+    console.log(localStorage['menu-state']);
+  });
+  /*******************************************************************************************************************
+   *
+   *      When we press huge buttons, it will change values of the left part - show different links
+   *
+   ******************************************************************************************************************/
+
+  $(".small-one").click(function () {
+    var value = $(this).attr('value') + "-property";
+
+    if (value === 'home-property') {
+      window.location = '/administracija';
+      return;
+    }
+
+    localStorage['menu-state'] = 'partially-open';
+    leftMenu.removeClass("left-menu-second-stage").removeClass("left-menu-first-stage");
+    contentWrapper.removeClass("content-wrapper-second-stage").removeClass("content-wrapper-first-stage"); // hide all other elements
+
+    $('.small-one-text').each(function () {
+      $(this).css('display', 'none');
+    });
+    $("div").find('[value="' + value + '"]').css('display', 'block');
+  });
+  /*******************************************************************************************************************
+   *
+   *      To avoid using a links, we could manage it through jquery to use linking of pages via "link" attribute.
+   *
+   ******************************************************************************************************************/
+
+  $(".small-one-linked, .home-icon").click(function () {
+    if (!$(this).attr('link')) return;
+    window.location = $(this).attr('link');
+  });
+  /*******************************************************************************************************************
+   *
+   *      When we have situation to upload image and preview it into browser before saving - there you go
+   *
+   ******************************************************************************************************************/
+
+  $('.photo-input').change(function () {
+    var data = new FormData();
+    var ins = document.getElementById($(this).attr('id')).files.length;
+    data.append($(this).attr('id'), document.getElementById($(this).attr('id')).files[0]);
+    var fotoID = $(this).attr('foto-name');
+    var previewID = $(this).attr('id') + '-title';
+    var src = $(this).attr('source'); // document.getElementById("loading_wrapper").style.display = 'block'; /** show loading part **/
+
+    console.log("Preview ID " + previewID);
+    var xml = new XMLHttpRequest();
+
+    xml.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        console.log(this.responseText);
+        var source = src + this.responseText;
+        console.log(source);
+        source = source.replace(' ', '');
+        console.log(fotoID);
+        var image = document.getElementById(fotoID);
+        image.setAttribute('src', source); // ** ovdje ćemo postaviti naziv fotografije, tako da je kasnije možemo samo strpati u bazu ** //
+
+        document.getElementById(previewID).value = this.responseText; // document.getElementById("loading_wrapper").style.display = 'none'; /** hide loading part **/
+      }
+    };
+
+    xml.open('POST', $(this).attr('url')); // ** Postavi tokene ** //
+
+    var metas = document.getElementsByTagName('meta');
+
+    for (var i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute("name") == "csrf-token") {
+        xml.setRequestHeader("X-CSRF-Token", metas[i].getAttribute("content"));
+      }
+    }
+
+    xml.send(data); // napravi http
+  });
+});
+/***********************************************************************************************************************
+ *
+ *      Loading part - If we wait for request : Show it !
+ *
+ **********************************************************************************************************************/
+
+function showLoading() {
+  $("#loading-gif").css('display', 'block');
+}
+
+function hideLoading() {
+  $("#loading-gif").css('display', 'none');
+}
+/***********************************************************************************************************************
+ *
+ *      FILTERS
+ *
+ **********************************************************************************************************************/
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -29883,162 +30039,15 @@ try {
 
 /***/ }),
 
-/***/ "./resources/js/menu/menu.js":
-/*!***********************************!*\
-  !*** ./resources/js/menu/menu.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var lastOne = null,
-    rest_menu_open = 0;
-$(document).ready(function () {
-  var hideAll = function hideAll() {
-    $(".my-select-wrapper").each(function () {
-      $(this).find(".select-values").fadeOut();
-      $(this).find("i").css({
-        'transform': 'rotate(0deg)'
-      });
-    });
-  };
-  /*******************************************************************************************************************
-   *
-   *      Trigger on click on "select menu"
-   *
-   ******************************************************************************************************************/
-
-
-  $(".my-select-value").click(function () {
-    var parent = $(this).parent(); // Hide all of them !!
-
-    hideAll();
-    var currentElement = parent.find(".select-values");
-    var parent_Id = parent.attr('id');
-
-    if (parent_Id !== lastOne) {
-      lastOne = parent_Id;
-      parent.find(".select-values").fadeIn();
-      parent.find("i").css({
-        'transform': 'rotate(180deg)'
-      });
-    } else {
-      lastOne = null;
-      parent.find(".select-values").fadeOut();
-      parent.find("i").css({
-        'transform': 'rotate(0deg)'
-      });
-    }
-  });
-  /*******************************************************************************************************************
-   *
-   *      Use value of it :)
-   *
-   ******************************************************************************************************************/
-
-  $(".my-option").click(function () {
-    $(this).parent().parent().find("p").text($(this).text());
-    $(this).parent().parent().attr("value", $(this).attr("value"));
-    hideAll();
-  });
-  /*******************************************************************************************************************
-   *      When we click "reveal rest of menu, it should :
-   *          1. remove border from top
-   *          2. set border on rest div
-   *          3. set padding on rest div
-   *          4. height = auto
-   ******************************************************************************************************************/
-
-  $(".other-searches-button").click(function () {
-    if (rest_menu_open === 0) {
-      rest_menu_open = 1;
-      $("#search-console").css("border-bottom", "0px");
-      $(".rest-of-search-options").css("border-bottom", "1px solid #d5d9dd");
-      $(".rest-of-search-options").css("padding-bottom", "14px");
-      var height = 50;
-      $(".rest-of-search-options").find(".search-row").each(function () {
-        height += $(this).height();
-      });
-      height += $(".check-boxes").height();
-      $(".rest-of-search-options").css("height", height + "px"); // $("#search-console").find(".search-wrapper").css("border-bottom", "1px solid #d5d9dd");
-
-      $("#search-console").find(".just-line").css("display", "block");
-    } else {
-      rest_menu_open = 0;
-      $("#search-console").css("border-bottom", "1px solid #d5d9dd");
-      $(".rest-of-search-options").css("border-bottom", "0px");
-      $(".rest-of-search-options").css("padding-bottom", "0px");
-      $(".rest-of-search-options").css("height", "0px"); // $("#search-console").find(".search-wrapper").css("border-bottom", "0px");
-
-      $("#search-console").find(".just-line").css("display", "none");
-    }
-  });
-  /*******************************************************************************************************************
-   *
-   *      Checkbox action ::
-   *          1. Set check icon
-   *          2. Set value Da - Ne
-   *
-   ******************************************************************************************************************/
-
-  $(".check-wrapper").click(function () {
-    if ($(this).attr('value') === 'Ne') {
-      $(this).find(".check-place").append('<i class="fas fa-check"></i>');
-      $(this).find(".check-place").css("background", "#00C0CD");
-      $(this).attr('value', 'Da');
-    } else {
-      $(this).find(".check-place").empty();
-      $(this).find(".check-place").css("background", "#fff");
-      $(this).attr('value', 'Ne');
-    }
-  });
-  /*******************************************************************************************************************
-   *
-   *      Hide all menu elements if we click on somewhere else
-   *
-   ******************************************************************************************************************/
-
-  $(document).click(function (e) {
-    if ($(e.target).closest('.my-select-wrapper').length === 0) {
-      hideAll();
-    }
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/sass/administracija/style.scss":
-/*!**************************************************!*\
-  !*** ./resources/sass/administracija/style.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/style.scss":
-/*!***********************************!*\
-  !*** ./resources/sass/style.scss ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!**************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/menu/menu.js ./resources/sass/style.scss ./resources/sass/administracija/style.scss ***!
-  \**************************************************************************************************************************************/
+/***/ 3:
+/*!*************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/administracija/main.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\menu\menu.js */"./resources/js/menu/menu.js");
-__webpack_require__(/*! C:\xampp\htdocs\europlac\resources\sass\style.scss */"./resources/sass/style.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\sass\administracija\style.scss */"./resources/sass/administracija/style.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\administracija\main.js */"./resources/js/administracija/main.js");
 
 
 /***/ })

@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="sign-up">
-            <a href="">
+            <a href="{{route('sign-in')}}">
                 <span>Forma /</span> Prijavite se
             </a>
             <div class="mobile-menu-icon">
