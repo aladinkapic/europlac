@@ -5,6 +5,7 @@
     <script src="{{asset('/js/swiper/swiper.min.js')}}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvpH2ZexSQv0s_VtyXEHzM4p8F1HdKMD0"></script>
 @endsection
+
 @section('content')
     <div class="estates-map" id="map"></div>
 
@@ -666,4 +667,7 @@
         </div>
     </div>
 
+@endsection
+@section('second_js_scripts')
+    <script src="{{asset('/js/maps/all-estates.js')}}"></script>
 @endsection

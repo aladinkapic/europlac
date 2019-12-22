@@ -17,7 +17,7 @@ function init() {
 
     // Get the HTML DOM element that will contain your map
     // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('map');
+    var mapElement = document.getElementById('map-of-estate');
 
     // Create the Google Map using our element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
@@ -29,54 +29,3 @@ function init() {
         title: 'Snazzy!'
     });
 }
-
-
-$(document).ready(function() {
-    if (localStorage.getItem("estates-preview-map") !== null) {
-        $(".open-close-button").empty();
-        $(".open-close-button").append(
-            '<p>Otvorite kartu</p>\n' +
-            '<i class="far fa-plus-square"></i>'
-        );
-
-        $(".estates-map").css('height', '0px');
-    }
-
-    $(".open-close-button").click(function () {
-        $(".open-close-button").empty();
-
-        if (localStorage.getItem("estates-preview-map") === null) {
-            // If it isn't set, that means map is fully visible
-            $(".open-close-button").append(
-                '<p>Otvorite kartu</p>\n' +
-                '<i class="far fa-plus-square"></i>'
-            );
-            localStorage['estates-preview-map'] = 'set-it'; // only strings
-            $(".estates-map").animate({
-                height: '0px'
-            })
-        }else{
-            $(".open-close-button").append(
-                '<p>Zatvorite kartu</p>\n' +
-                '<i class="far fa-minus-square"></i>'
-            );
-            localStorage.removeItem("estates-preview-map");
-            $(".estates-map").animate({
-                height: '500px'
-            })
-        }
-    }) ;
-
-
-
-    $(".single-estate").click(function () {
-        let url = $(this).attr('id-value');
-
-        window.location = '/nekretnine/pregled-nekretnine';
-    });
-});
-
-
-
-
-

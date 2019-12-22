@@ -14,8 +14,15 @@ const mix = require('laravel-mix');
 mix.js([
     'resources/js/app.js',
     'resources/js/menu/menu.js',
-    'resources/js/maps/all-estates.js'
 ], 'public/js')
+
+mix.js([
+    'resources/js/maps/all-estates.js'
+], 'public/js/maps/all-estates.js')
+
+mix.js([
+    'resources/js/maps/single-estate.js'
+], 'public/js/maps/single-estate.js')
 
 // mix.js([
 //     'resources/js/libraries/swiper.js',
