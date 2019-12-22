@@ -8,10 +8,10 @@
 @section('content')
     <div class="breadcrumbs">
         <div class="inside-breadcrumbs">
-            <div class="single-part">
+            <div class="single-part single-wanished">
                 <p>Poslovno stambeni kompleks uz Unu</p>
             </div>
-            <div class="single-part">
+            <div class="single-part ">
                 <p>
                     <a href="">Naslovna strana</a> /
                     <a href="">Sve nekretnine</a>  /
@@ -26,22 +26,22 @@
         <div class="swiper-container estate-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/1.jpg')}}" class="desktop-version" alt="">
+                    <img src="{{asset('/images/estates/1.jpg')}}"  alt="">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/2.jpg')}}" class="desktop-version" alt="">
+                    <img src="{{asset('/images/estates/2.jpg')}}"  alt="">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/3.jpg')}}" class="desktop-version" alt="">
+                    <img src="{{asset('/images/estates/3.jpg')}}"  alt="">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/4.jpg')}}" class="desktop-version" alt="">
+                    <img src="{{asset('/images/estates/4.jpg')}}"  alt="">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/5.jpg')}}" class="desktop-version" alt="">
+                    <img src="{{asset('/images/estates/5.jpg')}}"  alt="">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/6.jpg')}}" class="desktop-version" alt="">
+                    <img src="{{asset('/images/estates/6.jpg')}}"  alt="">
                 </div>
             </div>
 
@@ -65,6 +65,14 @@
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+                breakpoints: {
+                    1000: {
+                        slidesPerView: 2,
+                    },
+                    800: {
+                        slidesPerView: 1,
+                    }
+                }
             });
         </script>
     </div>
@@ -135,6 +143,9 @@
                 <p>
                     Stunning Urban Contemporary. For those seeking the best of Urban Living!! Bright, airy open floor plan with 3 full bedrooms and 2 baths. Corner residence with 2 decks facing NorthEast and SouthEast. Contemporary European style kitchen featuring Caesar style counter tops, Fisher & Paykel dual drawer dishwasher and refrigerator. Ge Profile oven, electric range and microwave. Tandem parking for 2 cars. Come see what makes Aria Residence 303 so desirable.
                 </p>
+                <p>
+                    Stunning Urban Contemporary. For those seeking the best of Urban Living!! Bright, airy open floor plan with 3 full bedrooms and 2 baths. Corner residence with 2 decks facing NorthEast and SouthEast. Contemporary European style kitchen featuring Caesar style counter tops, Fisher & Paykel dual drawer dishwasher and refrigerator. Ge Profile oven, electric range and microwave. Tandem parking for 2 cars.
+                </p>
             </div>
 
             <!-- Features -->
@@ -204,7 +215,7 @@
                 <h4>Video</h4>
             </div>
             <div class="video">
-                <iframe src="https://www.youtube.com/embed/P8ksPxR62Ag"></iframe>
+                <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/P8ksPxR62Ag"></iframe>
             </div>
 
             <!-- nearby -->
@@ -221,31 +232,12 @@
                     </div>
 
                     <div class="single-nearby" title="Ukupna ocjena iznosi 4.55">
-                        <p>
-                            Restoran Amfora, Cazin <span>(0.45 km)</span>
-                        </p>
-                        <div class="stars-part">
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
+                        <div class="what-is">
+                            <p>Restoran Amfora, Cazin</p>
+                            <p>
+                                <span>(0.45 km)</span>
+                            </p>
                         </div>
-                    </div>
-                    <div class="single-nearby" title="Ukupna ocjena iznosi 4.28">
-                        <p>
-                            Restoran Lovac, Cazin <span>(0.56 km)</span>
-                        </p>
                         <div class="stars-part">
                             <div class="single-star">
                                 <i class="fas fa-star"></i>
@@ -275,9 +267,12 @@
                     </div>
 
                     <div class="single-nearby" title="Ukupna ocjena iznosi 4.55">
-                        <p>
-                            Osnovna škola Cazin I <span>(0.24 km)</span>
-                        </p>
+                        <div class="what-is">
+                            <p>Osnovna škola Cazin I</p>
+                            <p>
+                                <span>(0.24 km)</span>
+                            </p>
+                        </div>
                         <div class="stars-part">
                             <div class="single-star">
                                 <i class="fas fa-star"></i>
@@ -297,9 +292,13 @@
                         </div>
                     </div>
                     <div class="single-nearby" title="Ukupna ocjena iznosi 4.28">
-                        <p>
-                            Osnovna škola Cazin II <span>(1.59 km)</span>
-                        </p>
+                        <div class="what-is">
+                            <p>Osnovna škola Cazin II</p>
+                            <p>
+                                <span>(1.59 km)</span>
+                            </p>
+                        </div>
+
                         <div class="stars-part">
                             <div class="single-star">
                                 <i class="fas fa-star"></i>
@@ -412,6 +411,10 @@
                     </div>
                     <div class="other-first other-text">
                         <textarea name="mesasge" id="" placeholder="Vaša poruka"></textarea>
+                    </div>
+
+                    <div class="send-button">
+                        <p>Pošaljite poruku</p>
                     </div>
                 </div>
             </div>

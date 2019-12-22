@@ -3397,10 +3397,10 @@ footer .bottom-footer .bottom-elements .copy p {
   left: 30px;
   top: 0px;
   width: calc(100% - 60px);
-  min-height: 60px;
   display: -webkit-inline-box;
   display: inline-flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .estate-details .estate-full .files .single-file {
@@ -3502,13 +3502,23 @@ footer .bottom-footer .bottom-elements .copy p {
           justify-content: space-between;
 }
 
-.estate-details .estate-full .nearby .single-class .single-nearby p {
-  font-size: 14px;
-  margin-top: 6px;
+.estate-details .estate-full .nearby .single-class .single-nearby .what-is {
+  position: relative;
+  left: 0px;
+  height: 30px;
+  display: -webkit-inline-box;
+  display: inline-flex;
 }
 
-.estate-details .estate-full .nearby .single-class .single-nearby p span {
+.estate-details .estate-full .nearby .single-class .single-nearby .what-is p {
+  font-size: 14px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.estate-details .estate-full .nearby .single-class .single-nearby .what-is p span {
   color: grey;
+  margin-left: 10px;
 }
 
 .estate-details .estate-full .nearby .single-class .single-nearby .stars-part {
@@ -3770,6 +3780,21 @@ footer .bottom-footer .bottom-elements .copy p {
 
 .estate-details .estate-full .contact-agent .contact-form .other-text {
   height: auto;
+}
+
+.estate-details .estate-full .contact-agent .contact-form .send-button {
+  height: 34px;
+  background: #00C0CD;
+  width: 200px;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.estate-details .estate-full .contact-agent .contact-form .send-button p {
+  color: #fff;
+  font-size: 14px;
+  padding-top: 8px;
 }
 
 .estate-details .estate-full .contact-agent .agent-preview .just-header,
@@ -4118,6 +4143,217 @@ footer .bottom-footer .bottom-elements .copy p {
 
   .estate-details .estate-full {
     width: 880px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .breadcrumbs .inside-breadcrumbs {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+
+  .estate-details {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+
+  .estate-details .estate-full {
+    width: calc(100% - 260px);
+  }
+
+  .estate-details .sidebar {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .breadcrumbs .inside-breadcrumbs {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+
+  .estate-details {
+    flex-wrap: wrap;
+    -webkit-box-pack: initial;
+            justify-content: initial;
+  }
+
+  .estate-details .estate-full {
+    width: 100%;
+  }
+
+  .estate-details .estate-full .contact-agent .agent-preview {
+    display: none;
+  }
+
+  .estate-details .estate-full .contact-agent .contact-form {
+    left: 30px;
+    width: calc(100% - 60px);
+  }
+
+  .estate-details .sidebar {
+    width: 100%;
+  }
+
+  .estate-details .sidebar .get-date .swiper-container {
+    height: 190px;
+  }
+
+  .estate-details .sidebar .get-date .swiper-container .swiper-wrapper .swiper-slide {
+    height: 160px;
+  }
+
+  .estate-details .sidebar .get-date .swiper-container .swiper-wrapper .swiper-slide h4 {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .breadcrumbs {
+    height: auto;
+  }
+
+  .breadcrumbs .inside-breadcrumbs {
+    left: 20px;
+    height: auto;
+    width: calc(100% - 40px);
+  }
+
+  .breadcrumbs .inside-breadcrumbs .single-wanished {
+    display: none;
+  }
+
+  .breadcrumbs .inside-breadcrumbs .single-part {
+    height: auto;
+  }
+
+  .breadcrumbs .inside-breadcrumbs .single-part p {
+    margin-bottom: 16px;
+  }
+
+  .estate-details {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .estate-details .estate-full {
+    margin-bottom: 30px;
+  }
+
+  .estate-details .estate-full .estate-state {
+    display: none;
+  }
+
+  .estate-details .estate-full .estate-header h1,
+  .estate-details .estate-full .estate-header p {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .estate-details .estate-full .estate-menu {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .estate-details .estate-full .estate-menu .menu-icon {
+    display: none;
+  }
+
+  .estate-details .estate-full .estate-menu .rest-of-it {
+    margin-left: 25px;
+    width: calc(100% - 50px);
+    height: auto;
+    padding-left: 0px;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
+  .estate-details .estate-full .estate-menu .rest-of-it a {
+    margin: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid white;
+  }
+
+  .estate-details .estate-full .estate-menu .rest-of-it a:last-child {
+    border: none;
+  }
+
+  .estate-details .estate-full .price h2 {
+    margin-left: 25px;
+  }
+
+  .estate-details .estate-full .basic-info .single-of-basic {
+    position: relative;
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .estate-details .estate-full .details-about p {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: justify;
+  }
+
+  .estate-details .estate-full .features-header {
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .estate-details .estate-full .video {
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .estate-details .estate-full .video iframe {
+    height: 220px;
+  }
+
+  .estate-details .estate-full .nearby {
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .estate-details .estate-full .nearby .single-class .single-nearby {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .estate-details .estate-full .nearby .single-class .single-nearby .what-is {
+    height: auto;
+    width: 100%;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .estate-details .estate-full .nearby .single-class .single-nearby .stars-part {
+    height: 30px;
+    width: 100%;
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+  }
+
+  .estate-details .estate-full .map-of-estate {
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 300px;
+  }
+
+  .estate-details .estate-full .contact-agent {
+    min-height: auto;
+    height: 620px;
+  }
+
+  .estate-details .estate-full .contact-agent .contact-form {
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .estate-details .estate-full .contact-agent .contact-form .send-button {
+    width: 100%;
   }
 }
 

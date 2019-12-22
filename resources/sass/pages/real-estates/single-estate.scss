@@ -234,9 +234,9 @@
             left:30px;
             top:0px;
             width:calc(100% - 60px);
-            min-height:60px;
             display: inline-flex;
             flex-wrap: wrap;
+            margin-bottom:30px;
             .single-file{
                 position:relative;
                 left:0px;
@@ -318,12 +318,19 @@
                     height:30px;
                     display: inline-flex;
                     justify-content: space-between;
-
-                    p{
-                        font-size:14px;
-                        margin-top:6px;
-                        span{
-                            color:grey;
+                    .what-is{
+                        position:relative;
+                        left:0px;
+                        height:30px;
+                        display: inline-flex;
+                        p{
+                            font-size:14px;
+                            margin-top:6px;
+                            margin-bottom:6px;
+                            span{
+                                color:grey;
+                                margin-left:10px;
+                            }
                         }
                     }
                     .stars-part{
@@ -550,6 +557,20 @@
                     }
                 }
                 .other-text{height:auto;}
+
+                .send-button{
+                    height:34px;
+                    background: #00C0CD;
+                    width:200px;
+                    border-radius:3px;
+                    text-align: center;
+                    p{
+                        color:#fff;
+                        font-size:14px;
+                        padding-top:8px;
+                    }
+                    margin-bottom:30px;
+                }
             }
             .agent-preview, .contact-form{
                 .just-header{
@@ -856,6 +877,187 @@
         width:1200px;
         .estate-full{
             width:880px;
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .breadcrumbs{
+        .inside-breadcrumbs{
+            left:50px;
+            width:calc(100% - 100px);
+        }
+    }
+    .estate-details{
+        left:50px;
+        width:calc(100% - 100px);
+        .estate-full{
+            width:calc(100% - 260px);
+        }
+        .sidebar{
+            width:240px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .breadcrumbs{
+        .inside-breadcrumbs{
+            left:50px;
+            width:calc(100% - 100px);
+        }
+    }
+    .estate-details{
+        flex-wrap: wrap;
+        justify-content: initial;
+        .estate-full{
+            width:100%;
+            .contact-agent{
+                .agent-preview{
+                    display: none;
+                }
+                .contact-form{
+                    left:30px;
+                    width:calc(100% - 60px);
+                }
+            }
+        }
+        .sidebar{
+            width: 100%;
+            .get-date {
+                .swiper-container {
+                    height: 190px;
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            height: 160px;
+                            h4{
+                                margin-top:20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .breadcrumbs{
+        height: auto;
+        .inside-breadcrumbs{
+            left:20px;
+            height: auto;
+            width:calc(100% - 40px);
+            .single-wanished{display: none;}
+            .single-part{
+                height: auto;
+                p{
+                    margin-bottom:16px;
+                }
+            }
+        }
+    }
+    .estate-details{
+        left:20px;
+        width:calc(100% - 40px);
+        .estate-full{
+            .estate-state{
+                display: none;
+            }
+            margin-bottom:30px;
+            .estate-header{
+                h1, p{
+                    margin-left:15px;
+                    margin-right:15px;
+                }
+            }
+            .estate-menu{
+                height: auto;
+                flex-wrap:wrap;
+                .menu-icon{
+                    display: none;
+                }
+                .rest-of-it{
+                    margin-left:25px;
+                    width:calc(100% - 50px);
+                    height: auto;
+                    padding-left:0px;
+                    flex-wrap:wrap;
+                    justify-content: center;
+                    a{
+                        margin:0px;
+                        left:0px;
+                        width: 100%;
+                        text-align: center;
+                        border-bottom:1px solid rgba(255,255,255,01);
+                    }
+                    a:last-child{border:none;}
+                }
+            }
+            .price{
+                h2{
+                    margin-left:25px;
+                }
+            }
+            .basic-info {
+                .single-of-basic {
+                    position: relative;
+                    left: 15px;
+                    width: calc(100% - 30px);
+                }
+            }
+            .details-about{
+                p{margin-left:15px; margin-right:15px; text-align: justify;}
+            }
+            .features-header {
+                left: 15px;
+                width: calc(100% - 30px);
+            }
+            .video{
+                left:15px;
+                width:calc(100% - 30px);
+                iframe{
+                    height:220px;
+                }
+            }
+            .nearby{
+                left:15px;
+                width:calc(100% - 30px);
+                .single-class{
+                    .single-nearby{
+                        width:100%;
+                        height: auto;
+                        flex-wrap: wrap;
+                        .what-is{
+                            height: auto;
+                            width:100%;
+                            justify-content: space-between;
+                        }
+                        .stars-part{
+                            height:30px;
+                            width:100%;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+            .map-of-estate{
+                left:15px;
+                width:calc(100% - 30px);
+                height:300px;
+            }
+
+            .contact-agent{
+                min-height: auto;
+                height: 620px;
+                .contact-form{
+                    left:15px;
+                    width:calc(100% - 30px);
+                    .send-button{
+                        width:100%;
+                    }
+                }
+            }
         }
     }
 }
