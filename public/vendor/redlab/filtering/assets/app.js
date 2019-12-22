@@ -13,12 +13,15 @@ $(document).ready(function(){
 
         $(".filter-row input").last().val('');
         $(".filter-row select").last().val('');
-
     });
 
     /*
         Remove filter
      */
+
+    $(".dropright").click(function(){
+        $(".fill-column-names").toggle();
+    });
 
 
     $(document).on('click', '.remove-filter' , function(){
@@ -50,16 +53,11 @@ $(document).ready(function(){
         // });
 
     };
-
-
     hiddeThem();
-
-
 
     /*
         Fill checkable column names
      */
-
     let initialValues = [], updateIntialValues = false;
 
     let setCheckPoints = function(){

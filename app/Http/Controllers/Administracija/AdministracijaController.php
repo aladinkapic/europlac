@@ -18,8 +18,9 @@ class AdministracijaController extends Controller{
 
         $filters = [
             'id' => '#',
-            'value' => 'Vrijednost',
-            'name' => 'Naziv'
+            'name' => 'Naziv',
+            'type' => 'Keyword',
+            'value' => 'Vrijednost'
         ];
 
         return view('administracija.pages.rest.sifarnici', compact('sifarnici', 'filters'));
