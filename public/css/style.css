@@ -3802,7 +3802,6 @@ footer .bottom-footer .bottom-elements .copy p {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 30px;
   height: auto;
 }
 
@@ -3822,9 +3821,10 @@ footer .bottom-footer .bottom-elements .copy p {
 
 .estate-details .sidebar .agent-preview .agent-image {
   position: relative;
-  left: 0px;
+  left: 20px;
   top: 0px;
-  width: 100%;
+  width: calc(100% - 40px);
+  margin-top: 20px;
   border-radius: 3px;
   overflow: hidden;
 }
@@ -3842,9 +3842,9 @@ footer .bottom-footer .bottom-elements .copy p {
 
 .estate-details .sidebar .agent-preview .agent-details .single-agent-detail {
   position: relative;
-  left: 0px;
+  left: 20px;
   top: 0px;
-  width: 100%;
+  width: calc(100% - 40px);
   height: 30px;
   margin-top: 5px;
   display: -webkit-inline-box;
@@ -3866,13 +3866,14 @@ footer .bottom-footer .bottom-elements .copy p {
 
 .estate-details .sidebar .agent-preview .agent-social {
   position: relative;
-  left: 0px;
-  width: 100%;
+  left: 20px;
+  width: calc(100% - 40px);
   margin-top: 20px;
   display: -webkit-inline-box;
   display: inline-flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .estate-details .sidebar .agent-preview .agent-social .single-social-icon {
@@ -3896,7 +3897,227 @@ footer .bottom-footer .bottom-elements .copy p {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 30px;
-  height: auto;
+  background: #EFEFEF;
+}
+
+.estate-details .sidebar .get-date .get-date-header {
+  text-align: center;
+}
+
+.estate-details .sidebar .get-date .get-date-header h4 {
+  font-weight: normal;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.estate-details .sidebar .get-date .get-date-header h5 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0px;
+}
+
+.estate-details .sidebar .get-date .swiper-container {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 150px;
+  background: #EFEFEF;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-wrapper {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-wrapper .swiper-slide {
+  background: #fff;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 120px;
+  text-align: center;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-wrapper .swiper-slide .date-header {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 30px;
+  background: #00C0CD;
+  text-align: center;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-wrapper .swiper-slide .date-header p {
+  color: #fff;
+  font-weight: bold;
+  padding-top: 5px;
+  margin: 0px;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-wrapper .swiper-slide h4 {
+  color: #00C0CD;
+  font-size: 40px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-wrapper .swiper-slide h5 {
+  margin: 0px;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-button-next {
+  right: 4px !important;
+  height: 10px;
+  top: 86px !important;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%2300C0CD'%2F%3E%3C%2Fsvg%3E") !important;
+}
+
+.estate-details .sidebar .get-date .swiper-container .swiper-button-prev {
+  left: 5px !important;
+  height: 10px;
+  top: 86px !important;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2300C0CD'%2F%3E%3C%2Fsvg%3E") !important;
+}
+
+.estate-details .sidebar .get-date .select-dates {
+  position: relative;
+  left: 20px;
+  top: 0px;
+  width: calc(100% - 40px);
+  height: 50px;
+  margin-top: 20px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper .my-select-value {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper .my-select-value p {
+  margin-left: 20px;
+  margin-top: 7px;
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+  font-family: "Nunito", sans-serif;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper .my-select-value .select-arrow {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper .my-select-value .select-arrow i {
+  margin-top: 10px;
+  font-size: 12px;
+  color: grey;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper .select-values {
+  position: absolute;
+  left: -1px;
+  background: #fff;
+  z-index: 1000;
+  top: 32px;
+  width: 100%;
+  max-height: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  display: none;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper .select-values .my-option {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: calc(100% - 20px);
+  height: 23px;
+  background: #fff;
+  padding-left: 20px;
+  padding-top: 7px;
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+  font-family: "Nunito", sans-serif;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper .select-values .my-option:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.estate-details .sidebar .get-date .select-dates .my-select-wrapper:hover {
+  cursor: pointer;
+}
+
+.estate-details .sidebar .get-date .select-dates .to {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0px;
+  font-size: 14px;
+  padding-top: 7px;
+}
+
+.estate-details .sidebar .get-date .schedule {
+  position: relative;
+  left: 20px;
+  top: 0px;
+  width: calc(100% - 40px);
+  background: #00C0CD;
+  height: 28px;
+  text-align: center;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.estate-details .sidebar .get-date .schedule p {
+  color: #fff;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 1400px) {
+  .breadcrumbs .inside-breadcrumbs {
+    left: calc(50% - 600px);
+    width: 1200px;
+  }
+
+  .estate-details {
+    left: calc(50% - 600px);
+    width: 1200px;
+  }
+
+  .estate-details .estate-full {
+    width: 880px;
+  }
 }
 
