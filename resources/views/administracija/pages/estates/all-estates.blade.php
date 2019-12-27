@@ -1,15 +1,15 @@
 @extends('administracija.layout.master')
-@section('title') Pregled svih korisnika  @endsection
+@section('title') Pregled svih nekretnina  @endsection
 
-@section('page-icon') <i class="fas fa-key"></i> @endsection
-@section('page-header') Uredite šifarnik @endsection
-@section('page-desc') Pregled i uređivanje vrijednosti šifarnika. <a href="{{route('new-keyword', ['key' => $key])}}">Unesite novi šifarnik</a> @endsection
-@section('page-links') <a href="{{route('admin.all-keywords')}}"> Svi šifarnici </a> / <a href="{{route('single-keyword', ['key' => $key])}}"> Uredite šifarnike </a> @endsection
+@section('page-icon') <i class="far fa-building"></i> @endsection
+@section('page-header') Pregled svih nekretnina @endsection
+@section('page-desc') Pregled i uređivanje svih nekretnina !. @endsection
+@section('page-links') <a href="{{route('admin.all-estates')}}"> Sve nekretnine </a> @endsection
 
 @section('other_css_links') <link rel="stylesheet" href="{{asset('/css/bootstrap.css')}}"> @endsection
 
 @section('content')
-    {!!  \App\Http\Controllers\Administracija\Filter::show($sifarnici, $filters) !!}
+    {!!  \App\Http\Controllers\Administracija\Filter::show($estates, $filters) !!}
     <table id="filtering" class="table table-condensed table-bordered">
         <thead>
         {!! \App\Http\Controllers\Administracija\Filter::tableHeader($filters) !!}
@@ -17,11 +17,11 @@
         </thead>
         <tbody>
         @php $counter = 1; @endphp
-        @foreach($sifarnici as $user)
+        @foreach($estates as $user)
             <tr>
                 <td>{{$counter++}}.</td>
-                <td>{{$user->name ?? '/'}}</td>
-                <td>{{$user->type ?? '/'}}</td>
+                <td>{{$user->naziv ?? '/'}}</td>
+                <td>{{$user->adresa ?? '/'}}</td>
                 <td>{{$user->value ?? '/'}}</td>
                 <td>
                     <a href="">

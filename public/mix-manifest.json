@@ -1,5 +1,6 @@
 {
     "/js/administracija/app.js": "/js/administracija/app.js",
+    "/js/administracija/maps/map.js": "/js/administracija/maps/map.js",
     "/js/app.js": "/js/app.js",
     "/css/style.css": "/css/style.css",
     "/css/administracija/style.css": "/css/administracija/style.css",

@@ -30,6 +30,10 @@ mix.js([
     'resources/js/administracija/main.js',
 ], 'public/js/administracija/app.js')
 
+mix.js([
+    'resources/js/administracija/maps/map.js',
+], 'public/js/administracija/maps/map.js')
+
 
 // mix.js([
 //     'resources/js/libraries/swiper.js',

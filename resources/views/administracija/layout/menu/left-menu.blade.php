@@ -31,7 +31,7 @@
                 <i class="fas fa-terminal"></i>
                 <p>NEKRETNINE</p>
             </div>
-            <div class="small-one-linked" link="/users/all-users">
+            <div class="small-one-linked" link="{{route('admin.all-estates')}}">
                 <i class="far fa-building"></i>
                 <p>Pregled svih nekretnina</p>
             </div>

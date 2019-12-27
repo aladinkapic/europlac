@@ -94,6 +94,10 @@ a {
   margin-top: 5px;
 }
 
+.content-wrapper #page-menu .page-menu-header p a {
+  color: #00ACED;
+}
+
 .content-wrapper #page-menu .page-menu-navigation {
   position: absolute;
   right: 0px;
@@ -279,6 +283,11 @@ a {
   margin-bottom: 30px;
 }
 
+.content-wrapper section .single-one-with-padding {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
 .content-wrapper section .split-two .input-row,
 .content-wrapper section .single-one .input-row {
   position: relative;
@@ -385,6 +394,17 @@ a {
   display: none;
 }
 
+.content-wrapper section .split-two .select-location,
+.content-wrapper section .single-one .select-location {
+  position: relative;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 360px;
+  margin-top: 30px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 .content-wrapper section .bottom-buttons {
   position: relative;
   left: 0px;
@@ -478,6 +498,16 @@ a {
 
 .fancy-green {
   color: #00FFD0;
+}
+
+.my-button {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  color: #fff;
+  background: #333;
 }
 
 /************************************************* Filters CSS ********************************************************/
