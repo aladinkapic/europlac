@@ -18,6 +18,8 @@ class Estates extends Migration
 
             $table->string('naziv')->nullable();
             $table->string('adresa')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('cijena')->nullable();
 
             $table->integer('grad')->nullable();
             $table->integer('drzava')->nullable();

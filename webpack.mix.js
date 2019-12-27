@@ -32,7 +32,8 @@ mix.js([
 
 mix.js([
     'resources/js/administracija/maps/map.js',
-], 'public/js/administracija/maps/map.js')
+    'resources/js/administracija/includes/upload-image.js',
+], 'public/js/administracija/estate.js')
 
 
 // mix.js([

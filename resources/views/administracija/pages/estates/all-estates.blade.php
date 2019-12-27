@@ -17,14 +17,15 @@
         </thead>
         <tbody>
         @php $counter = 1; @endphp
-        @foreach($estates as $user)
+        @foreach($estates as $estate)
             <tr>
                 <td>{{$counter++}}.</td>
-                <td>{{$user->naziv ?? '/'}}</td>
-                <td>{{$user->adresa ?? '/'}}</td>
-                <td>{{$user->value ?? '/'}}</td>
+                <td>{{$estate->naziv ?? '/'}}</td>
+                <td>{{$estate->adresa ?? '/'}}</td>
+                <td>{{$estate->gradRel->name ?? '/'}}</td>
+                <td>{{$estate->drzavaRel->name ?? '/'}}</td>
                 <td>
-                    <a href="">
+                    <a href="{{route('admin.preview-estate', ['id' => $estate->id])}}">
                         <button class="btn my-button">Pregled</button>
                     </a>
                 </td>

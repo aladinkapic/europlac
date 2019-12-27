@@ -37,9 +37,12 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/'], 
     Route::get('unos-sifarnika/{key}',            'AdministracijaController@newKeyword')->name('new-keyword');
     Route::post('spremite-sifarnik',              'AdministracijaController@saveKeyword')->name('save-new-keyword');
 
+    // Photo upload
+    Route::post('/photo/photo-upload',            'Photos@saveEstateIcon')->name('photos.save-estate-icon');
+
     // Estates
     Route::get('pregled-nekretnina',              'AdministracijaController@allEstates')->name('admin.all-estates');
     Route::get('dodajte-nekretninu',              'AdministracijaController@addEstate')->name('admin.add-estate');
     Route::post('spremite-nekretninu',            'AdministracijaController@saveEstate')->name('admin.save-estate');
-
+    Route::get('pregled-nekretnine/{id}',         'AdministracijaController@previewEstate')->name('admin.preview-estate');
 });
