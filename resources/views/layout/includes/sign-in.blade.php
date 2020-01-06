@@ -13,9 +13,10 @@
     {!! Html::image(asset('/images/logo.png')) !!}
 </div>
 <div class="login_forma">
-    <form action="/prijavi_me" method="post">
+    <form action="{{route('sign-me-in')}}" method="post">
+        @csrf
         <div class="forma">
-            <input type="hidden" name="_token" value="iFj6lMUe2emCx0eHVkB5NgsF8exhzpDw13dwIpZk">
+
             <div class="red_forme">
                 <h4>PRIJAVITE SE</h4>
             </div>
@@ -24,13 +25,13 @@
                 <div class="input_okvir_i">
                     <i class="fas fa-user"></i>
                 </div>
-                <input type="text" name="username" placeholder="Vaš username" value="" autocomplete="off">
+                <input type="text" name="email" placeholder="Vaša email adresa" value="" autocomplete="off">
             </div>
             <div class="input_okvir  ">
                 <div class="input_okvir_i">
                     <i class="fas fa-unlock-alt"></i>
                 </div>
-                <input type="password" name="sifra" placeholder="Vaša šifra">
+                <input type="password" name="password" placeholder="Vaša šifra">
             </div>
 
             <div class="input_button">

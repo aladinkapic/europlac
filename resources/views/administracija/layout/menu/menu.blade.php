@@ -16,7 +16,7 @@
             <i class="fas fa-compress-arrows-alt"></i>
         </div>
         <div class="user-icon" title="Odjavite se !!">
-            <a href="#">
+            <a href="{{route('logout')}}">
                 <i class="fas fa-power-off"></i>
             </a>
         </div>

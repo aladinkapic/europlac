@@ -14,6 +14,8 @@
 Route::prefix('/')->group(function (){
     Route::get('/',                  'HomeController@index')->name('home');
     Route::get('/prijavite-se',      'HomeController@signIn')->name('sign-in');
+    Route::post('/prijavi-me',       'HomeController@signMeIn')->name('sign-me-in');
+    Route::get('/logout',            'HomeController@logout')->name('logout');
 });
 
 Route::prefix('/nekretnine/')->group(function (){
@@ -27,7 +29,7 @@ Route::prefix('/kontaktirajte-nas/')->group(function (){
 });
 
 
-Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/'], function(){
+Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', 'middleware' => 'authenticate'], function(){
     Route::get('/',                               'AdministracijaController@index')->name('admin');
 
     // Keywords - CRUD
