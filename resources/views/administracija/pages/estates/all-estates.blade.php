@@ -25,7 +25,7 @@
                 <td>{{$estate->gradRel->name ?? '/'}}</td>
                 <td>{{$estate->drzavaRel->name ?? '/'}}</td>
                 <td>
-                    <a href="{{route('admin.preview-estate', ['id' => $estate->id])}}">
+                    <a href="{{route('admin.preview-estate', ['id' => $estate->id, 'what' => true])}}">
                         <button class="btn my-button">Pregled</button>
                     </a>
                 </td>

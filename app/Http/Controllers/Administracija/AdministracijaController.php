@@ -91,9 +91,10 @@ class AdministracijaController extends Controller{
 
         return back();
     }
-    public function previewEstate($id){
+    public function previewEstate($id, $what){
         $estate = Estate::where('id', $id)->first();
-        $preview = true;
+        if($what == true) $preview = $what;
+        else $preview = null;
 
         $daNe         = Sifarnici::where('type', 'da_ne')->get()->pluck('name', 'value');
         $grad         = Sifarnici::where('type', 'grad')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite grad', '0');
@@ -105,5 +106,14 @@ class AdministracijaController extends Controller{
         $stanje       = Sifarnici::where('type', 'stanje')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite stanje', '0');
 
         return view('administracija.pages.estates.preview-estate', compact('daNe', 'grad', 'drzava', 'svrha', 'vrsta', 'br_soba', 'br_kupatila','stanje', 'estate', 'preview'));
+    }
+
+    public function updateEstate(Request $request){
+        try{
+            $estate = Estate::where('id', $request->id)->update(
+                $request->except(['_token', 'id', 'photo-input'])
+            );
+        }catch (\Exception $e){}
+        return redirect()->route('admin.preview-estate', ['id' => $request->id, 'what' => true]);
     }
 }

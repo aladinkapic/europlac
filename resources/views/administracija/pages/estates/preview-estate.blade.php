@@ -3,15 +3,24 @@
 
 @section('page-icon') <i class="far fa-building"></i> @endsection
 @section('page-header') {{$estate->naziv ?? ''}} @endsection
-@section('page-desc') {{$estate->adresa ?? ''}}, {{$estate->gradRel->name ?? ''}} - {{$estate->drzavaRel->name ?? ''}} @endsection
-@section('page-links') <a href=""> Sve nekretnine </a> / <a href="{{Route('admin.preview-estate', ['id' => $estate->id])}}"> Pregled nekretnine </a> @endsection
+@section('page-desc')
+    {{$estate->adresa ?? ''}}, {{$estate->gradRel->name ?? ''}} - {{$estate->drzavaRel->name ?? ''}}
+    @if(isset($preview))
+        / <a href="{{route('admin.preview-estate', ['id' => $estate->id, 'what' => '0'])}}">Uredite nekretninu</a>
+        / <a href="{{route('photos.photo-gallery', ['id' => $estate->id])}}">Galerija</a>
+    @endif
+@endsection
+@section('page-links') <a href=""> Sve nekretnine </a> / <a href="{{Route('admin.preview-estate', ['id' => $estate->id, 'what' => true])}}"> Pregled nekretnine </a> @endsection
 
 @section('other_css_links')
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvpH2ZexSQv0s_VtyXEHzM4p8F1HdKMD0"></script>
 @endsection
 
 @section('content')
-    <section>
+    {!! Form::open(array('route' => 'admin.update-estate', 'action' => 'AdministracijaController@saveEstate')) !!}
+    @csrf
+    {!! Form::hidden('id', $estate->id) !!}
+        <section>
         <div class="split-two">
             <div class="input-row">
                 <div class="input-col">
@@ -56,7 +65,18 @@
         <div class="split-two">
             <div class="input-row">
                 <div class="input-image-w">
+                    {!! Form::hidden('photo', $estate->photo, ['class' => 'photo-preview', 'id' => 'photo-input-title']) !!}
                     <img src="/images/estates/{{$estate->photo ?? '/'}}" id="photo-preview" alt="">
+                    @if(!isset($preview))
+                        <form action="">
+                            <label for="photo-input">
+                                <div class="input-image-shadow">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                            </label>
+                            <input type="file" id="photo-input" class="photo-input" source="/images/estates/" foto-name="photo-preview" name="photo-input" url="{{route('photos.save-estate-icon')}}">
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>
@@ -222,7 +242,17 @@
                 </div>
             </div>
         </div>
+
+
+        @if(!isset($preview))
+            <div class="bottom-buttons">
+                <div class="bottom-button">
+                    {!! Form::submit('SPREMITE SADRŽAJ', ['class' => 'save-button']) !!}
+                </div>
+            </div>
+        @endif
     </section>
+    {!! Form::close(); !!}
 @endsection
 
 @section('second_js_scripts')

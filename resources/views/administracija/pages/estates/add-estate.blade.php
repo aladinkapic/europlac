@@ -11,9 +11,9 @@
 @endsection
 
 @section('content')
-    {!! Form::open(array('route' => 'admin.save-estate', 'action' => 'AdministracijaController@saveEstate')) !!}
-
+    {!! Form::open(array('route' => 'admin.save-estate', 'action' => 'AdministracijaController@updateEstate')) !!}
     @csrf
+
     <section>
         <div class="split-two">
             <div class="input-row">
