@@ -42,6 +42,8 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/'], 
     Route::post('/photo/upload-to-gallery',       'Photos@savePhotosToGallery')->name('photos.save-to-gallery');
     Route::get('/remove_file/{id}',               'Photos@removeFile')->name('photos.remove-file');
 
+    Route::get('/files/all-files/{id}',            'Photos@allFiles')->name('photos.all-files');
+
     // Estates
     Route::get('pregled-nekretnina',               'AdministracijaController@allEstates')->name('admin.all-estates');
     Route::get('dodajte-nekretninu',               'AdministracijaController@addEstate')->name('admin.add-estate');

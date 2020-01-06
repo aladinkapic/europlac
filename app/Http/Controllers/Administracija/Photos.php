@@ -26,6 +26,12 @@ class Photos extends Controller{
 
         return view('administracija.pages.estates.gallery', compact('estate', 'images'));
     }
+    public function allFiles($id){
+        $estate = Estate::where('id', $id)->first();
+        $images = FilesRelationships::where('property_id', $estate->id)->where('model', 'Models/Estate/Files')->with('file')->get();
+
+        return view('administracija.pages.estates.all-files', compact('estate', 'images'));
+    }
     public function savePhotosToGallery(Request $request){
         for($i=0; $i<count($request->values); $i++){
             try{
