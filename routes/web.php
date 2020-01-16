@@ -57,6 +57,8 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::get('u-blizini/{id}',                   'NearbyController@previewAll')->name('admin.preview-nearby');
     Route::get('unos-u-blizini/{id}',              'NearbyController@insertNew')->name('admin.insert-nearby');
     Route::post('spremi-u-blizini',                'NearbyController@save')->name('admin.save-nearby');
+    Route::get('pregled-u-blizini/{id}',           'NearbyController@preview')->name('admin.preview-single-nearby');
+    Route::post('azuriraj-u-blizini',              'NearbyController@update')->name('admin.update-nearby');
 });
 
 

@@ -52,4 +52,35 @@ class NearbyController extends Controller{
             return redirect()->route('admin.preview-nearby', ['id' => $request->estate_id]);
         }catch (\Exception $e){dd($e);}
     }
+
+
+    public function preview($id){
+        $category = Sifarnici::where('type', 'nearby')->get()->pluck('name', 'value')->prepend('Odaberite kategoriju', '0');
+        $nearby   = Nearby::where('id', $id)->first();
+        $estate   = Estate::where('id', $nearby->estate_id)->first();
+
+        return view('administracija.pages.estates.nearby.preview', compact('estate', 'category', 'nearby'));
+    }
+
+    public function update(Request $request){
+        if($request->category == 1){ // Education
+            $request->request->add(['icon' => 'fas fa-graduation-cap']);
+        }else if($request->category == 2){
+            $request->request->add(['icon' => 'fas fa-bus']);
+        }else if($request->category == 3){
+            $request->request->add(['icon' => 'fas fa-cocktail']);
+        }else if($request->category == 4){
+            $request->request->add(['icon' => 'fas fa-landmark']);
+        }else if($request->category == 5){
+            $request->request->add(['icon' => 'fas fa-shopping-basket']);
+        }
+
+        try{
+            $nearby = Nearby::where('id', $request->id)->update(
+                $request->except(['_token', 'estate_id', 'id'])
+            );
+
+            return redirect()->route('admin.preview-nearby', ['id' => $request->estate_id]);
+        }catch (\Exception $e){dd($e);}
+    }
 }

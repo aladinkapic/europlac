@@ -17,15 +17,15 @@
         </thead>
         <tbody>
         @php $counter = 1; @endphp
-        @foreach($nearby as $user)
+        @foreach($nearby as $near)
             <tr>
                 <td>{{$counter++}}.</td>
-                <td>{{$user->gradRel->name ?? '/'}}</td>
-                <td>{{$user->name ?? '/'}}</td>
-                <td>{{$user->distance ?? '/'}}</td>
+                <td>{{$near->gradRel->name ?? '/'}}</td>
+                <td>{{$near->name ?? '/'}}</td>
+                <td>{{$near->distance ?? '/'}}</td>
                 <td></td>
                 <td>
-                    <a href="">
+                    <a href="{{route('admin.preview-single-nearby', ['id' => $near->id ?? ''])}}">
                         <button class="btn my-button">Pregled</button>
                     </a>
                 </td>
