@@ -9,6 +9,7 @@
         / <a href="{{route('admin.preview-estate', ['id' => $estate->id, 'what' => '0'])}}">Uredite nekretninu</a>
         / <a href="{{route('photos.photo-gallery', ['id' => $estate->id])}}">Galerija</a>
         / <a href="{{route('photos.all-files',     ['id' => $estate->id])}}">Dokumenti</a>
+        / <a href="{{route('admin.preview-nearby', ['id' => $estate->id])}}">Objekti u blizini</a>
     @endif
 @endsection
 @section('page-links') <a href=""> Sve nekretnine </a> / <a href="{{Route('admin.preview-estate', ['id' => $estate->id, 'what' => true])}}"> Pregled nekretnine </a> @endsection

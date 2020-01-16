@@ -52,6 +52,11 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('spremite-nekretninu',             'AdministracijaController@saveEstate')->name('admin.save-estate');
     Route::get('pregled-nekretnine/{id}/{what}',   'AdministracijaController@previewEstate')->name('admin.preview-estate');
     Route::post('azurirajte-nekretninu',           'AdministracijaController@updateEstate')->name('admin.update-estate');
+
+    // Nearby
+    Route::get('u-blizini/{id}',                   'NearbyController@previewAll')->name('admin.preview-nearby');
+    Route::get('unos-u-blizini/{id}',              'NearbyController@insertNew')->name('admin.insert-nearby');
+    Route::post('spremi-u-blizini',                'NearbyController@save')->name('admin.save-nearby');
 });
 
 
