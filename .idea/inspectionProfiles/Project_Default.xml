@@ -10,7 +10,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="9">
+          <list size="11">
             <item index="0" class="java.lang.String" itemvalue="value" />
             <item index="1" class="java.lang.String" itemvalue="id-value" />
             <item index="2" class="java.lang.String" itemvalue="year" />
@@ -20,6 +20,8 @@
             <item index="6" class="java.lang.String" itemvalue="source" />
             <item index="7" class="java.lang.String" itemvalue="foto-name" />
             <item index="8" class="java.lang.String" itemvalue="url" />
+            <item index="9" class="java.lang.String" itemvalue="goto" />
+            <item index="10" class="java.lang.String" itemvalue="extraid" />
           </list>
         </value>
       </option>

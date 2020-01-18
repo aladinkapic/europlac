@@ -3,12 +3,12 @@
 
 @section('page-icon') <i class="fas fa-map-signs"></i> @endsection
 @section('page-header') {{$nearby->name ?? '/'}} @endsection
-@section('page-desc') Pregled objekata u blizini @endsection
-@section('page-links') <a href=""> Sve nekretnine </a> / <a href="{{Route('admin.preview-estate', ['id' => $estate->id, 'what' => true])}}"> Pregled nekretnine </a> / <a href="{{route('admin.preview-nearby', ['id' => $estate->id ?? '/'])}}">Objekti u blizini</a>@endsection
+@section('page-desc') Pregled objekata u blizini / <a href="#" class="trigger-to-delete">OBRIŠITE</a> @endsection
+@section('page-links') <a href=""> Sve nekretnine </a> / <a href="{{Route('admin.preview-estate', ['id' => $estate->id, 'what' => true])}}"> Pregled nekretnine </a> / <a href="{{route('admin.preview-nearby', ['id' => $estate->id ?? '/'])}}">Objekti u blizini</a> @endsection
 
-@section('other_css_links')
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvpH2ZexSQv0s_VtyXEHzM4p8F1HdKMD0"></script>
-@endsection
+<!-- Deleting items -->
+@section("delete-url") {{route('admin.delete-nearby', ['id' => $nearby->id ?? '', 'goto' => $estate->id ?? '/'])}} @endsection
+<!-- END OF DELETING ITEMS -->
 
 @section('content')
     {!! Form::open(array('route' => 'admin.update-nearby', 'action' => 'NearbyController@update')) !!}
@@ -53,8 +53,4 @@
         </div>
     </section>
     {!! Form::close(); !!}
-@endsection
-
-@section('second_js_scripts')
-    <script src="{{asset('/js/administracija/estate.js')}}"></script>
 @endsection

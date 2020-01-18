@@ -2,7 +2,7 @@
 @section('title') Dodajte novog uposlenika  @endsection
 
 @section('page-icon') <i class="far fa-building"></i> @endsection
-@section('page-header') {{$estate->naziv ?? ''}} @endsection
+@section('page-header') {{$estate->naziv ?? ''}}@endsection
 @section('page-desc')
     {{$estate->adresa ?? ''}}, {{$estate->gradRel->name ?? ''}} - {{$estate->drzavaRel->name ?? ''}}
     @if(isset($preview))
@@ -10,8 +10,15 @@
         / <a href="{{route('photos.photo-gallery', ['id' => $estate->id])}}">Galerija</a>
         / <a href="{{route('photos.all-files',     ['id' => $estate->id])}}">Dokumenti</a>
         / <a href="{{route('admin.preview-nearby', ['id' => $estate->id])}}">Objekti u blizini</a>
+
+        / <a href="#" class="trigger-to-delete">OBRIŠITE</a>
     @endif
 @endsection
+
+<!-- Deleting items -->
+@section("delete-url") {{route('admin.delete-estate', ['id' => $estate->id ?? ''])}} @endsection
+<!-- END OF DELETING ITEMS -->
+
 @section('page-links') <a href=""> Sve nekretnine </a> / <a href="{{Route('admin.preview-estate', ['id' => $estate->id, 'what' => true])}}"> Pregled nekretnine </a> @endsection
 
 @section('other_css_links')
@@ -76,7 +83,7 @@
                                     <i class="fas fa-camera"></i>
                                 </div>
                             </label>
-                            <input type="file" id="photo-input" class="photo-input" source="/images/estates/" foto-name="photo-preview" name="photo-input" url="{{route('photos.save-estate-icon')}}">
+                            <input type="file" id="photo-input" class="photo-input" source="/images/estates/" foto-name="photo-preview" name="photo-input" url="{{route('photos.estates.save-image')}}">
                         </form>
                     @endif
                 </div>

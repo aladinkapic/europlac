@@ -262,7 +262,7 @@ $(document).ready(function () {
   });
   $(".single-estate").click(function () {
     var url = $(this).attr('id-value');
-    window.location = '/nekretnine/pregled-nekretnine';
+    window.location = '/nekretnine/pregled-nekretnine/' + url;
   });
 });
 

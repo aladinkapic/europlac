@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller{
     public function index(){
-
-        return view('pages.home');
+        $filters = $this->estateFilters;
+        return view('pages.home', compact('filters'));
     }
 
     public function signIn(){

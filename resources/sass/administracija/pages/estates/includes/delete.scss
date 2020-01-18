@@ -1,0 +1,83 @@
+#delete-item-wrapper{
+    position: fixed;
+    left: 0px;
+    top:0px;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    z-index: 50;
+    display: none;
+
+    .delete-item{
+        position:absolute;
+        left:30%;
+        width:40%;
+        background: #fff;
+        top:calc(50% - 200px);
+        border-radius: 3px;
+        .delete-header{
+            position:relative;
+            left:15px;
+            top:0px;
+            width:calc(100% - 30px);
+            height: 50px;
+            border-bottom:1px solid rgba(0,0,0,0.1);
+            display: inline-flex;
+            justify-content: space-between;
+            h4{
+                position: relative;
+                margin:0px;
+                padding-top:14px;
+                font-size:20px;
+            }
+            i{
+                font-size:22px;
+                padding-top:14px;
+                transition: all 0.2s;
+            }
+            i:hover{
+                cursor: pointer;
+                color: #FF1256;
+            }
+        }
+        .delete-body{
+            position:relative;
+            left:15px;
+            top:0px;
+            width:calc(100% - 30px);
+            margin-top:30px;
+
+            span{
+                font-size:12px;
+            }
+        }
+        .delete-buttons{
+            position:relative;
+            left:15px;
+            width:calc(100% - 30px);
+            margin-top:30px;
+            height:50px;
+            margin-bottom:20px;
+            border-top:1px solid rgba(0,0,0,0.1);
+            display: inline-flex;
+            justify-content: flex-end;
+            .single-button{
+                position:relative;
+                background: #FF1256;
+                height: 25px;
+                margin-top:20px;
+                margin-left:15px;
+                padding-top:3px;
+                padding-left:15px;
+                padding-right:15px;
+                font-weight: bold;
+                color:#fff;
+                border-radius:3px;
+            }
+            .single-button-blue{background: #00ACED;}
+            .single-button:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

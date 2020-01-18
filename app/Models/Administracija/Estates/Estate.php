@@ -15,4 +15,14 @@ class Estate extends Model{
     public function drzavaRel(){
         return $this->hasOne(Sifarnici::class, 'value', 'drzava')->where('type', 'drzava');
     }
+    public function svrhaRel(){
+        return $this->hasOne(Sifarnici::class, 'value', 'svrha')->where('type', 'svrha');
+    }
+    public function vrstaRel(){
+        return $this->hasOne(Sifarnici::class, 'value', 'vrsta')->where('type', 'vrsta');
+    }
+    public function stanjeRel(){
+        return $this->hasOne(Sifarnici::class, 'value', 'stanje')->where('type', 'stanje');
+    }
+
 }

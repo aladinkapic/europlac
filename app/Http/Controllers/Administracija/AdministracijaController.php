@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Administracija\Estates\Estate;
 use App\Models\Administracija\Sifarnici;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Session;
 
 class AdministracijaController extends Controller{
     public function index(){
@@ -66,7 +68,10 @@ class AdministracijaController extends Controller{
             'naziv' => 'Naziv',
             'adresa' => 'Adresa',
             'gradRel.name' => 'Grad',
-            'drzavaRel.name' => 'Država'
+            'drzavaRel.name' => 'Država',
+            'svrhaRel.name' => 'Svrha',
+            'vrstaRel.name' => 'Vrsta',
+            'stanjeRel.name' => 'Stanje'
         ];
         return view('administracija.pages.estates.all-estates', compact('estates', 'filters'));
     }
@@ -83,6 +88,8 @@ class AdministracijaController extends Controller{
         return view('administracija.pages.estates.add-estate', compact('daNe', 'grad', 'drzava', 'svrha', 'vrsta', 'br_soba', 'br_kupatila','stanje'));
     }
     public function saveEstate(Request $request){
+        $request->request->add(['user_id' => Crypt::decryptString(Session::get('ID'))]);
+
         try{
             $estate = Estate::create(
                 $request->except(['_token', 'photo-input'])
@@ -115,5 +122,13 @@ class AdministracijaController extends Controller{
             );
         }catch (\Exception $e){}
         return redirect()->route('admin.preview-estate', ['id' => $request->id, 'what' => true]);
+    }
+
+    public function deleteEstate($id){
+        try{
+            $estate = Estate::where('id', $id)->delete();
+        }catch (\Exception $e){}
+
+        return redirect()->route('admin.all-estates');
     }
 }

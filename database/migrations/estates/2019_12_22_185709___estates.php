@@ -20,6 +20,8 @@ class Estates extends Migration
             $table->string('adresa')->nullable();
             $table->string('photo')->nullable();
             $table->string('cijena')->nullable();
+            $table->string('cijena_po_kvadratu')->nullable();
+            $table->integer('valuta')->nullable();
 
             $table->integer('grad')->nullable();
             $table->integer('drzava')->nullable();
@@ -63,6 +65,9 @@ class Estates extends Migration
 
             // Video URL
             $table->text('video')->nullable();
+
+            // User ID
+            $table->integer('user_id')->nullable();
 
             $table->timestamps();
         });

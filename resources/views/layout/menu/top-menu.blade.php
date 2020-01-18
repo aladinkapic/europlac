@@ -45,7 +45,7 @@
                 <input type="text" name="name_of" placeholder="Pretraga po nazivu .." autocomplete="off">
             </div>
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite željeni grad" id="cities" value="0">
+                <div class="my-select-wrapper" title="Odaberite željeni grad" id="grad" value="0">
                     <div class="my-select-value">
                         <p>Odaberite grad</p>
                         <div class="select-arrow">
@@ -55,8 +55,9 @@
 
                     <div class="select-values">
                         <div class="my-option" value="0">Svi gradovi</div>
-                        <div class="my-option" value="1">Cazin</div>
-                        <div class="my-option" value="2">Bihać</div>
+                        @foreach($filters['grad'][0] as $key => $value)
+                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -77,7 +78,7 @@
     <div class="search-wrapper">
         <div class="search-row">
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite željeni grad" id="what_to_do" value="0">
+                <div class="my-select-wrapper" title="Odaberite svrhu" id="svrha" value="0">
                     <div class="my-select-value">
                         <p>Odaberite svrhu</p>
                         <div class="select-arrow">
@@ -87,15 +88,16 @@
 
                     <div class="select-values">
                         <div class="my-option" value="0">Svrha</div>
-                        <div class="my-option" value="1">Prodaja</div>
-                        <div class="my-option" value="2">Najam</div>
+                        @foreach($filters['svrha'][0] as $key => $value)
+                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
 
 
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite željeni grad" id="estate_type" value="0">
+                <div class="my-select-wrapper" title="Odaberite željeni grad" id="vrsta" value="0">
                     <div class="my-select-value">
                         <p>Odaberite vrstu nekretnine</p>
                         <div class="select-arrow">
@@ -105,13 +107,9 @@
 
                     <div class="select-values">
                         <div class="my-option" value="0">Sve</div>
-                        <div class="my-option" value="1">Apartman</div>
-                        <div class="my-option" value="2">Kuća</div>
-                        <div class="my-option" value="3">Poslovni prostor</div>
-                        <div class="my-option" value="4">Stan</div>
-                        <div class="my-option" value="5">Vikendica</div>
-                        <div class="my-option" value="6">Vila</div>
-                        <div class="my-option" value="7">Zemljište</div>
+                        @foreach($filters['vrsta'][0] as $key => $value)
+                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -174,10 +172,9 @@
 
                     <div class="select-values">
                         <div class="my-option" value="0">Odaberite državu</div>
-                        <div class="my-option" value="1">Bosna i Hercegovina</div>
-                        <div class="my-option" value="2">Hrvatska</div>
-                        <div class="my-option" value="3">Srbija</div>
-                        <div class="my-option" value="4">Crna Gora</div>
+                        @foreach($filters['drzava'][0] as $key => $value)
+                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>

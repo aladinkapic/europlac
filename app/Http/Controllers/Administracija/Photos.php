@@ -10,8 +10,10 @@ use Illuminate\Http\Request;
 use phpDocumentor\Reflection\File;
 
 class Photos extends Controller{
-    public function saveEstateIcon(Request $request){
-        dd($request->all());
+    public function saveEstateImageee(Request $request){
+
+    }
+    public function saveEstateImage(Request $request){
         if($request->has('photo-input')){
             $file = $request->file('photo-input');
             $ext = pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION);

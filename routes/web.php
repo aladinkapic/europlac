@@ -20,7 +20,7 @@ Route::prefix('/')->group(function (){
 
 Route::prefix('/nekretnine/')->group(function (){
     Route::get('/',                          'EstateController@index')->name('all-estates');
-    Route::get('pregled-nekretnine',         'EstateController@preview')->name('estate-preview');
+    Route::get('pregled-nekretnine/{id}',    'EstateController@preview')->name('estate-preview');
 });
 
 
@@ -39,7 +39,6 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('spremite-sifarnik',              'AdministracijaController@saveKeyword')->name('save-new-keyword');
 
     // Photo upload
-    Route::post('/photo/photo-upload',            'Photos@saveEstateIcon')->name('photos.save-estate-icon');
     Route::get('/photo/galerija/{id}',            'Photos@photoGallery')->name('photos.photo-gallery');
     Route::post('/photo/upload-to-gallery',       'Photos@savePhotosToGallery')->name('photos.save-to-gallery');
     Route::get('/remove_file/{id}',               'Photos@removeFile')->name('photos.remove-file');
@@ -52,6 +51,8 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('spremite-nekretninu',             'AdministracijaController@saveEstate')->name('admin.save-estate');
     Route::get('pregled-nekretnine/{id}/{what}',   'AdministracijaController@previewEstate')->name('admin.preview-estate');
     Route::post('azurirajte-nekretninu',           'AdministracijaController@updateEstate')->name('admin.update-estate');
+    Route::post('/photo/photo-upload-icon',        'Photos@saveEstateImage')->name('photos.estates.save-image');
+    Route::get('delete-estate/{id}',               'AdministracijaController@deleteEstate')->name('admin.delete-estate');
 
     // Nearby
     Route::get('u-blizini/{id}',                   'NearbyController@previewAll')->name('admin.preview-nearby');
@@ -59,7 +60,7 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('spremi-u-blizini',                'NearbyController@save')->name('admin.save-nearby');
     Route::get('pregled-u-blizini/{id}',           'NearbyController@preview')->name('admin.preview-single-nearby');
     Route::post('azuriraj-u-blizini',              'NearbyController@update')->name('admin.update-nearby');
-
+    Route::get('delete-nearby/{id}/{goto}',        'NearbyController@deleteNearby')->name('admin.delete-nearby');
 
 
     // Users

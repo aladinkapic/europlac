@@ -29836,6 +29836,33 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/administracija/includes/delete.js":
+/*!********************************************************!*\
+  !*** ./resources/js/administracija/includes/delete.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$("document").ready(function () {
+  $(".trigger-to-delete").click(function () {
+    $("#delete-item-wrapper").fadeIn();
+  });
+  $(".close-fa-times").click(function () {
+    $("#delete-item-wrapper").fadeOut();
+  });
+  $(".delete-item-trigger").click(function () {
+    var object = $("#delete-item-wrapper");
+
+    if (object.attr('extraId') !== '') {
+      window.location = object.attr('url') + '/' + object.attr('extraId');
+    } else {
+      window.location = object.attr('url');
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/administracija/main.js":
 /*!*********************************************!*\
   !*** ./resources/js/administracija/main.js ***!
@@ -30040,14 +30067,15 @@ try {
 /***/ }),
 
 /***/ 3:
-/*!*************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/administracija/main.js ***!
-  \*************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/administracija/main.js ./resources/js/administracija/includes/delete.js ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\administracija\main.js */"./resources/js/administracija/main.js");
+__webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\administracija\main.js */"./resources/js/administracija/main.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\administracija\includes\delete.js */"./resources/js/administracija/includes/delete.js");
 
 
 /***/ })

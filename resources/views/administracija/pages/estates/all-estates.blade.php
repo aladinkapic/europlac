@@ -24,6 +24,9 @@
                 <td>{{$estate->adresa ?? '/'}}</td>
                 <td>{{$estate->gradRel->name ?? '/'}}</td>
                 <td>{{$estate->drzavaRel->name ?? '/'}}</td>
+                <td>{{$estate->svrhaRel->name ?? '/'}}</td>
+                <td>{{$estate->vrstaRel->name ?? '/'}}</td>
+                <td>{{$estate->stanjeRel->name ?? '/'}}</td>
                 <td>
                     <a href="{{route('admin.preview-estate', ['id' => $estate->id, 'what' => true])}}">
                         <button class="btn my-button">Pregled</button>

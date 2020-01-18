@@ -83,4 +83,12 @@ class NearbyController extends Controller{
             return redirect()->route('admin.preview-nearby', ['id' => $request->estate_id]);
         }catch (\Exception $e){dd($e);}
     }
+
+    public function deleteNearby($id, $estate){
+        try{
+            $nearby = Nearby::where('id', $id)->delete();
+        }catch (\Exception $e){}
+
+        return redirect()->route('admin.preview-nearby', ['id' => $estate]);
+    }
 }

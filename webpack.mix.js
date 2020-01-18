@@ -28,6 +28,7 @@ mix.js([
 mix.js([
     'resources/js/app.js',
     'resources/js/administracija/main.js',
+    'resources/js/administracija/includes/delete.js',
 ], 'public/js/administracija/app.js')
 
 mix.js([

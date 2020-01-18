@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class Filter extends Controller{
-    private static $limit = 15;
+    private static $limit = 12;
 
     public static function filter($query){
 

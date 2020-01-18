@@ -116,4 +116,28 @@ $(document).ready(function() {
             hideAll();
         }
     });
+
+    /*******************************************************************************************************************
+     *
+     *      Search it !!
+     *
+     ******************************************************************************************************************/
+
+    $(".search-button").click(function () {
+        let url = '/nekretnine';
+
+        $(".my-select-wrapper").each(function () {
+            //console.log($(this).attr('id') + ': ' + $(this).attr('value'));
+            if($(this).attr('value') !== "0"){
+                console.log("Found this : " + $(this).attr('id') + ':: value ' + $(this).attr('value'));
+
+                url += '?filter%5B%5D='+$(this).attr('id')+'&filter_values%5B%5D=' + $(this).attr('value');
+            }
+        });
+
+        if(url !== '/nekretnine'){
+            url += '&limit=12';
+            window.location = url;
+        }
+    });
 });

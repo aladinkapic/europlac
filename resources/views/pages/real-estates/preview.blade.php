@@ -9,13 +9,13 @@
     <div class="breadcrumbs">
         <div class="inside-breadcrumbs">
             <div class="single-part single-wanished">
-                <p>Poslovno stambeni kompleks uz Unu</p>
+                <p>{{$estate->naziv ?? '/'}}</p>
             </div>
             <div class="single-part ">
                 <p>
                     <a href="">Naslovna strana</a> /
                     <a href="">Sve nekretnine</a>  /
-                    <a href="">Poslovno stambeni kompleks uz Unu</a>
+                    <a href="">{{$estate->naziv ?? '/'}}</a>
                 </p>
             </div>
         </div>
@@ -25,24 +25,11 @@
     <div class="slider-container">
         <div class="swiper-container estate-slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/1.jpg')}}"  alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/2.jpg')}}"  alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/3.jpg')}}"  alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/4.jpg')}}"  alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/5.jpg')}}"  alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('/images/estates/6.jpg')}}"  alt="">
-                </div>
+                @foreach($images as $image)
+                    <div class="swiper-slide">
+                        <img src="{{asset('/images/estates/'.$image->file->file_name ?? '/')}}"  alt="">
+                    </div>
+                @endforeach
             </div>
 
             <div class="swiper-button-next"></div>
@@ -89,11 +76,11 @@
                 </div>
             </div>
             <div class="estate-header">
-                <h1>Poslovno stambeni kompleks uz Unu</h1>
-                <p>Bosanska Otoka bb, Bosna i Hercegovina</p>
+                <h1>{{$estate->naziv ?? '/'}}</h1>
+                <p>{{$estate->adresa ?? '/'}}, {{$estate->drzavaRel->name ?? '/'}}</p>
             </div>
             <div class="price">
-                <h2>126 000.00 BAM</h2>
+                <h2>{{$estate->cijena ?? '/'}} BAM</h2>
             </div>
             <div class="basic-info">
                 <div class="single-of-basic">

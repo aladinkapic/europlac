@@ -37,6 +37,9 @@
                 </h4>
                 <p>
                     @yield('page-desc')
+
+                    <!-- Deleting pop -up -->
+                    @include('administracija.pages.rest.includes.delete')
                 </p>
             </div>
             <div class="page-menu-navigation">

@@ -3,6 +3,7 @@
 /public/storage
 /public/images/estates
 /public/images/slider
+/public/images/users
 /storage/*.key
 /vendor
 .env
