@@ -106,11 +106,8 @@ $('.photo-input').change(function () {
 
   xml.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-      console.log(this.responseText);
       var source = src + this.responseText;
-      console.log(source);
       source = source.replace(' ', '');
-      console.log(fotoID);
       var image = document.getElementById(fotoID);
       image.setAttribute('src', source); // ** ovdje ćemo postaviti naziv fotografije, tako da je kasnije možemo samo strpati u bazu ** //
 

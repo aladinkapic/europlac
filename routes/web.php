@@ -59,6 +59,13 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('spremi-u-blizini',                'NearbyController@save')->name('admin.save-nearby');
     Route::get('pregled-u-blizini/{id}',           'NearbyController@preview')->name('admin.preview-single-nearby');
     Route::post('azuriraj-u-blizini',              'NearbyController@update')->name('admin.update-nearby');
+
+
+
+    // Users
+    Route::get('moj-profil',                      'UsersController@myProfile')->name('admin.users.my-profile');
+    Route::post('azuriraj-usera',                 'UsersController@update')->name('admin.users.update');
+    Route::post('/photo/photo-upload',            'Photos@saveUserIcon')->name('photos.users.save-user-icon');
 });
 
 

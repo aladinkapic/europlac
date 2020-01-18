@@ -11,12 +11,23 @@ use phpDocumentor\Reflection\File;
 
 class Photos extends Controller{
     public function saveEstateIcon(Request $request){
+        dd($request->all());
         if($request->has('photo-input')){
             $file = $request->file('photo-input');
             $ext = pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION);
             echo $name = md5($file->getClientOriginalName().time()).'.'.$ext;
 
             $file->move("images/estates/", $name);
+        }
+    }
+
+    public function saveUserIcon(Request $request){
+        if($request->has('photo-input')){
+            $file = $request->file('photo-input');
+            $ext = pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION);
+            echo $name = md5($file->getClientOriginalName().time()).'.'.$ext;
+
+            $file->move("images/users/", $name);
         }
     }
 

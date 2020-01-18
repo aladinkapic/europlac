@@ -22,7 +22,7 @@
         </div>
 
         <div class="user-icon user-name">
-            <a href="#">
+            <a href="{{route('admin.users.my-profile')}}">
                 <p>Root Admin</p>
             </a>
         </div>
