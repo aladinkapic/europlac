@@ -45,9 +45,9 @@
                 <input type="text" name="name_of" placeholder="Pretraga po nazivu .." autocomplete="off">
             </div>
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite željeni grad" id="grad" value="0">
+                <div class="my-select-wrapper" title="Odaberite željeni grad" id="gradRel.name" value="0">
                     <div class="my-select-value">
-                        <p>Odaberite grad</p>
+                        <p id="gradRel.name.paragraph">Odaberite grad</p>
                         <div class="select-arrow">
                             <i class="fas fa-chevron-down"></i>
                         </div>
@@ -56,7 +56,7 @@
                     <div class="select-values">
                         <div class="my-option" value="0">Svi gradovi</div>
                         @foreach($filters['grad'][0] as $key => $value)
-                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                            <div class="my-option" value="{{$value}}">{{$value}}</div>
                         @endforeach
                     </div>
                 </div>
@@ -78,9 +78,9 @@
     <div class="search-wrapper">
         <div class="search-row">
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite svrhu" id="svrha" value="0">
+                <div class="my-select-wrapper" title="Odaberite svrhu" id="svrhaRel.name" value="0">
                     <div class="my-select-value">
-                        <p>Odaberite svrhu</p>
+                        <p id="svrha-paragraph">Odaberite svrhu</p>
                         <div class="select-arrow">
                             <i class="fas fa-chevron-down"></i>
                         </div>
@@ -89,7 +89,7 @@
                     <div class="select-values">
                         <div class="my-option" value="0">Svrha</div>
                         @foreach($filters['svrha'][0] as $key => $value)
-                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                            <div class="my-option" value="{{$value}}">{{$value}}</div>
                         @endforeach
                     </div>
                 </div>
@@ -97,9 +97,9 @@
 
 
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite željeni grad" id="vrsta" value="0">
+                <div class="my-select-wrapper" title="Odaberite željeni grad" id="vrstaRel.name" value="0">
                     <div class="my-select-value">
-                        <p>Odaberite vrstu nekretnine</p>
+                        <p id="vrsta-paragraph">Odaberite vrstu nekretnine</p>
                         <div class="select-arrow">
                             <i class="fas fa-chevron-down"></i>
                         </div>
@@ -108,16 +108,16 @@
                     <div class="select-values">
                         <div class="my-option" value="0">Sve</div>
                         @foreach($filters['vrsta'][0] as $key => $value)
-                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                            <div class="my-option" value="{{$value}}">{{$value}}</div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite željeni grad" id="room_number" value="0">
+                <div class="my-select-wrapper" title="Odaberite željeni grad" id="broj_soba" value="0">
                     <div class="my-select-value">
-                        <p>Odaberite broj soba</p>
+                        <p id="broj_soba-paragraph">Odaberite broj soba</p>
                         <div class="select-arrow">
                             <i class="fas fa-chevron-down"></i>
                         </div>
@@ -125,24 +125,17 @@
 
                     <div class="select-values">
                         <div class="my-option" value="0">Broj soba</div>
-                        <div class="my-option" value="1">1</div>
-                        <div class="my-option" value="2">2</div>
-                        <div class="my-option" value="3">3</div>
-                        <div class="my-option" value="4">4</div>
-                        <div class="my-option" value="5">5</div>
-                        <div class="my-option" value="6">6</div>
-                        <div class="my-option" value="7">7</div>
-                        <div class="my-option" value="7">8</div>
-                        <div class="my-option" value="7">9</div>
-                        <div class="my-option" value="7">10</div>
+                        @foreach($filters['broj_soba'][0] as $key => $value)
+                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
 
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite željeni grad" id="bath_number" value="0">
+                <div class="my-select-wrapper" title="Odaberite željeni grad" id="broj_kupatila" value="0">
                     <div class="my-select-value">
-                        <p>Odaberite broj kupatila</p>
+                        <p id="broj_kupatila-paragraph">Odaberite broj kupatila</p>
                         <div class="select-arrow">
                             <i class="fas fa-chevron-down"></i>
                         </div>
@@ -150,21 +143,18 @@
 
                     <div class="select-values">
                         <div class="my-option" value="0">Broj kupatila</div>
-                        <div class="my-option" value="1">1</div>
-                        <div class="my-option" value="2">2</div>
-                        <div class="my-option" value="3">3</div>
-                        <div class="my-option" value="4">4</div>
-                        <div class="my-option" value="5">5</div>
-                        <div class="my-option" value="6">6</div>
+                        @foreach($filters['broj_kupatila'][0] as $key => $value)
+                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
         <div class="search-row">
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite državu" id="country" value="0">
+                <div class="my-select-wrapper" title="Odaberite državu" id="drzavaRel.name" value="0">
                     <div class="my-select-value">
-                        <p>Odaberite državu</p>
+                        <p id="drzava-paragraph">Odaberite državu</p>
                         <div class="select-arrow">
                             <i class="fas fa-chevron-down"></i>
                         </div>
@@ -173,16 +163,16 @@
                     <div class="select-values">
                         <div class="my-option" value="0">Odaberite državu</div>
                         @foreach($filters['drzava'][0] as $key => $value)
-                            <div class="my-option" value="{{$key}}">{{$value}}</div>
+                            <div class="my-option" value="{{$value}}">{{$value}}</div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
             <div class="other-first">
-                <div class="my-select-wrapper" title="Odaberite stanje nekretnine" id="state_of_estate" value="0">
+                <div class="my-select-wrapper" title="Odaberite stanje nekretnine" id="stanjeRel.name" value="0">
                     <div class="my-select-value">
-                        <p>Odaberite stanje</p>
+                        <p id="stanje-paragraph">Odaberite stanje</p>
                         <div class="select-arrow">
                             <i class="fas fa-chevron-down"></i>
                         </div>
@@ -190,8 +180,9 @@
 
                     <div class="select-values">
                         <div class="my-option" value="0">Odaberite stanje</div>
-                        <div class="my-option" value="1">Useljivo</div>
-                        <div class="my-option" value="2">Nije useljivo</div>
+                        @foreach($filters['stanje'][0] as $key => $value)
+                            <div class="my-option" value="{{$value}}">{{$value}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -213,19 +204,19 @@
 
             <!-- elements -->
             <div class="check-boxed-body">
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="voda" value="1">
                     <div class="check-place"></div>
                     <p>Priključak vode</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="struja" value="1">
                     <div class="check-place"></div>
                     <p>Priključak struje</p>
                 </div>
-                <div class="check-wrapper">
+                <div class="check-wrapper" id="internet" value="1">
                     <div class="check-place"></div>
                     <p>Priključak interneta</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="plin" value="1">
                     <div class="check-place"></div>
                     <p>Priključak plina</p>
                 </div>
@@ -234,19 +225,19 @@
             <!------------------------------------------>
 
             <div class="check-boxed-body">
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="kanalizacija" value="1">
                     <div class="check-place"></div>
                     <p>Kanalizacija</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="garaza" value="1">
                     <div class="check-place"></div>
                     <p>Garaža</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="klima" value="1">
                     <div class="check-place"></div>
                     <p>Instalisan klima uređaj</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="parking" value="1">
                     <div class="check-place"></div>
                     <p>Parking mjesto</p>
                 </div>
@@ -255,19 +246,19 @@
             <!------------------------------------------>
 
             <div class="check-boxed-body">
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="jedan_sprat" value="1">
                     <div class="check-place"></div>
                     <p>Jedan sprat</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="dva_sprata" value="1">
                     <div class="check-place"></div>
                     <p>Dva sprata</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="tri_sprata" value="1">
                     <div class="check-place"></div>
                     <p>Tri sprata</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="vise_spratova" value="1">
                     <div class="check-place"></div>
                     <p>Više spratova</p>
                 </div>
@@ -276,19 +267,19 @@
             <!------------------------------------------>
 
             <div class="check-boxed-body">
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="jezgro_grada" value="1">
                     <div class="check-place"></div>
                     <p>Jezgro grada</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="pogled_na_grad" value="1">
                     <div class="check-place"></div>
                     <p>Pogled na grad</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="pogled_na_more" value="1">
                     <div class="check-place"></div>
                     <p>Pogled na more</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="u_blizini_rijeke" value="1">
                     <div class="check-place"></div>
                     <p>U blizini rijeke</p>
                 </div>
@@ -297,19 +288,19 @@
             <!------------------------------------------>
 
             <div class="check-boxed-body">
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="bazen" value="1">
                     <div class="check-place"></div>
                     <p>Bazen</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="sauna" value="1">
                     <div class="check-place"></div>
                     <p>Sauna</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="jacuzzi" value="1">
                     <div class="check-place"></div>
                     <p>Jacuzzi</p>
                 </div>
-                <div class="check-wrapper" value="Ne">
+                <div class="check-wrapper" id="kuhinja_sa_sankom" value="1">
                     <div class="check-place"></div>
                     <p>Kuhinja sa šankom</p>
                 </div>

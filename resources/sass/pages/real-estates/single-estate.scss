@@ -237,6 +237,7 @@
             display: inline-flex;
             flex-wrap: wrap;
             margin-bottom:30px;
+            z-index: 50;
             .single-file{
                 position:relative;
                 left:0px;
@@ -252,6 +253,9 @@
                     margin-left:15px;
                     margin-top:10px;
                 }
+            }
+            .single-file:hover{
+                p, i{color:#00C0CD;}
             }
         }
         .video{

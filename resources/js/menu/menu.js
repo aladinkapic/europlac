@@ -90,18 +90,18 @@ $(document).ready(function() {
      *
      *      Checkbox action ::
      *          1. Set check icon
-     *          2. Set value Da - Ne
+     *          2. Set value 1 - 2 (Ne - Da)
      *
      ******************************************************************************************************************/
     $(".check-wrapper").click(function () {
-        if($(this).attr('value') === 'Ne'){
+        if($(this).attr('value') === '1'){
             $(this).find(".check-place").append('<i class="fas fa-check"></i>');
             $(this).find(".check-place").css("background", "#00C0CD");
-            $(this).attr('value', 'Da');
+            $(this).attr('value', '2');
         }else{
             $(this).find(".check-place").empty();
             $(this).find(".check-place").css("background", "#fff");
-            $(this).attr('value', 'Ne');
+            $(this).attr('value', '1');
         }
     });
 
@@ -126,18 +126,84 @@ $(document).ready(function() {
     $(".search-button").click(function () {
         let url = '/nekretnine';
 
+        let index = 0;
         $(".my-select-wrapper").each(function () {
             //console.log($(this).attr('id') + ': ' + $(this).attr('value'));
             if($(this).attr('value') !== "0"){
                 console.log("Found this : " + $(this).attr('id') + ':: value ' + $(this).attr('value'));
+                if(index++ === 0) url += '?';
+                else url += '&';
+                url += 'filter%5B%5D='+$(this).attr('id')+'&filter_values%5B%5D=' + $(this).attr('value');
+            }
+        });
 
-                url += '?filter%5B%5D='+$(this).attr('id')+'&filter_values%5B%5D=' + $(this).attr('value');
+        $(".check-wrapper").each(function () {
+            if($(this).attr('value') !== "1"){
+                if(index++ === 0) url += '?';
+                else url += '&';
+                url += 'filter%5B%5D='+$(this).attr('id')+'&filter_values%5B%5D=' + $(this).attr('value');
             }
         });
 
         if(url !== '/nekretnine'){
             url += '&limit=12';
             window.location = url;
+        }else window.location = url;
+    });
+
+
+    /*******************************************************************************************************************
+     *
+     *      Set default values !!
+     *
+     ******************************************************************************************************************/
+
+    let result = window.location.href;
+    let array_of_results = result.split('filter');
+
+    let searched_results = Array();
+    let odd = null, even = null;
+
+    for(let i=1; i<array_of_results.length; i++){
+        var mySubString = array_of_results[i].substring(
+            array_of_results[i].lastIndexOf("=") + 1,
+            array_of_results[i].lastIndexOf("&")
+        );
+
+        if(i === (array_of_results.length - 1)){
+            var mySubString = array_of_results[i].substring(
+                array_of_results[i].indexOf("=") + 1,
+                array_of_results[i].indexOf("&")
+            );
+        }
+
+        if(i % 2 === 0) {
+            odd = mySubString.replace();
+            odd = odd.split('%20').join(" ");
+
+            searched_results.push(new Array(even,  odd));
+        }
+        else even = mySubString;
+    }
+
+    $(".my-select-wrapper").each(function () {
+        for(let j=0; j<searched_results.length; j++){
+            if($(this).attr('id') === searched_results[j][0]){
+                $(this).attr('value', searched_results[j][1]);
+                //$("#"+searched_results[j][0]+'-paragraph').text(searched_results[j][1]);
+                $(this).find("p").text(searched_results[j][1]);
+            }
         }
     });
+
+    $(".check-wrapper").each(function () {
+        for(let j=0; j<searched_results.length; j++){
+            if($(this).attr('id') === searched_results[j][0]){
+                $(this).find(".check-place").append('<i class="fas fa-check"></i>');
+                $(this).find(".check-place").css("background", "#00C0CD");
+                $(this).attr('value', '2');
+            }
+        }
+    });
+    console.log(searched_results[0]);
 });

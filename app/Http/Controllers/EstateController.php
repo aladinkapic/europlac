@@ -15,6 +15,8 @@ class EstateController extends Controller{
         $estates = Filter::filter($estates);
         $filters = $this->estateFilters;
 
+//        dd($estates->total()); // Number of pages
+
         return view('pages.real-estates.index', compact('estates', 'filters'));
     }
 
@@ -22,8 +24,9 @@ class EstateController extends Controller{
         $estate = Estate::where('id', $id)->with('gradRel')
             ->with('drzavaRel')->first();
         $images = FilesRelationships::where('property_id', $estate->id)->where('model', 'Models/Estate')->with('file')->get();
+        $files  = FilesRelationships::where('property_id', $estate->id)->where('model', 'Models/Estate/Files')->with('file')->get();
         $filters = $this->estateFilters;
 
-        return view('pages.real-estates.preview', compact('estate', 'images', 'filters'));
+        return view('pages.real-estates.preview', compact('estate', 'images', 'filters', 'files'));
     }
 }

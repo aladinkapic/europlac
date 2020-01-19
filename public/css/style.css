@@ -3530,6 +3530,7 @@ footer .bottom-footer .bottom-elements .copy p {
   display: inline-flex;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  z-index: 50;
 }
 
 .estate-details .estate-full .files .single-file {
@@ -3550,6 +3551,11 @@ footer .bottom-footer .bottom-elements .copy p {
   font-size: 13px;
   margin-left: 15px;
   margin-top: 10px;
+}
+
+.estate-details .estate-full .files .single-file:hover p,
+.estate-details .estate-full .files .single-file:hover i {
+  color: #00C0CD;
 }
 
 .estate-details .estate-full .video {

@@ -13,56 +13,16 @@
             </div>
             <div class="single-part ">
                 <p>
-                    <a href="">Naslovna strana</a> /
-                    <a href="">Sve nekretnine</a>  /
-                    <a href="">{{$estate->naziv ?? '/'}}</a>
+                    <a href="{{route('home')}}">Naslovna strana</a> /
+                    <a href="{{url()->previous()}}">Sve nekretnine</a>  /
+                    <a href="#">{{$estate->naziv ?? '/'}}</a>
                 </p>
             </div>
         </div>
     </div>
 
     <!-- slider with images -->
-    <div class="slider-container">
-        <div class="swiper-container estate-slider">
-            <div class="swiper-wrapper">
-                @foreach($images as $image)
-                    <div class="swiper-slide">
-                        <img src="{{asset('/images/estates/'.$image->file->file_name ?? '/')}}"  alt="">
-                    </div>
-                @endforeach
-            </div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Add Pagination -->
-            <div class="swiper-pagination swiper-pagination2"></div>
-        </div>
-
-        <script>
-            var swiper1 = new Swiper('.estate-slider', {
-                slidesPerView: 3,
-                spaceBetween: 0,
-                pagination: {
-                    el: '.swiper-pagination2',
-                    type: 'progressbar',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    1000: {
-                        slidesPerView: 2,
-                    },
-                    800: {
-                        slidesPerView: 1,
-                    }
-                }
-            });
-        </script>
-    </div>
+    @include('pages.real-estates.snippets.gallery')
 
     <!-- estate details -->
     <div class="estate-details">
@@ -71,8 +31,8 @@
                 <div class="status featured">
                     <p>EURO-PLAC d.o.o</p>
                 </div>
-                <div class="status sell">
-                    <p>PRODAJA</p>
+                <div class="status @if($estate->svrha == 1) sell @else rent @endif">
+                    <p>{{strtoupper($estate->svrhaRel->name ?? '/')}}</p>
                 </div>
             </div>
             <div class="estate-header">
@@ -85,27 +45,27 @@
             <div class="basic-info">
                 <div class="single-of-basic">
                     <p>Svrha</p>
-                    <p>Prodaja</p>
+                    <p>{{$estate->svrhaRel->name ?? '/'}}</p>
                 </div>
                 <div class="single-of-basic">
                     <p>Vrsta nekretnine</p>
-                    <p>Apartman</p>
+                    <p>{{$estate->vrstaRel->name ?? '/'}}</p>
                 </div>
                 <div class="single-of-basic">
                     <p>Broj soba</p>
-                    <p>3 soba / e</p>
+                    <p>{{$estate->broj_soba ?? '/'}} soba / e</p>
                 </div>
                 <div class="single-of-basic">
                     <p>Broj kupatila</p>
-                    <p>2 kupatilo / la</p>
+                    <p>{{$estate->broj_kupatila ?? '/'}} kupatilo / la</p>
                 </div>
                 <div class="single-of-basic">
                     <p>Stanje nekretnine</p>
-                    <p>Useljivo</p>
+                    <p>{{$estate->stanjeRel->name ?? '/'}}</p>
                 </div>
                 <div class="single-of-basic">
                     <p>Površina</p>
-                    <p>86 m2</p>
+                    <p>{{$estate->povrsina ?? '/'}} m2</p>
                 </div>
             </div>
 
@@ -118,7 +78,7 @@
                 <div class="rest-of-it">
                     <a href="#estate-features"><p>Karakteristike</p></a>
                     <a href="#estate-files"><p>Dokumenti</p></a>
-                    <a href="#estate-video"><p>Video</p></a>
+                    @if(isset($estate->video)) <a href="#estate-video"><p>Video</p></a> @endif
                     <a href="#estate-nearby"><p >U Blizini</p></a>
                     <a href="#estate-location"><p>Lokacija</p></a>
                     <a href="#estate-agent"><p>Kontakt</p></a>
@@ -139,71 +99,23 @@
             <div class="features-header" id="estate-features">
                 <h4>Karakteristike nekretnine</h4>
             </div>
-            <div class="features">
-                <div class="all-features">
-                    <div class="single-feature">
-                        <i class="fas fa-check"></i>
-                        <p>2 Etaža / e</p>
-                    </div>
-                    <div class="single-feature">
-                        <i class="fas fa-check"></i>
-                        <p>5 Soba / e</p>
-                    </div>
-                    <div class="single-feature">
-                        <i class="fas fa-check"></i>
-                        <p>2 Kupatilo / la</p>
-                    </div>
-                    <div class="single-feature">
-                        <i class="fas fa-check"></i>
-                        <p>Centralno grijanje</p>
-                    </div>
-                    <div class="single-feature">
-                        <i class="fas fa-check"></i>
-                        <p>Garaža</p>
-                    </div>
-                    <div class="single-feature">
-                        <i class="fas fa-check"></i>
-                        <p>Struja</p>
-                    </div>
-                    <div class="single-feature">
-                        <i class="fas fa-check"></i>
-                        <p>Voda</p>
-                    </div>
-                </div>
-            </div>
+            @include('pages.real-estates.snippets.features')
 
             <!-- Files -->
             <div class="features-header" id="estate-files">
                 <h4>Privici / Dokumenti</h4>
             </div>
-            <div class="files">
-                <a href="">
-                    <div class="single-file">
-                        <i class="fas fa-file-pdf"></i>
-                        <p>DokumentacijaV1.pdf</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="single-file">
-                        <i class="fas fa-file-word"></i>
-                        <p>Dozvole.docx</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="single-file">
-                        <i class="fas fa-file-excel"></i>
-                        <p>Karakteristike.xlxs</p>
-                    </div>
-                </a>
-            </div>
+            @include('pages.real-estates.snippets.documents')
 
             <!-- Video -->
-            <div class="features-header" id="estate-video">
-                <h4>Video</h4>
-            </div>
-            <div class="video">
-                <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/P8ksPxR62Ag"></iframe>
-            </div>
+            @if(isset($estate->video))
+                <div class="features-header" id="estate-video">
+                    <h4>Video</h4>
+                </div>
+                <div class="video">
+                    <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{$estate->video ?? '/'}}"></iframe>
+                </div>
+            @endif
 
             <!-- nearby -->
             <div class="features-header" id="estate-nearby">
