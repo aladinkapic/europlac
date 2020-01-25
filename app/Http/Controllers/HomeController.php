@@ -45,4 +45,10 @@ class HomeController extends Controller{
         Session::forget('ID');  // Korisnik je izlogovan u potpunosti
         return redirect()->route('home');
     }
+
+
+    /*********************************************** CONTACT US *******************************************************/
+    public function contactUs(){
+
+    }
 }

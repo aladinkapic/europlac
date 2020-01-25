@@ -6,5 +6,6 @@
     "/css/style.css": "/css/style.css",
     "/css/administracija/style.css": "/css/administracija/style.css",
     "/js/maps/all-estates.js": "/js/maps/all-estates.js",
+    "/js/maps/contact-us.js": "/js/maps/contact-us.js",
     "/js/maps/single-estate.js": "/js/maps/single-estate.js"
 }

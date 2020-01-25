@@ -39,6 +39,12 @@ mix.js([
     'resources/js/administracija/includes/upload-files.js',
 ], 'public/js/administracija/upload.js')
 
+    // Contact us
+
+mix.js([
+    'resources/js/maps/contact-us.js'
+], 'public/js/maps/contact-us.js')
+
 // mix.js([
 //     'resources/js/libraries/swiper.js',
 // ], 'public/js/libraries.js')

@@ -20,7 +20,7 @@
                 <a href="">O nama</a>
             </div>
             <div class="single-link">
-                <a href="">Kontaktirajte nas</a>
+                <a href="{{route('contact-us')}}">Kontaktirajte nas</a>
             </div>
         </div>
         <div class="sign-up">

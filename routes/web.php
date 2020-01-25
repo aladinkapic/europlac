@@ -16,6 +16,8 @@ Route::prefix('/')->group(function (){
     Route::get('/prijavite-se',      'HomeController@signIn')->name('sign-in');
     Route::post('/prijavi-me',       'HomeController@signMeIn')->name('sign-me-in');
     Route::get('/logout',            'HomeController@logout')->name('logout');
+
+//    Route::get('kontaktirajte-nas',  'HomeController@contactUs')->name('contact-us');
 });
 
 Route::prefix('/nekretnine/')->group(function (){
@@ -70,6 +72,7 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
 
 
     // HOMEPAGE - SECTION
+    // Slider CRUD
     Route::get('slider-preview',                  'HomePageController@sliderPreview')->name('admin.homepage.slider-preview');
     Route::get('slider-add',                      'HomePageController@sliderAdd')->name('admin.homepage.slider-new-one');
     Route::post('/upload-slider-image',           'Photos@saveSliderImage')->name('admin.homepage.slider-new-image');
@@ -77,7 +80,10 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::get('slider-edit/{id}',                'HomePageController@sliderEdit')->name('admin.homepage.slider-edit');
     Route::post('/update-slider',                 'HomePageController@updateSlider')->name('admin.homepage.slider-update');
 
+    // All estates that are visible on homepage
     Route::get('homepage-estates',                'HomePageController@allEstates')->name('admin.homepage.all-estates');
+
+    // About us crud
 });
 
 

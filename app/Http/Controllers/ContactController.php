@@ -5,5 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller{
-    //
+    public function index(){
+        $filters = $this->estateFilters;
+        return view('pages.contact-us.index', compact('filters'));
+    }
 }

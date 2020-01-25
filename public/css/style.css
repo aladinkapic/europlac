@@ -2062,6 +2062,239 @@ button.swiper-pagination-bullet {
   -ms-perspective: 1200px;
 }
 
+.contact-split {
+  margin-top: 80px;
+  position: relative;
+  left: calc(50% - 700px);
+  width: 1400px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-split .left-one {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 200px;
+}
+
+.contact-split .left-one .just-line {
+  position: relative;
+  left: 0px;
+  top: 8px;
+  width: 100%;
+  height: 6px;
+  background: #00C0CD;
+}
+
+.contact-split .right-one {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: calc(100% - 330px);
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-split .right-one h2 {
+  margin: 0px;
+  font-size: 28px;
+}
+
+.contact-split .right-one .split-again {
+  width: 50%;
+}
+
+.contact-split .right-one .split-again h2 {
+  margin: 0px;
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.contact-split .right-one .split-again h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.contact-split .right-one .split-again h4 {
+  color: grey;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.contact-split .right-one .split-again p {
+  margin-bottom: 0px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: grey;
+}
+
+.contact-split .right-one .split-again p span {
+  color: #000;
+}
+
+.contact-split .right-one .split-again h5 {
+  color: grey;
+}
+
+.contact-split .right-one .contact-form {
+  position: relative;
+  left: 0px;
+  width: calc(100% - 0px);
+  margin-right: 30px;
+  height: 100%;
+}
+
+.contact-split .right-one .contact-form .just-header h4 {
+  font-size: 28px;
+  margin-top: 0px;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper .my-select-value {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper .my-select-value p {
+  margin-left: 20px;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+  font-family: "Nunito", sans-serif;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper .my-select-value .select-arrow {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper .my-select-value .select-arrow i {
+  margin-top: 15px;
+  font-size: 12px;
+  color: grey;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper .select-values {
+  position: absolute;
+  left: -1px;
+  background: #fff;
+  z-index: 1000;
+  top: 42px;
+  width: 100%;
+  max-height: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  display: none;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper .select-values .my-option {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: calc(100% - 20px);
+  height: 28px;
+  background: #fff;
+  padding-left: 20px;
+  padding-top: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+  font-family: "Nunito", sans-serif;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper .select-values .my-option:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.contact-split .right-one .contact-form .my-select-wrapper:hover {
+  cursor: pointer;
+}
+
+.contact-split .right-one .contact-form .other-first {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  height: 40px;
+  left: 0px;
+  border-radius: 2px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.contact-split .right-one .contact-form .other-first input {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-left: 15px;
+  outline: none;
+  background: #F2F2F2;
+}
+
+.contact-split .right-one .contact-form .other-first textarea {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: none;
+  font-size: 16px;
+  padding: 15px;
+  resize: vertical;
+  outline: none;
+  background: #F2F2F2;
+}
+
+.contact-split .right-one .contact-form .other-text {
+  height: auto;
+}
+
+.contact-split .right-one .contact-form .send-button {
+  height: 34px;
+  background: #00C0CD;
+  width: 200px;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-split .right-one .contact-form .send-button p {
+  color: #fff;
+  font-size: 14px;
+  padding-top: 8px;
+}
+
 footer {
   position: relative;
   left: 0px;
