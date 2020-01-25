@@ -10,12 +10,12 @@
     <div class="numbers">
         <div class="one-number">
             <h3>
-                162
+                {{$number_of_estates ?? '/'}}
             </h3>
             <p>NEKRETNINE</p>
         </div>
         <div class="one-number">
-            <h3>€ 1.5</h3>
+            <h3>€ {{$total_money ?? '/'}}</h3>
             <p>MILIONA U PRODAJI</p>
         </div>
         <div class="one-number">

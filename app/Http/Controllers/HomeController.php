@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Administracija\Estates\Estate;
 use App\Models\Administracija\Homepage\Slider;
 use App\User;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -13,7 +15,11 @@ class HomeController extends Controller{
         $filters = $this->estateFilters;
         $slider  = Slider::get();
 
-        return view('pages.home', compact('filters', 'slider'));
+        // Numbers
+        $number_of_estates = Estate::get()->count();
+        $total_money = round((DB::table('estates')->sum('cijena') / 1000000 ) / 1.95, 1);
+
+        return view('pages.home', compact('filters', 'slider', 'number_of_estates', 'total_money'));
     }
 
     public function signIn(){
