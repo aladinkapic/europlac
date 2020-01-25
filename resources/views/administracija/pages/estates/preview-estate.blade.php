@@ -69,6 +69,10 @@
                     {!! Form::label('cijena', __('Cijena').' :', ['class' => 'form-label']) !!}
                     {!! Form::number('cijena', $estate->cijena ?? '', ['class' => 'form-input', 'autocomplete' => 'off', isset($preview) ? 'readonly' : '']) !!}
                 </div>
+                <div class="input-col">
+                    {!! Form::label('izdvojeno', __('Izdvojeno').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('izdvojeno', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                </div>
             </div>
         </div>
         <div class="split-two">
@@ -114,6 +118,10 @@
                 <div class="input-col">
                     {!! Form::label('stanje', __('Stanje nekretnine').' :', ['class' => 'form-label']) !!}
                     {!! Form::select('stanje', $stanje, $estate->stanje ?? '', ['class' => 'form-input', 'autocomplete' => 'off', isset($preview) ? 'disabled => true' : '']) !!}
+                </div>
+                <div class="input-col">
+                    {!! Form::label('akcija', __('Akcijska cijena').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('akcija', ['Ne' => 'Ne', 'Da' => 'Da'], '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
                 </div>
             </div>
 

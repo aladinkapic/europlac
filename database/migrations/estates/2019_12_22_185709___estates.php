@@ -69,6 +69,10 @@ class Estates extends Migration
             // User ID
             $table->integer('user_id')->nullable();
 
+            // Izdvojeno i akcija
+            $table->string('akcija')->nullable();
+            $table->integer('izdvojeno')->nullable();
+
             $table->timestamps();
         });
     }

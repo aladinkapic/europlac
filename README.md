@@ -28,6 +28,10 @@ But if we need specific URL to go after it, there is a way to make custom route 
 
     - extraId="@yield('delete-extra-id')"
 
+### Keywords - Yes / No
+
+    1. No
+    2. Yes
 
 ## License
 This project is open-sourced software licensed under the [live4science](https://live4science.com) licence.
