@@ -76,6 +76,8 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('/save-slider',                   'HomePageController@saveSlider')->name('admin.homepage.slider-save');
     Route::get('slider-edit/{id}',                'HomePageController@sliderEdit')->name('admin.homepage.slider-edit');
     Route::post('/update-slider',                 'HomePageController@updateSlider')->name('admin.homepage.slider-update');
+
+    Route::get('homepage-estates',                'HomePageController@allEstates')->name('admin.homepage.all-estates');
 });
 
 

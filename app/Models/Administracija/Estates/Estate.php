@@ -2,6 +2,7 @@
 
 namespace App\Models\Administracija\Estates;
 
+use App\Models\Administracija\FilesRelationships;
 use App\Models\Administracija\Sifarnici;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
@@ -24,6 +25,9 @@ class Estate extends Model{
     }
     public function stanjeRel(){
         return $this->hasOne(Sifarnici::class, 'value', 'stanje')->where('type', 'stanje');
+    }
+    public function valutaRel(){
+        return $this->hasOne(Sifarnici::class, 'value', 'valuta')->where('type', 'valuta');
     }
 
     // Nearby
@@ -49,5 +53,9 @@ class Estate extends Model{
     // Users
     public function userRel(){
         return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    public function brojSlika(){
+        return $this->hasMany(FilesRelationships::class, 'property_id', 'id')->where('model', 'Models/Estate');
     }
 }

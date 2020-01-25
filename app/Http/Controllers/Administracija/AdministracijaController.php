@@ -84,8 +84,9 @@ class AdministracijaController extends Controller{
         $br_soba      = Sifarnici::where('type', 'broj_soba')->get()->pluck('name', 'value')->prepend('Odaberite broj soba', '0');
         $br_kupatila  = Sifarnici::where('type', 'broj_kupatila')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite broj kupatila', '0');
         $stanje       = Sifarnici::where('type', 'stanje')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite stanje', '0');
+        $valuta       = Sifarnici::where('type', 'valuta')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite valutu', '0');
 
-        return view('administracija.pages.estates.add-estate', compact('daNe', 'grad', 'drzava', 'svrha', 'vrsta', 'br_soba', 'br_kupatila','stanje'));
+        return view('administracija.pages.estates.add-estate', compact('daNe', 'grad', 'drzava', 'svrha', 'vrsta', 'br_soba', 'br_kupatila','stanje', 'valuta'));
     }
     public function saveEstate(Request $request){
         $request->request->add(['user_id' => Crypt::decryptString(Session::get('ID'))]);
@@ -111,8 +112,9 @@ class AdministracijaController extends Controller{
         $br_soba      = Sifarnici::where('type', 'broj_soba')->get()->pluck('name', 'value')->prepend('Odaberite broj soba', '0');
         $br_kupatila  = Sifarnici::where('type', 'broj_kupatila')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite broj kupatila', '0');
         $stanje       = Sifarnici::where('type', 'stanje')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite stanje', '0');
+        $valuta       = Sifarnici::where('type', 'valuta')->orderBy('name')->get()->pluck('name', 'value')->prepend('Odaberite valutu', '0');
 
-        return view('administracija.pages.estates.preview-estate', compact('daNe', 'grad', 'drzava', 'svrha', 'vrsta', 'br_soba', 'br_kupatila','stanje', 'estate', 'preview'));
+        return view('administracija.pages.estates.preview-estate', compact('daNe', 'grad', 'drzava', 'svrha', 'vrsta', 'br_soba', 'br_kupatila','stanje', 'estate', 'preview', 'valuta'));
     }
 
     public function updateEstate(Request $request){

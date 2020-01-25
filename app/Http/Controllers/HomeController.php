@@ -19,7 +19,14 @@ class HomeController extends Controller{
         $number_of_estates = Estate::get()->count();
         $total_money = round((DB::table('estates')->sum('cijena') / 1000000 ) / 1.95, 1);
 
-        return view('pages.home', compact('filters', 'slider', 'number_of_estates', 'total_money'));
+        $estates = Estate::where('prikaz_na_naslovnoj', 2)->inRandomOrder()->take(3)
+            ->with('gradRel')
+            ->with('drzavaRel')
+            ->with('valutaRel')
+            ->with('brojSlika')
+            ->get();
+
+        return view('pages.home', compact('filters', 'slider', 'number_of_estates', 'total_money', 'estates'));
     }
 
     public function signIn(){

@@ -55,8 +55,8 @@
                     {!! Form::number('cijena', '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
                 </div>
                 <div class="input-col">
-                    {!! Form::label('izdvojeno', __('Izdvojeno').' :', ['class' => 'form-label']) !!}
-                    {!! Form::select('izdvojeno', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                    {!! Form::label('valuta', __('Valuta').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('valuta', $valuta, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
                 </div>
             </div>
         </div>
@@ -104,7 +104,17 @@
                 </div>
                 <div class="input-col">
                     {!! Form::label('akcija', __('Akcijska cijena').' :', ['class' => 'form-label']) !!}
-                    {!! Form::select('akcija', ['Ne' => 'Ne', 'Da' => 'Da'], '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                    {!! Form::select('akcija', ['Ne' => 'NE', 'Da' => 'DA'], '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-col">
+                    {!! Form::label('izdvojeno', __('Izdvojeno').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('izdvojeno', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                </div>
+                <div class="input-col">
+                    {!! Form::label('prikaz_na_naslovnoj', __('Prikaži nekretninu na naslovnoj').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('prikaz_na_naslovnoj', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
                 </div>
             </div>
 

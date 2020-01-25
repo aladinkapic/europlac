@@ -73,6 +73,12 @@ class Estates extends Migration
             $table->string('akcija')->nullable();
             $table->integer('izdvojeno')->nullable();
 
+            // Prikaži nekretninu na naslovnoj strani
+            $table->integer('prikaz_na_naslovnoj')->nullable();
+
+            // Broj pregleda nekretnine
+            $table->bigInteger('broj_pregleda')->default(0);
+
             $table->timestamps();
         });
     }

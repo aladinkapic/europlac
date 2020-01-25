@@ -70,8 +70,8 @@
                     {!! Form::number('cijena', $estate->cijena ?? '', ['class' => 'form-input', 'autocomplete' => 'off', isset($preview) ? 'readonly' : '']) !!}
                 </div>
                 <div class="input-col">
-                    {!! Form::label('izdvojeno', __('Izdvojeno').' :', ['class' => 'form-label']) !!}
-                    {!! Form::select('izdvojeno', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                    {!! Form::label('valuta', __('Valuta').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('valuta', $valuta, $estate->valuta ??'', ['class' => 'form-input', isset($preview) ? 'disabled => true' : '']) !!}
                 </div>
             </div>
         </div>
@@ -121,7 +121,18 @@
                 </div>
                 <div class="input-col">
                     {!! Form::label('akcija', __('Akcijska cijena').' :', ['class' => 'form-label']) !!}
-                    {!! Form::select('akcija', ['Ne' => 'Ne', 'Da' => 'Da'], '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                    {!! Form::select('akcija', ['Ne' => 'NE', 'Da' => 'DA'], $estate->akcija ?? '', ['class' => 'form-input', isset($preview) ? 'disabled => true' : '']) !!}
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-col">
+                    {!! Form::label('izdvojeno', __('Izdvojeno').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('izdvojeno', $daNe, $estate->izdvojeno ?? '', ['class' => 'form-input', isset($preview) ? 'disabled => true' : '']) !!}
+                </div>
+                <div class="input-col">
+                    {!! Form::label('prikaz_na_naslovnoj', __('Prikaži nekretninu na naslovnoj').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('prikaz_na_naslovnoj', $daNe, $estate->prikaz_na_naslovnoj ?? '', ['class' => 'form-input', isset($preview) ? 'disabled => true' : '']) !!}
                 </div>
             </div>
 

@@ -52,7 +52,7 @@
                 <i class="fas fa-terminal"></i>
                 <p>NEKRETNINE</p>
             </div>
-            <div class="small-one-linked" link="">
+            <div class="small-one-linked" link="{{route('admin.homepage.all-estates')}}">
                 <i class="far fa-building"></i>
                 <p>Nekretnine na naslovnoj</p>
             </div>

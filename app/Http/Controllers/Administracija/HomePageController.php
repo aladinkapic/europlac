@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Administracija;
 
 use App\Http\Controllers\Controller;
+use App\Models\Administracija\Estates\Estate;
 use App\Models\Administracija\Homepage\Slider;
 use Illuminate\Http\Request;
 
@@ -40,4 +41,24 @@ class HomePageController extends Controller{
         return redirect()->route('admin.homepage.slider-preview');
     }
 
+
+    /*************************************************** ESTATES ******************************************************/
+    public function allEstates(){
+        $estates = Estate::with('gradRel')
+            ->with('drzavaRel')->where('prikaz_na_naslovnoj', 2);
+
+        $estates = Filter::filter($estates);
+
+        $filters = [
+            'id' => '#',
+            'naziv' => 'Naziv',
+            'adresa' => 'Adresa',
+            'gradRel.name' => 'Grad',
+            'drzavaRel.name' => 'Država',
+            'svrhaRel.name' => 'Svrha',
+            'vrstaRel.name' => 'Vrsta',
+            'stanjeRel.name' => 'Stanje'
+        ];
+        return view('administracija.pages.estates.all-estates', compact('estates', 'filters'));
+    }
 }

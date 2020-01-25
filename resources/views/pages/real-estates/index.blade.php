@@ -52,7 +52,7 @@
                         <p>{{$estate->naziv ?? '/'}}</p>
                     </div>
                     <div class="split-it split-it-second">
-                        <p>{{$estate->cijena ?? '/'}}</p>
+                        <p>{{$estate->cijena ?? '/'}} {{$estate->valutaRel->name ?? '/'}}</p>
                     </div>
                 </div>
                 <div class="address">
