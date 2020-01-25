@@ -19,15 +19,19 @@
             </div>
         </div>
     </div>
-    <div class="estates-map" id="map"></div>
+    <div class="full-line"></div>
+    <div class="contact-us-map" id="map"></div>
     <div class="contact-split">
         <div class="left-one"><div class="just-line"></div></div>
         <div class="right-one">
             <div class="split-again">
                 <h2><b>Cazin</b>, Bosna i Hercegovina</h2>
-                <h3>Lojička bb - kod pijace Incel</h3>
+                <h3>Lojićka bb - kod pijace Incel</h3>
                 <h3>77220 Cazin, Bosna i Hercegovina</h3>
-                <h5>@ info@europlac-nekretnine.com</h5>
+                <br>
+                <p><span>NAŠ EMAIL</span></p>
+                <p><a href="mailto:info@europlac-nekretnine.com" title="Kliknite ovdje da pošaljete email!">@ info@europlac-nekretnine.com</a></p>
+                <br>
             </div>
             <div class="split-again">
                 <h4>POZOVITE NAS</h4>
@@ -62,8 +66,8 @@
                     <textarea name="mesasge" id="" placeholder="Vaša poruka"></textarea>
                 </div>
 
-                <div class="send-button">
-                    <p>Pošaljite poruku</p>
+                <div class="send-button" title="Pošaljite poruku!">
+                    <p>POŠALJITE PORUKU</p>
                 </div>
             </div>
         </div>

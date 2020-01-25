@@ -30,6 +30,10 @@ Route::prefix('/kontaktirajte-nas/')->group(function (){
     Route::get('/',                  'ContactController@index')->name('contact-us');
 });
 
+Route::prefix('/o-nama/')->group(function (){
+    Route::get('/',                  'AboutUsController@index')->name('about-us');
+});
+
 
 Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', 'middleware' => 'authenticate'], function(){
     Route::get('/',                               'AdministracijaController@index')->name('admin');

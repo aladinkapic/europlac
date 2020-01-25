@@ -11,6 +11,7 @@ a{text-decoration: none; color:#222;}
     width: 8px;
     height:0px;
 }
+.full-line{position:relative; left:0px; top:0px; width:100%; height:4px; background: #00C0CD;}
 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
@@ -27,6 +28,7 @@ a{text-decoration: none; color:#222;}
 @import "pages/home/home";
 @import "css/swiper";
 @import "pages/contact-us/contact";
+@import "pages/about-us/about";
 @import "pages/includes/footer/footer";
 @import "pages/includes/fonts";
 @import "pages/real-estates/all-estates";

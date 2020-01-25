@@ -17,7 +17,7 @@
                 <a href="">Usluge</a>
             </div>
             <div class="single-link">
-                <a href="">O nama</a>
+                <a href="{{route('about-us')}}">O nama</a>
             </div>
             <div class="single-link">
                 <a href="{{route('contact-us')}}">Kontaktirajte nas</a>

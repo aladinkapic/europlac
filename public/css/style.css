@@ -18,6 +18,15 @@ a {
   height: 0px;
 }
 
+.full-line {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 4px;
+  background: #00C0CD;
+}
+
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -2062,6 +2071,15 @@ button.swiper-pagination-bullet {
   -ms-perspective: 1200px;
 }
 
+.contact-us-map {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 500px;
+  box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.75);
+}
+
 .contact-split {
   margin-top: 80px;
   position: relative;
@@ -2139,6 +2157,10 @@ button.swiper-pagination-bullet {
   color: #000;
 }
 
+.contact-split .right-one .split-again p a {
+  color: grey;
+}
+
 .contact-split .right-one .split-again h5 {
   color: grey;
 }
@@ -2147,8 +2169,6 @@ button.swiper-pagination-bullet {
   position: relative;
   left: 0px;
   width: calc(100% - 0px);
-  margin-right: 30px;
-  height: 100%;
 }
 
 .contact-split .right-one .contact-form .just-header h4 {
@@ -2293,6 +2313,162 @@ button.swiper-pagination-bullet {
   color: #fff;
   font-size: 14px;
   padding-top: 8px;
+  font-weight: bold;
+}
+
+.contact-split .right-one .contact-form .send-button p:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .contact-split {
+    left: calc(50% - 600px);
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-split {
+    left: 50px;
+    width: calc(100% - 100px);
+  }
+
+  .contact-split .left-one {
+    width: 120px;
+  }
+
+  .contact-split .right-one {
+    width: calc(100% - 200px);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contact-split {
+    flex-wrap: wrap;
+  }
+
+  .contact-split .left-one,
+  .contact-split .right-one {
+    width: 100%;
+  }
+
+  .contact-split .left-one .just-line {
+    width: 200px;
+  }
+
+  .contact-split .right-one {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contact-split {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .contact-split .right-one {
+    flex-wrap: wrap;
+  }
+
+  .contact-split .right-one .split-again {
+    width: 100%;
+  }
+
+  .contact-split .right-one .contact-form .send-button {
+    width: 100%;
+  }
+}
+
+.about-full-image {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+.about-full-image img {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+.about-full-image .inner-shadow {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.about-full-image .inner-shadow .middle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.about-full-image .inner-shadow .middle h1 {
+  font-size: 40px;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+}
+
+/** SPLIT IT **/
+
+.about-split {
+  position: relative;
+  left: calc(50% - 700px);
+  width: 1400px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin-top: 80px;
+}
+
+.about-split .left-one {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 200px;
+}
+
+.about-split .left-one .just-line {
+  position: relative;
+  left: 0px;
+  top: 8px;
+  width: 100%;
+  height: 6px;
+  background: #00C0CD;
+}
+
+.about-split .right-one {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: calc(100% - 330px);
+}
+
+.about-split .right-one h5 {
+  font-size: 16px;
+}
+
+.about-split .right-one h2 {
+  margin: 0px;
+  font-size: 34px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.about-split .right-one p {
+  font-size: 15px;
+}
+
+.about-split .right-one ul li,
+.about-split .right-one ol li {
+  font-size: 15px;
 }
 
 footer {
