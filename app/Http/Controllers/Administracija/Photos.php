@@ -68,4 +68,19 @@ class Photos extends Controller{
         }catch (\Exception $e){return back();}
         return back();
     }
+
+
+    /************************************************* SLIDER *********************************************************/
+    public function saveSliderImage(Request $request){
+        if($request->has('photo-input')){
+            $file = $request->file('photo-input');
+        }else if($request->has('photo-mobile')) {
+            $file = $request->file('photo-mobile');
+        }
+
+        $ext = pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION);
+        echo $name = md5($file->getClientOriginalName().time()).'.'.$ext;
+
+        $file->move("images/slider/", $name);
+    }
 }

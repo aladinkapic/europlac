@@ -22,7 +22,11 @@ class EstateController extends Controller{
 
     public function preview($id){
         $estate = Estate::where('id', $id)->with('gradRel')
-            ->with('drzavaRel')->first();
+            ->with('drzavaRel')
+            ->with('nearby_education.categoryRel', 'nearby_transport.categoryRel', 'nearby_clubs.categoryRel', 'nearby_parks.categoryRel', 'nearby_shops.categoryRel')
+            ->with('userRel')
+            ->first();
+
         $images = FilesRelationships::where('property_id', $estate->id)->where('model', 'Models/Estate')->with('file')->get();
         $files  = FilesRelationships::where('property_id', $estate->id)->where('model', 'Models/Estate/Files')->with('file')->get();
         $filters = $this->estateFilters;

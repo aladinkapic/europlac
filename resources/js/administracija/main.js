@@ -106,18 +106,20 @@ $( document ).ready(function() {
      *
      ******************************************************************************************************************/
 
-    $('.photo-input').change(function () {
+    $('.photo-input, .photo-mobile').change(function () {
         var data = new FormData();
         var ins = document.getElementById($(this).attr('id')).files.length;
 
         data.append($(this).attr('id'), document.getElementById($(this).attr('id')).files[0]);
+
+        console.log(data.get($(this).attr('id')));
 
         let fotoID    = $(this).attr('foto-name');
         let previewID = $(this).attr('id') + '-title';
         let src       = $(this).attr('source');
         // document.getElementById("loading_wrapper").style.display = 'block'; /** show loading part **/
 
-        console.log("Preview ID " + previewID);
+
         var xml = new XMLHttpRequest();
         xml.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {

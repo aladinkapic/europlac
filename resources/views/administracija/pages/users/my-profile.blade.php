@@ -65,27 +65,27 @@
             <div class="input-row">
                 <div class="input-col">
                     {!! Form::label('fb', __('Facebook').' :', ['class' => 'form-label']) !!}
-                    {!! Form::text('fb', $user->fb ?? '', ['class' => 'form-input', 'autocomplete' => 'off', 'readonly']) !!}
+                    {!! Form::text('fb', $user->fb ?? '', ['class' => 'form-input', 'autocomplete' => 'off', '']) !!}
                 </div>
                 <div class="input-col">
                     {!! Form::label('in', __('Instagram').' :', ['class' => 'form-label']) !!}
-                    {!! Form::number('in', $user->in ?? '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                    {!! Form::text('in', $user->in ?? '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
                 </div>
             </div>
             <div class="input-row">
                 <div class="input-col">
                     {!! Form::label('linked', __('LinkedIN').' :', ['class' => 'form-label']) !!}
-                    {!! Form::text('linked', $user->linked ?? '', ['class' => 'form-input', 'autocomplete' => 'off', 'readonly']) !!}
+                    {!! Form::text('linked', $user->linked ?? '', ['class' => 'form-input', 'autocomplete' => 'off', '']) !!}
                 </div>
                 <div class="input-col">
                     {!! Form::label('yt', __('YouTube').' :', ['class' => 'form-label']) !!}
-                    {!! Form::number('yt', $user->yt ?? '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                    {!! Form::text('yt', $user->yt ?? '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
                 </div>
             </div>
             <div class="input-row">
                 <div class="input-col">
                     {!! Form::label('tw', __('Twitter').' :', ['class' => 'form-label']) !!}
-                    {!! Form::text('tw', $user->tw ?? '', ['class' => 'form-input', 'autocomplete' => 'off', 'readonly']) !!}
+                    {!! Form::text('tw', $user->tw ?? '', ['class' => 'form-input', 'autocomplete' => 'off', '']) !!}
                 </div>
             </div>
         </div>

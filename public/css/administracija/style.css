@@ -4664,6 +4664,16 @@ a {
   transition: all 0.2s;
 }
 
+.content-wrapper section .split-two .input-row .input-image-w .input-image-shadow h2,
+.content-wrapper section .single-one .input-row .input-image-w .input-image-shadow h2 {
+  font-size: 40px;
+  padding-top: 86px;
+  opacity: 0.1;
+  color: #A0522D;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 .content-wrapper section .split-two .input-row .input-image-w img,
 .content-wrapper section .single-one .input-row .input-image-w img {
   position: absolute;
@@ -4677,7 +4687,9 @@ a {
 }
 
 .content-wrapper section .split-two .input-row .input-image-w .input-image-shadow:hover i,
-.content-wrapper section .single-one .input-row .input-image-w .input-image-shadow:hover i {
+.content-wrapper section .split-two .input-row .input-image-w .input-image-shadow:hover h2,
+.content-wrapper section .single-one .input-row .input-image-w .input-image-shadow:hover i,
+.content-wrapper section .single-one .input-row .input-image-w .input-image-shadow:hover h2 {
   opacity: 1;
 }
 
@@ -4688,7 +4700,9 @@ a {
 }
 
 .content-wrapper section .split-two .input-row .input-image-w .photo-input,
-.content-wrapper section .single-one .input-row .input-image-w .photo-input {
+.content-wrapper section .split-two .input-row .input-image-w .photo-mobile,
+.content-wrapper section .single-one .input-row .input-image-w .photo-input,
+.content-wrapper section .single-one .input-row .input-image-w .photo-mobile {
   display: none;
 }
 

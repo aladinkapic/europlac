@@ -3687,6 +3687,22 @@ footer .bottom-footer .bottom-elements .copy p {
   background: #333333;
 }
 
+.estate-details .estate-full .nearby .transport .class-header .class-icon {
+  background: #00ACED;
+}
+
+.estate-details .estate-full .nearby .clubs .class-header .class-icon {
+  background: #d0211c;
+}
+
+.estate-details .estate-full .nearby .parks .class-header .class-icon {
+  background: #00FFD0;
+}
+
+.estate-details .estate-full .nearby .shops .class-header .class-icon {
+  background: #385d7a;
+}
+
 .estate-details .estate-full .map-of-estate {
   position: relative;
   left: 30px;

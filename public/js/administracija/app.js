@@ -29960,15 +29960,15 @@ $(document).ready(function () {
    *
    ******************************************************************************************************************/
 
-  $('.photo-input').change(function () {
+  $('.photo-input, .photo-mobile').change(function () {
     var data = new FormData();
     var ins = document.getElementById($(this).attr('id')).files.length;
     data.append($(this).attr('id'), document.getElementById($(this).attr('id')).files[0]);
+    console.log(data.get($(this).attr('id')));
     var fotoID = $(this).attr('foto-name');
     var previewID = $(this).attr('id') + '-title';
     var src = $(this).attr('source'); // document.getElementById("loading_wrapper").style.display = 'block'; /** show loading part **/
 
-    console.log("Preview ID " + previewID);
     var xml = new XMLHttpRequest();
 
     xml.onreadystatechange = function () {

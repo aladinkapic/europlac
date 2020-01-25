@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Administracija\Homepage\Slider;
 use App\User;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Session;
@@ -10,7 +11,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller{
     public function index(){
         $filters = $this->estateFilters;
-        return view('pages.home', compact('filters'));
+        $slider  = Slider::get();
+
+        return view('pages.home', compact('filters', 'slider'));
     }
 
     public function signIn(){

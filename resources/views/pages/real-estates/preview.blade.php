@@ -121,203 +121,21 @@
             <div class="features-header" id="estate-nearby">
                 <h4>Objekti u blizini</h4>
             </div>
-            <div class="nearby">
-                <div class="single-class">
-                    <div class="class-header">
-                        <div class="class-icon">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-                        <p>RESTORANI</p>
-                    </div>
-
-                    <div class="single-nearby" title="Ukupna ocjena iznosi 4.55">
-                        <div class="what-is">
-                            <p>Restoran Amfora, Cazin</p>
-                            <p>
-                                <span>(0.45 km)</span>
-                            </p>
-                        </div>
-                        <div class="stars-part">
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-class education">
-                    <div class="class-header">
-                        <div class="class-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <p>EDUKACIJA</p>
-                    </div>
-
-                    <div class="single-nearby" title="Ukupna ocjena iznosi 4.55">
-                        <div class="what-is">
-                            <p>Osnovna škola Cazin I</p>
-                            <p>
-                                <span>(0.24 km)</span>
-                            </p>
-                        </div>
-                        <div class="stars-part">
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-nearby" title="Ukupna ocjena iznosi 4.28">
-                        <div class="what-is">
-                            <p>Osnovna škola Cazin II</p>
-                            <p>
-                                <span>(1.59 km)</span>
-                            </p>
-                        </div>
-
-                        <div class="stars-part">
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="single-star">
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('pages.real-estates.snippets.nearby')
 
             <!-- location -->
-            <div class="features-header" id="estate-location">
-                <h4>Lokacija </h4>
-            </div>
-            <div class="map-of-estate" id="map-of-estate"></div>
+            @if(($estate->x_koordinata) and ($estate->y_koordinata))
+                <div class="features-header" id="estate-location">
+                    <h4>Lokacija </h4>
+                </div>
+                <div class="map-of-estate" id="map-of-estate" lat="{{$estate->x_koordinata ?? '/'}}" lon="{{$estate->y_koordinata ?? '/'}}"></div>
+            @endif
 
             <!-- Contact agent -->
-            <div class="contact-agent" id="estate-agent">
-                <div class="agent-preview">
-                    <div class="just-header">
-                        <h4>Albin Ćoralić</h4>
-                    </div>
-                    <div class="agent-image">
-                        <img src="{{asset('/images/slider/albin.jpg')}}" class="desktop-version" alt="">
-                    </div>
-
-                    <div class="agent-details">
-                        <div class="single-agent-detail">
-                            <i class="fas fa-phone"></i>
-                            <p>0038761/536-889</p>
-                        </div>
-                        <div class="single-agent-detail">
-                            <i class="fas fa-phone"></i>
-                            <p>0038761/856-899</p>
-                        </div>
-                        <div class="single-agent-detail">
-                            <i class="fas fa-envelope-open-text"></i>
-                            <p>info@europlac-nekretnine.com</p>
-                        </div>
-                        <div class="single-agent-detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Lojićka bb, 77220 Cazin</p>
-                        </div>
-                    </div>
-                    <div class="agent-social">
-                        <a target="_blank" href="" title="Posjetite našu Facebook stranicu">
-                            <div class="single-social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                        </a>
-                        <a target="_blank" href="" title="Posjetite našu LinkedIN stranicu">
-                            <div class="single-social-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
-                        </a>
-                        <a target="_blank" href="" title="Posjetite našu Instagram stranicu">
-                            <div class="single-social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                        </a>
-                        <a target="_blank" href="" title="Posjetite naš YouTube kanal">
-                            <div class="single-social-icon">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </a>
-                        <a target="_blank" href="" title="Posjetite našu Twitter stranicu">
-                            <div class="single-social-icon">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <div class="just-header">
-                        <h4>Zatražite više informacija</h4>
-                    </div>
-
-                    <div class="my-select-wrapper" title="Odaberite razlog kontaktiranja" id="request_showing_of_estate" value="0">
-                        <div class="my-select-value">
-                            <p>Zakažite posjetu nekretnine</p>
-                            <div class="select-arrow">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-
-                        <div class="select-values">
-                            <div class="my-option" value="0">Zakažite posjetu nekretnine</div>
-                            <div class="my-option" value="1">Želim dodatne informacije</div>
-                        </div>
-                    </div>
-                    <div class="other-first">
-                        <input type="text" name="name" placeholder="Vaše ime" autocomplete="off">
-                    </div>
-                    <div class="other-first">
-                        <input type="text" name="email" placeholder="Vaš email" autocomplete="off">
-                    </div>
-                    <div class="other-first">
-                        <input type="text" name="phone" placeholder="Vaš broj telefona" autocomplete="off">
-                    </div>
-                    <div class="other-first other-text">
-                        <textarea name="mesasge" id="" placeholder="Vaša poruka"></textarea>
-                    </div>
-
-                    <div class="send-button">
-                        <p>Pošaljite poruku</p>
-                    </div>
-                </div>
-            </div>
+            @include('pages.real-estates.snippets.contact-agent')
         </div>
+
+
         <div class="sidebar">
             <!-- Agent preview -->
             <div class="agent-preview">

@@ -3,10 +3,16 @@
         <div class="small-one" value="home">
             <i class="fas fa-home"></i>
             <p>
+                Dashboard
+            </p>
+        </div>
+        <div class="small-one" value="homepage">
+            <i class="fas fa-sliders-h"></i>
+            <p>
                 Naslovna
             </p>
         </div>
-        <div class="small-one" value="users">
+        <div class="small-one" value="estates">
             <i class="far fa-building"></i>
             <p>
                 Nekretnine
@@ -25,8 +31,43 @@
             </p>
         </div>
     </div>
+
     <div class="left-huge">
-        <div class="small-one-text small-one-text-first" value="users-property">
+
+        <div class="small-one-text small-one-text-first" value="homepage-property">
+            <div class="small-one-admin-preview">
+                <i class="fas fa-terminal"></i>
+                <p>NASLOVNA STRANA</p>
+            </div>
+            <div class="small-one-linked" link="{{route('admin.homepage.slider-preview')}}">
+                <i class="fas fa-sliders-h"></i>
+                <p>Pregled slidera</p>
+            </div>
+            <div class="small-one-linked" link="{{route('admin.homepage.slider-new-one')}}">
+                <i class="fas fa-plus"></i>
+                <p>Novi slider</p>
+            </div>
+
+            <div class="small-one-admin-preview">
+                <i class="fas fa-terminal"></i>
+                <p>NEKRETNINE</p>
+            </div>
+            <div class="small-one-linked" link="">
+                <i class="far fa-building"></i>
+                <p>Nekretnine na naslovnoj</p>
+            </div>
+
+            <div class="small-one-admin-preview">
+                <i class="fas fa-terminal"></i>
+                <p>O NAMA</p>
+            </div>
+            <div class="small-one-linked" link="">
+                <i class="far fa-sticky-note"></i>
+                <p>Ukratko o nama</p>
+            </div>
+        </div>
+
+        <div class="small-one-text small-one-text-first" value="estates-property">
             <div class="small-one-admin-preview">
                 <i class="fas fa-terminal"></i>
                 <p>NEKRETNINE</p>

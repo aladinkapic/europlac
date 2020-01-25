@@ -67,6 +67,15 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::get('moj-profil',                      'UsersController@myProfile')->name('admin.users.my-profile');
     Route::post('azuriraj-usera',                 'UsersController@update')->name('admin.users.update');
     Route::post('/photo/photo-upload',            'Photos@saveUserIcon')->name('photos.users.save-user-icon');
+
+
+    // HOMEPAGE - SECTION
+    Route::get('slider-preview',                  'HomePageController@sliderPreview')->name('admin.homepage.slider-preview');
+    Route::get('slider-add',                      'HomePageController@sliderAdd')->name('admin.homepage.slider-new-one');
+    Route::post('/upload-slider-image',           'Photos@saveSliderImage')->name('admin.homepage.slider-new-image');
+    Route::post('/save-slider',                   'HomePageController@saveSlider')->name('admin.homepage.slider-save');
+    Route::get('slider-edit/{id}',                'HomePageController@sliderEdit')->name('admin.homepage.slider-edit');
+    Route::post('/update-slider',                 'HomePageController@updateSlider')->name('admin.homepage.slider-update');
 });
 
 

@@ -299,6 +299,13 @@ a{text-decoration:none; color:#000;}
                             color:#A0522D;
                             transition:all 0.2s;
                         }
+                        h2{
+                            font-size:40px;
+                            padding-top:86px;
+                            opacity:0.1;
+                            color:#A0522D;
+                            transition:all 0.2s;
+                        }
                     }
 
                     img{
@@ -312,10 +319,10 @@ a{text-decoration:none; color:#000;}
                         margin:auto;
                     }
 
-                    .input-image-shadow:hover i{opacity:1;}
+                    .input-image-shadow:hover i, .input-image-shadow:hover h2{opacity:1;}
                     .input-image-shadow:hover{cursor:pointer; background:rgba(0,0,0,0.3);}
 
-                    .photo-input{display:none;}
+                    .photo-input, .photo-mobile{display:none;}
                 }
             }
 

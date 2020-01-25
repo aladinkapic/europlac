@@ -12,4 +12,7 @@ class Nearby extends Model{
     public function gradRel(){
         return $this->hasOne(Sifarnici::class, 'value', 'category')->where('type', 'nearby');
     }
+    public function categoryRel(){
+        return $this->hasOne(Sifarnici::class, 'value', 'category')->where('type', 'nearby');
+    }
 }
