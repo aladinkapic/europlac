@@ -2,8 +2,10 @@
     margin-top:50px;
     position:relative;
     left:0px;
+    padding:15px;
     width:100%;
     display: inline-flex;
+    transition: all 0.2s;
     justify-content: space-between;
     .left-one{
         position:relative;
@@ -32,7 +34,31 @@
             span{color:grey;}
         }
     }
+
+    .edit-delete{
+        position:absolute;
+        z-index: 100;
+        right:15px;
+        top:15px;
+        width: 100px;
+        height: 30px;
+        display: inline-flex;
+        justify-content: flex-end;
+        .post-part{
+            width:30px;
+            height:30px;
+            margin-left:10px;
+            background: #00C0CD;
+            text-align: center;
+            border-radius:3px;
+            i{margin-top:7px; font-size:14px; color: #fff;}
+        }
+        .delete-post{
+            background: #FF1256;
+        }
+    }
 }
+.news-part:hover{background: #fff;}
 
 .blog-post-inputs{
     position:relative;

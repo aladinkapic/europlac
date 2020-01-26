@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class BlogRel extends Model{
     protected $table = 'blog_rel';
     protected $guarded = ['id'];
+
+    public function text(){
+        return $this->hasOne(BlogText::class, 'id', 'element_id');
+    }
 }

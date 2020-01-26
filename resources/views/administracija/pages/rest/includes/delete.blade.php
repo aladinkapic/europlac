@@ -8,9 +8,9 @@
         </div>
 
         <div class="delete-body">
-            <p>Da li ste sigurni da želite obrisati odabrani Artikal?</p>
+            <p>Da li ste sigurni da želite obrisati odabranu stavku?</p>
 
-            <span>NAPOMENA : Brisanjem artikla se brišu svi podaci vezani za njega i onemogućavaju vraćanje podataka nazad!!</span>
+            <span>NAPOMENA : Brisanjem stavke se brišu svi podaci vezani za njega i onemogućavaju vraćanje podataka nazad!!</span>
         </div>
 
         <div class="delete-buttons">

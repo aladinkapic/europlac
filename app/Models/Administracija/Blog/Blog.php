@@ -12,4 +12,7 @@ class Blog extends Model{
     public function categoryRel(){
         return $this->hasOne(Sifarnici::class, 'value', 'category')->where('type', 'blog_category');
     }
+    public function posts(){
+        return $this->hasMany(BlogRel::class, 'blog_id', 'id');
+    }
 }

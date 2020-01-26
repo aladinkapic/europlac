@@ -101,10 +101,17 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('update-blog-post',               'BlogController@updateNewPost')->name('admin.blog.update-new-post');
 
     Route::get('blog-details/{id}',               'BlogController@blogDetails')->name('admin.blog.blog-details');
-    Route::get('insert-text/{id}',                'BlogController@newText')->name('admin.blog.blog-details-text');
-    Route::get('insert-image/{id}',               'BlogController@newImage')->name('admin.blog.blog-details-image');
-    Route::post('insert-blog-text',               'BlogController@insertBlogText')->name('admin.blog.insert-blog-text');
 
+    // Tekst
+    Route::get('insert-text/{id}',                'BlogController@newText')->name('admin.blog.blog-details-text');
+    Route::get('edit-text/{id}',                  'BlogController@editText')->name('admin.blog.blog-details-text-edit');
+    Route::post('insert-blog-text',               'BlogController@insertBlogText')->name('admin.blog.insert-blog-text');
+    Route::post('update-blog-text',               'BlogController@updateBlogText')->name('admin.blog.update-blog-text');
+    Route::get('delete-blog-text/{id}',           'BlogController@deleteBlogText')->name('admin.blog.delete-blog-text');
+
+
+    // Image
+    Route::get('insert-image/{id}',               'BlogController@newImage')->name('admin.blog.blog-details-image');
 });
 
 

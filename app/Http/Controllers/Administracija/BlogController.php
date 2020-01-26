@@ -62,7 +62,9 @@ class BlogController extends Controller{
 
     /*********************************************** BLOG DETAILS *****************************************************/
     public function blogDetails($id){
-        $post = Blog::where('id', $id)->first();
+        $post = Blog::where('id', $id)
+            ->with('posts.text')
+            ->first();
 
         return view('administracija.pages.blog.blog-details', compact('post'));
     }
@@ -87,6 +89,30 @@ class BlogController extends Controller{
         }catch (\Exception $e){}
 
         return redirect()->route('admin.blog.blog-details', ['id' => $request->blog_id]);
+    }
+    public function editText($id){
+        $text = BlogText::where('id', $id)->first();
+        $post = Blog::where('id', $text->blog_id)->first();
+
+        return view('administracija.pages.blog.details.text', compact('post', 'text'));
+    }
+    public function updateBlogText(Request $request){
+        try{
+            $text = BlogText::where('id', $request->id)->update(
+                $request->except(['_token', 'id'])
+            );
+        }catch (\Exception $e){}
+
+        return redirect()->route('admin.blog.blog-details', ['id' => $request->blog_id]);
+    }
+    public function deleteBlogText($id){
+        $text = BlogText::where('id', $id)->first();
+        $blog_id = $text->blog_id;
+
+        $rel = BlogRel::where('blog_id', $blog_id)->where('element_id', $id)->delete();
+        $text->delete();
+
+        return redirect()->route('admin.blog.blog-details', ['id' => $blog_id]);
     }
 
     // Blog image
