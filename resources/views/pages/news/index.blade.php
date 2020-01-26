@@ -47,7 +47,7 @@
                 <p>One of my fabourite things I like to watch is the bloopers and outtakes that are shown of mistakes made during the making of a movie.</p>
 
                 <div class="view-more" title="Pročitajte više">
-                    <a href="">
+                    <a href="{{route('news.preview', ['id' => 1])}}">
                         <div class="inside-more">
                             <div class="left-line"></div>
                             <p>Nastavite čitati</p>
@@ -90,8 +90,4 @@
             <p>Sljedeća stranica</p>
         </div>
     </div>
-@endsection
-
-@section('second_js_scripts')
-    <script src="{{asset('/js/maps/contact-us.js')}}"></script>
 @endsection

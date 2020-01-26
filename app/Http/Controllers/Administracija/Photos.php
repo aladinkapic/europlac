@@ -83,4 +83,18 @@ class Photos extends Controller{
 
         $file->move("images/slider/", $name);
     }
+
+
+
+    /************************************************ BLOG POSTS ******************************************************/
+    public function photoBlogUpload(Request $request){
+        if($request->has('photo-input')){
+            $file = $request->file('photo-input');
+
+            $ext = pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION);
+            echo $name = md5($file->getClientOriginalName().time()).'.'.$ext;
+
+            $file->move("images/blog/", $name);
+        }
+    }
 }

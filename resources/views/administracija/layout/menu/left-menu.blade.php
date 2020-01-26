@@ -9,7 +9,7 @@
         <div class="small-one" value="homepage">
             <i class="fas fa-sliders-h"></i>
             <p>
-                Naslovna
+                Sadržaj
             </p>
         </div>
         <div class="small-one" value="estates">
@@ -64,6 +64,22 @@
             <div class="small-one-linked" link="">
                 <i class="far fa-sticky-note"></i>
                 <p>Ukratko o nama</p>
+            </div>
+
+
+            <!-- BLOG -->
+
+            <div class="small-one-admin-preview">
+                <i class="fas fa-terminal"></i>
+                <p>BLOG</p>
+            </div>
+            <div class="small-one-linked" link="{{route('admin.blog.index')}}">
+                <i class="fas fa-rss"></i>
+                <p>Pregled svih postova</p>
+            </div>
+            <div class="small-one-linked" link="{{route('admin.blog.new-post')}}">
+                <i class="fas fa-plus"></i>
+                <p>Novi post</p>
             </div>
         </div>
 

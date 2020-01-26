@@ -36,6 +36,7 @@ Route::prefix('/o-nama/')->group(function (){
 
 Route::prefix('/novosti/')->group(function (){
     Route::get('/',                  'NewsController@index')->name('news');
+    route::get('pregled/{id}',       'NewsController@preview')->name('news.preview');
 });
 
 
@@ -91,7 +92,19 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     // All estates that are visible on homepage
     Route::get('homepage-estates',                'HomePageController@allEstates')->name('admin.homepage.all-estates');
 
-    // About us crud
+    // Blog posts
+    Route::get('blog',                            'BlogController@index')->name('admin.blog.index');
+    Route::get('blog-novi-post',                  'BlogController@newPost')->name('admin.blog.new-post');
+    Route::post('photo/blog-photo-upload',        'Photos@photoBlogUpload')->name('photos.blog.new-post-photo');
+    Route::post('save-blog-post',                 'BlogController@saveNewPost')->name('admin.blog.save-new-post');
+    Route::get('blog-pregled-posta/{id}',         'BlogController@previewPost')->name('admin.blog.preview-post');
+    Route::post('update-blog-post',               'BlogController@updateNewPost')->name('admin.blog.update-new-post');
+
+    Route::get('blog-details/{id}',               'BlogController@blogDetails')->name('admin.blog.blog-details');
+    Route::get('insert-text/{id}',                'BlogController@newText')->name('admin.blog.blog-details-text');
+    Route::get('insert-image/{id}',               'BlogController@newImage')->name('admin.blog.blog-details-image');
+    Route::post('insert-blog-text',               'BlogController@insertBlogText')->name('admin.blog.insert-blog-text');
+
 });
 
 

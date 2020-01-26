@@ -19,7 +19,8 @@ class Sifarnici extends Model{
         'da_ne' => 'Da / Ne',
         'status' => 'Status',
         'nearby' => 'Objekti u blizini',
-        'valuta' => 'Valuta'
+        'valuta' => 'Valuta',
+        'blog_category' => 'Kategorije blog-a'
     ];
 
     public static function getKeywords(){ return (new self())->keywords; }
