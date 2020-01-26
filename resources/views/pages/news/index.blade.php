@@ -20,43 +20,26 @@
     <div class="news-section">
         <!-- Disply all news -->
         <div class="all-news">
-            <div class="single-new">
-                <img src="{{asset('/images/blog/1.jpg')}}" class="desktop-version" alt="">
+            @foreach($posts as $post)
+                <div class="single-new">
+                    <img src="{{asset('/images/blog/'.$post->image ?? '/')}}" class="desktop-version" alt="">
 
-                <h2>Business meeting 2017 in San Francisco</h2>
-                <h5>Prije 5 sati u kategoriji Posao</h5>
-                <p>One of my fabourite things I like to watch is the bloopers and outtakes that are shown of mistakes made during the making of a movie.</p>
+                    <h2>{{$post->header ?? '/'}}</h2>
+                    <h5>Prije 5 sati u kategoriji {{$post->categoryRel->name ?? '/'}}</h5>
+                    <p>{{$post->short_desc ?? '/'}}</p>
 
-                <div class="view-more" title="Pročitajte više">
-                    <a href="">
-                        <div class="inside-more">
-                            <div class="left-line"></div>
-                            <p>Nastavite čitati</p>
-                            <div class="right-line"></div>
-                            <i class="fas fa-caret-right"></i>
-                        </div>
-                    </a>
+                    <div class="view-more" title="Pročitajte više">
+                        <a href="{{route('news.preview', ['id' => $post->id ?? '/'])}}">
+                            <div class="inside-more">
+                                <div class="left-line"></div>
+                                <p>Nastavite čitati</p>
+                                <div class="right-line"></div>
+                                <i class="fas fa-caret-right"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="single-new">
-                <img src="{{asset('/images/blog/1.jpg')}}" class="desktop-version" alt="">
-
-                <h2>Business meeting 2017 in San Francisco</h2>
-                <h5>Prije 5 sati u kategoriji Posao</h5>
-                <p>One of my fabourite things I like to watch is the bloopers and outtakes that are shown of mistakes made during the making of a movie.</p>
-
-                <div class="view-more" title="Pročitajte više">
-                    <a href="{{route('news.preview', ['id' => 1])}}">
-                        <div class="inside-more">
-                            <div class="left-line"></div>
-                            <p>Nastavite čitati</p>
-                            <div class="right-line"></div>
-                            <i class="fas fa-caret-right"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         <!-- Side bar-->
