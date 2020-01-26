@@ -52,11 +52,19 @@
                     <p>{{nl2br($elem->text->description ?? '/')}}</p>
                 </div>
             </div>
-        @elseif($elem->what == 'image')
-            <div class="news-part">
+        @elseif($elem->what == 'image_part')
+            <div class="news-part image">
+                <div class="edit-delete edit-delete-2">
+                    <a href="{{route('admin.blog.blog-details-image-edit', ['id' => $elem->text->id])}}">
+                        <div class="post-part edit-post" title="Uredite ovaj post">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                    </a>
+                </div>
+
                 <div class="left-one"><div class="just-line"></div></div>
                 <div class="right-one">
-                    <img src="{{asset('/images/blog/1.jpg')}}" class="desktop-version" alt="">
+                    <img src="{{asset('/images/blog/all-images/'.$elem->imagRel->image ?? '/')}}" class="desktop-version" alt="">
                 </div>
             </div>
         @endif

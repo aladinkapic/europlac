@@ -5455,7 +5455,7 @@ a {
 .news-part .edit-delete {
   position: absolute;
   z-index: 100;
-  right: 15px;
+  right: 30px;
   top: 15px;
   width: 100px;
   height: 30px;
@@ -5482,6 +5482,11 @@ a {
 
 .news-part .edit-delete .delete-post {
   background: #FF1256;
+}
+
+.news-part .edit-delete-2 {
+  right: 30px;
+  top: 40px;
 }
 
 .news-part:hover {

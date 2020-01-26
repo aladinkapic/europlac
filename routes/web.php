@@ -112,6 +112,11 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
 
     // Image
     Route::get('insert-image/{id}',               'BlogController@newImage')->name('admin.blog.blog-details-image');
+    Route::get('edit-image/{id}',                 'BlogController@editImage')->name('admin.blog.blog-details-image-edit');
+    Route::post('photo/post-image-upload',        'Photos@blogPostImageUpload')->name('photos.blog.post-image-upload');
+    Route::post('insert-blog-image',              'BlogController@insertBlogImage')->name('admin.blog.insert-blog-image');
+    Route::post('update-blog-image',              'BlogController@updateBlogImage')->name('admin.blog.update-blog-image');
+    Route::get('delete-blog-image/{id}',          'BlogController@deleteBlogImage')->name('admin.blog.delete-blog-image');
 });
 
 

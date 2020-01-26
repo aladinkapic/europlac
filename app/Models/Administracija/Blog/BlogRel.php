@@ -11,4 +11,7 @@ class BlogRel extends Model{
     public function text(){
         return $this->hasOne(BlogText::class, 'id', 'element_id');
     }
+    public function imagRel(){
+        return $this->hasOne(BlogImage::class, 'id', 'element_id');
+    }
 }

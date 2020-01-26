@@ -38,7 +38,7 @@
     .edit-delete{
         position:absolute;
         z-index: 100;
-        right:15px;
+        right:30px;
         top:15px;
         width: 100px;
         height: 30px;
@@ -56,6 +56,10 @@
         .delete-post{
             background: #FF1256;
         }
+    }
+    .edit-delete-2{
+        right:30px;
+        top: 40px;
     }
 }
 .news-part:hover{background: #fff;}

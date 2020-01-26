@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administracija;
 
 use App\Http\Controllers\Controller;
 use App\Models\Administracija\Blog\Blog;
+use App\Models\Administracija\Blog\BlogImage;
 use App\Models\Administracija\Blog\BlogRel;
 use App\Models\Administracija\Blog\BlogText;
 use App\Models\Administracija\Estates\Estate;
@@ -64,6 +65,7 @@ class BlogController extends Controller{
     public function blogDetails($id){
         $post = Blog::where('id', $id)
             ->with('posts.text')
+            ->with('posts.imagRel')
             ->first();
 
         return view('administracija.pages.blog.blog-details', compact('post'));
@@ -117,6 +119,51 @@ class BlogController extends Controller{
 
     // Blog image
     public function newImage($id){
+        $post = Blog::where('id', $id)->first();
 
+        return view('administracija.pages.blog.details.image', compact('post'));
+    }
+    public function insertBlogImage(Request $request){
+        try{
+            $image = BlogImage::create(
+                $request->except(['_token', 'photo-input'])
+            );
+
+            $rel = BlogRel::create([
+                'blog_id' => $request->blog_id,
+                'element_id' => $image->id,
+                'what' => 'image_part'
+            ]);
+        }catch (\Exception $e){}
+
+        return redirect()->route('admin.blog.blog-details', ['id' => $request->blog_id]);
+    }
+    public function editImage($id){
+        $post  = Blog::where('id', $id)->first();
+        $image = BlogImage::where('id', $id)->first();
+
+        return view('administracija.pages.blog.details.image', compact('post','image'));
+    }
+    public function updateBlogImage(Request $request){
+        try{
+            $image = BlogImage::where('id', $request->id)->update([
+                'image' => $request->image
+            ]);
+
+            $rel = BlogRel::where('element_id', $request->id)->where('what', 'image_part')->first();
+        }catch (\Exception $e){}
+        $rel = BlogRel::where('element_id', $request->id)->where('what', 'image_part')->first();
+
+        return redirect()->route('admin.blog.blog-details', ['id' => $rel->blog_id]);
+    }
+    public function deleteBlogImage($id){
+        $image = BlogImage::where('id', $id)->first();
+        $rel = BlogRel::where('element_id', $image->id)->where('what', 'image_part')->first();
+        $blog_id = $rel->blog_id;
+
+        $rel->delete();
+        $image->delete();
+
+        return redirect()->route('admin.blog.blog-details', ['id' => $blog_id]);
     }
 }
