@@ -11,6 +11,8 @@
         min-height: 300px;
         .single-new{
             margin-top:30px;
+            border-bottom:1px solid rgba(0,0,0,0.1);
+            padding-bottom:20px;
             img{
                 position:relative;
                 left:0px;
@@ -59,5 +61,33 @@
 
         h4{font-size:20px;}
         p{font-size:17px; font-weight: bold; color:grey;}
+    }
+
+    @media screen and (max-width: 1400px){
+        left:calc(50% - 600px);
+        width:1200px;
+    }
+
+    @media screen and (max-width: 1200px){
+        left:50px;
+        width:calc(100% - 100px);
+        .left-one{
+            width:120px;
+        }
+        .right-one{
+            width:calc(100% - 200px);
+        }
+    }
+
+    @media screen and (max-width: 1000px){
+        flex-wrap: wrap;
+        .all-news{width:100%;}
+        .side-bar{
+            p{font-size:15px; font-weight: bold; color:grey;}
+        }
+    }
+    @media screen and (max-width: 800px){
+        left:20px;
+        width:calc(100% - 40px);
     }
 }
