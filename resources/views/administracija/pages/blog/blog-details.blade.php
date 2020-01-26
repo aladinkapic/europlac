@@ -38,7 +38,7 @@
         @if($elem->what == 'text_part')
             <div class="news-part">
                 <div class="edit-delete">
-                    <a href="{{route('admin.blog.blog-details-text-edit', ['id' => $elem->text->id])}}">
+                    <a href="{{route('admin.blog.blog-details-text-edit', ['id' => $elem->text->id ?? '/'])}}">
                         <div class="post-part edit-post" title="Uredite ovaj post">
                             <i class="fas fa-edit"></i>
                         </div>
@@ -55,7 +55,7 @@
         @elseif($elem->what == 'image_part')
             <div class="news-part image">
                 <div class="edit-delete edit-delete-2">
-                    <a href="{{route('admin.blog.blog-details-image-edit', ['id' => $elem->text->id])}}">
+                    <a href="{{route('admin.blog.blog-details-image-edit', ['id' => $elem->imagRel->id ?? '/'])}}">
                         <div class="post-part edit-post" title="Uredite ovaj post">
                             <i class="fas fa-edit"></i>
                         </div>

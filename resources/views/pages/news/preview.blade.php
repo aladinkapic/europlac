@@ -5,13 +5,13 @@
     <div class="breadcrumbs">
         <div class="inside-breadcrumbs">
             <div class="single-part single-wanished">
-                <p>Business meeting 2017 in San Francisco</p>
+                <p>{{$post->header ?? '/'}}</p>
             </div>
             <div class="single-part ">
                 <p>
                     <a href="{{route('home')}}">Naslovna strana</a> /
                     <a href="{{route('news')}}">Blog</a> /
-                    <a href="{{route('news')}}">Business meeting 2017 in San Francisco</a>
+                    <a href="{{route('news')}}">{{$post->header ?? '/'}}</a>
                 </p>
             </div>
         </div>
@@ -20,7 +20,7 @@
     <div class="news-part">
         <div class="left-one"><div class="just-line"></div></div>
         <div class="right-one">
-            <h1>Business meeting 2017 in San Francisco</h1>
+            <h1>{{$post->header ?? '/'}}</h1>
         </div>
     </div>
 
@@ -34,7 +34,7 @@
                 <div class="right-one">
                     <h2>{{$elem->text->header ?? '/'}}</h2>
 
-                    <p>{{nl2br($elem->text->description ?? '/')}}</p>
+                    <p>{{nl2br(stripcslashes($elem->text->description ?? '/'))}}</p>
                 </div>
             </div>
         @elseif($elem->what == 'image_part')

@@ -74,6 +74,8 @@
             </ol>
         </div>
     </div>
+
+    <div class="news-line"></div>
 @endsection
 
 @section('second_js_scripts')
