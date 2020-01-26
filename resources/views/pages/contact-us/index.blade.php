@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title') Dobro došli na www.europlac-nekretnine.com @stop
+@section('title') Kontaktirajte nas @stop
 @section('other_js_links')
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvpH2ZexSQv0s_VtyXEHzM4p8F1HdKMD0"></script>
 @endsection
