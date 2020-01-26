@@ -9,6 +9,12 @@
         top:0px;
         width:100%;
     }
+    .mobile-version{
+        display: none;
+    }
+    .desktop-version{
+        display: block;
+    }
     .inner-shadow{
         position:absolute;
         left:0px;
@@ -24,6 +30,30 @@
                 font-size: 40px;
                 color: #fff;
                 font-family: 'Nunito', sans-serif;
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        .mobile-version{
+            display: block;
+        }
+        .desktop-version{
+            display: none;
+        }
+
+        .inner-shadow{
+            .middle{
+                position: absolute;
+                bottom:20px;
+                text-align: left;
+                h1{
+                    font-size: 24px;
+                    color: #fff;
+                    font-family: 'Nunito', sans-serif;
+                    margin-left:20px;
+                    margin-right:20px;
+                }
             }
         }
     }
@@ -65,5 +95,37 @@
             li{font-size: 15px;}
         }
 
+    }
+
+    @media screen and (max-width: 1400px){
+        left:calc(50% - 600px);
+        width:1200px;
+    }
+
+    @media screen and (max-width: 1200px){
+        left:50px;
+        width:calc(100% - 100px);
+        .left-one{
+            width:120px;
+        }
+        .right-one{
+            width:calc(100% - 200px);
+        }
+    }
+
+    @media screen and (max-width: 1000px){
+        flex-wrap: wrap;
+        .left-one, .right-one{width:100%;}
+        .left-one{
+            .just-line{width:200px;}
+        }
+        .right-one{margin-top:40px;}
+    }
+    @media screen and (max-width: 800px){
+        left:20px;
+        width:calc(100% - 40px);
+        .right-one{
+            flex-wrap: wrap;
+        }
     }
 }

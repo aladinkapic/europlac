@@ -22,7 +22,8 @@
     <div class="full-line"></div>
 
     <div class="about-full-image">
-        <img src="{{asset('/images/images/about.jpg')}}"  alt="">
+        <img src="{{asset('/images/images/about.jpg')}}" class="desktop-version" alt="">
+        <img src="{{asset('/images/images/about_m.png')}}" class="mobile-version" alt="">
         <div class="inner-shadow">
             <div class="middle">
                 <h1>Uživamo prodavati nekretnine i graditi iskustvo.</h1>

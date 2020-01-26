@@ -27,12 +27,94 @@
             <a href="{{route('sign-in')}}">
                 <span>Forma /</span> Prijavite se
             </a>
-            <div class="mobile-menu-icon">
+            <div class="mobile-menu-icon exit_menu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </div>
 </div>
+
+<!------------------------------------------------  Left menu  -------------------------------------------------------->
+<div id="left_menu">
+    <div class="exit_menu" title="Zatvorite menu">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="languages">
+        <div class="single_language single_language0">
+            <p>BOS</p>
+        </div>
+        <div class="single_language">
+            <p>ENG</p>
+        </div>
+        <div class="single_language single_language2">
+            <p>GER</p>
+        </div>
+    </div>
+
+    <!-- menu links -->
+    <div class="menu_links">
+        <div class="menu_link">
+            <a href="/">NASLOVNA</a>
+        </div>
+        <div class="menu_link left_with_sublinks" index="0">
+            <a href="#">NEKRETNINE</a>
+        </div>
+        <div class="menu_sublinks">
+            <div class="menu_sublink">
+                <a href="/nekretnine">
+                    <p># Sve nekretnine</p>
+                </a>
+            </div>
+            <div class="menu_sublink">
+                <a href="/nekretnine?filter%5B%5D=vrstaRel.name&filter_values%5B%5D=Apartman&limit=12">
+                    <p># Apartmani</p>
+                </a>
+            </div>
+            <div class="menu_sublink">
+                <a href="/nekretnine?filter%5B%5D=vrstaRel.name&filter_values%5B%5D=Kuća&limit=12">
+                    <p># Kuće</p>
+                </a>
+            </div>
+            <div class="menu_sublink">
+                <a href="/nekretnine?filter%5B%5D=vrstaRel.name&filter_values%5B%5D=Poslovni%20prostor&limit=12">
+                    <p># Poslovni prostori</p>
+                </a>
+            </div>
+            <div class="menu_sublink">
+                <a href="/nekretnine?filter%5B%5D=vrstaRel.name&filter_values%5B%5D=Stan&limit=12">
+                    <p># Stanovi</p>
+                </a>
+            </div>
+            <div class="menu_sublink">
+                <a href="/nekretnine?filter%5B%5D=vrstaRel.name&filter_values%5B%5D=Vikendica&limit=12">
+                    <p># Vikendice</p>
+                </a>
+            </div>
+            <div class="menu_sublink">
+                <a href="/nekretnine?filter%5B%5D=vrstaRel.name&filter_values%5B%5D=Vila&limit=12">
+                    <p># Vile</p>
+                </a>
+            </div>
+        </div>
+        <div class="menu_link">
+            <a href="">USLUGE</a>
+        </div>
+        <div class="menu_link">
+            <a href="/o-nama">O NAMA</a>
+        </div>
+        <div class="menu_link">
+            <a href="/kontaktirajte-nas">KONTAKT</a>
+        </div>
+    </div>
+
+
+    <div class="copyrights">
+        <a href="/login">
+            <p>	&copy; Copyright <span>EURO-PLAC d.o.o</span> </p>
+        </a>
+    </div>
+</div>
+
 
 <!---------------------------------------------- Search console ------------------------------------------------------->
 <div id="search-console">

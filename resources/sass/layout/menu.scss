@@ -111,6 +111,80 @@
 }
 
 
+/** Menu languages **/
+
+#left_menu{
+    position:fixed;
+    right:-530px;
+    top:-50px;
+    width:480px;
+    height:calc(100% + 100px);
+    background:#fff;
+    z-index: 1000;
+    -webkit-box-shadow: 0 0 65px rgba(0,0,0,.07);
+    -moz-box-shadow: 0 0 65px rgba(0,0,0,.07);
+    box-shadow: 0 0 65px rgba(0,0,0,.07);
+    transition:all 0.5s;
+
+    .exit_menu{
+        position:absolute; text-align:right; right:110px; top:80px; width:40px; height:40px;
+        z-index: 10000;
+
+        i{ font-size:30px; margin-top:5px;  }
+        i:hover{cursor:pointer; color:#FC757B;}
+    }
+
+    .languages{
+        position:absolute; top:80px; left:60px; width:calc(100% - 200px); height:40px;
+
+
+        .single_language{
+            position:relative; left:0px; top:65px; height:30px; display: inline-block; border-right:1px solid rgba(0,0,0,0.2); padding:0px 10px;
+            p{ margin-top:7px; font-weight:bold; color:grey;}
+            p:hover{cursor:pointer; color:#cee002;}
+        }
+        .single_language0{padding-left:0px;}
+        .single_language2{border:none;}
+    }
+
+    /** menu links **/
+    .menu_links{
+        position:absolute; top:210px; left:60px; width:calc(100% - 170px); height:calc(100% - 420px); overflow:auto;
+        .menu_link{
+            position:relative; left:0px; top:0px; width:100%; height:80px; margin-top:2px;
+            a{color:grey; font-weight:bold; text-decoration:none; font-size:35px; margin-top:20px; position:absolute;}
+            a:hover{color:#222;}
+        }
+
+        .menu_sublinks{
+            position:relative; left:0px; top:0px; width:100%; height:0px; transition:all 0.2s; overflow:hidden;
+            .menu_sublinks .menu_sublink{
+                position:relative; left:0px; top:0px; width:100%; height:40px;
+                p{position:absolute; font-weight:bold; color:grey; margin-top:12px;}
+                p:hover{cursor:pointer; color:#222;}
+            }
+        }
+    }
+
+    .copyrights{
+        position:absolute; left:20px; bottom:80px; width:calc(100% - 170px); height:50px;
+        p{ letter-spacing:1px; font-weight:bold;}
+    }
+
+    /**** MOBILE VERSION ****/
+
+    @media screen and (max-width: 1200px){
+
+    }
+
+    @media screen and (max-width: 800px){
+        width:calc(100% + 50px);  right:calc(-100% - 50px);
+        .languages, .menu_links{left:20px; width:calc(100% - 90px);}
+        .exit_menu{right:70px; z-index:100;}
+    }
+}
+
+
 /*** Search console ***/
 #search-console{
     position:relative;

@@ -4,6 +4,7 @@
 /public/images/estates
 /public/images/slider
 /public/images/users
+/public/images/images
 /storage/*.key
 /vendor
 .env

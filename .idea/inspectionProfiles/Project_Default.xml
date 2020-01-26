@@ -10,7 +10,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="13">
+          <list size="14">
             <item index="0" class="java.lang.String" itemvalue="value" />
             <item index="1" class="java.lang.String" itemvalue="id-value" />
             <item index="2" class="java.lang.String" itemvalue="year" />
@@ -24,6 +24,7 @@
             <item index="10" class="java.lang.String" itemvalue="extraid" />
             <item index="11" class="java.lang.String" itemvalue="lat" />
             <item index="12" class="java.lang.String" itemvalue="lon" />
+            <item index="13" class="java.lang.String" itemvalue="index" />
           </list>
         </value>
       </option>
