@@ -5,6 +5,8 @@
 /public/images/slider
 /public/images/users
 /public/images/images
+/public/images/blog
+/public/images/blog/all-images
 /storage/*.key
 /vendor
 .env
