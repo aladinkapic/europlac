@@ -4621,6 +4621,10 @@ footer .bottom-footer .bottom-elements .copy p {
   padding-top: 8px;
 }
 
+.estate-details .estate-full .contact-agent .contact-form .send-button:hover {
+  cursor: pointer;
+}
+
 .estate-details .estate-full .contact-agent .agent-preview .just-header,
 .estate-details .estate-full .contact-agent .contact-form .just-header {
   position: relative;
