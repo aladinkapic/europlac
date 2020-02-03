@@ -98,12 +98,21 @@ google.maps.event.addDomListener(window, 'load', init);
 function init() {
   // Basic options for a simple Google Map
   // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+  var y = 15.904128746032708,
+      x = 44.96673432135165,
+      marker;
+
+  if (coodinates.length) {
+    x = coodinates[0]['x'];
+    y = coodinates[0]['y'];
+  }
+
   var mapOptions = {
     // How zoomed in you want the map to start at (always required)
     zoom: 11,
     disableDefaultUI: true,
     // The latitude and longitude to center the map (always required)
-    center: new google.maps.LatLng(40.6700, -73.9400),
+    center: new google.maps.LatLng(x, y),
     // New York
     // How you would like to style the map.
     // This is where you would paste any style found on Snazzy Maps.
@@ -225,13 +234,25 @@ function init() {
 
   var mapElement = document.getElementById('map'); // Create the Google Map using our element and options defined above
 
-  var map = new google.maps.Map(mapElement, mapOptions); // Let's also add a marker while we're at it
+  var map = new google.maps.Map(mapElement, mapOptions);
 
-  var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(40.6700, -73.9400),
-    map: map,
-    title: 'Snazzy!'
-  });
+  for (var i = 0; i < coodinates.length; i++) {
+    var category = 7;
+    if (coodinates[i]['category'] === 1) category = 'Apartman.png';else if (coodinates[i]['category'] === 2) category = 'Kuca.png';else if (coodinates[i]['category'] === 3) category = 'poslovni.png';else if (coodinates[i]['category'] === 4) category = 'Stan.png';else if (coodinates[i]['category'] === 5) category = 'Vikendica.png';else if (coodinates[i]['category'] === 6) category = 'Vila.png';else if (coodinates[i]['category'] === 7) category = 'Zemljiste.png';
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(coodinates[i]['x'], coodinates[i]['y']),
+      map: map,
+      title: coodinates[i]['title'],
+      icon: '/images/icons/' + category
+    });
+    console.log(coodinates[i]);
+  } // // Let's also add a marker while we're at it
+  // var marker = new google.maps.Marker({
+  //     position: new google.maps.LatLng(40.6700, -73.9400),
+  //     map: map,
+  //     title: 'Snazzy!'
+  // });
+
 }
 
 $(document).ready(function () {

@@ -1,4 +1,4 @@
-let lastOne = null, rest_menu_open = 0;
+let lastOne = null, rest_menu_open = 0; let current_page = 1;
 
 $(document).ready(function() {
     let hideAll = function(){
@@ -122,8 +122,7 @@ $(document).ready(function() {
      *      Search it !!
      *
      ******************************************************************************************************************/
-
-    $(".search-button").click(function () {
+    let searchIt = function(){
         let url = '/nekretnine';
 
         let index = 0;
@@ -146,9 +145,13 @@ $(document).ready(function() {
         });
 
         if(url !== '/nekretnine'){
-            url += '&limit=12';
+            url += '&limit=12&page='+current_page;
             window.location = url;
-        }else window.location = url;
+        }else window.location = (url + '?&page=' + current_page);
+    };
+
+    $(".search-button").click(function () {
+        searchIt();
     });
 
 
@@ -248,6 +251,11 @@ $(document).ready(function() {
                 //arrow[i].className = "fas fa-icon fa-angle-down";
             }
         }
+    });
+
+    $(".single-page").click(function () {
+        current_page = $(this).attr('page');
+        searchIt();
     });
 });
 

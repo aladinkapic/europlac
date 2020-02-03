@@ -22,6 +22,7 @@ class Estates extends Migration
             $table->string('cijena')->nullable();
             $table->string('cijena_po_kvadratu')->nullable();
             $table->integer('valuta')->nullable();
+            $table->text('opis')->nullable();
 
             $table->integer('grad')->nullable();
             $table->integer('drzava')->nullable();
@@ -43,6 +44,11 @@ class Estates extends Migration
             $table->integer('garaza')->nullable();
             $table->integer('klima')->nullable();
             $table->integer('parking')->nullable();
+
+            $table->integer('ostava')->nullable();
+            $table->integer('namjestaj')->nullable();
+            $table->integer('kablovska')->nullable();
+            $table->integer('videonadzor')->nullable();
 
             $table->integer('jedan_sprat')->nullable();
             $table->integer('dva_sprata')->nullable();

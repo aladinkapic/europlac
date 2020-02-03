@@ -81,15 +81,11 @@
 
 
     <div class="pages">
-        <div class="single-page focus">
-            <p>1</p>
-        </div>
-        <div class="single-page">
-            <p>2</p>
-        </div>
-        <div class="single-page">
-            <p>3</p>
-        </div>
+        @for($i=0; $i<((int)($estates->total() / 12) + 1); $i++)
+            <div class="single-page {{($i+1 == $current_page) ? 'focus' : ''}}" page="{{$i + 1}}">
+                <p>{{$i + 1}}</p>
+            </div>
+        @endfor
         <div class="single-page next-one">
             <p>Sljedeća stranica</p>
         </div>
@@ -97,5 +93,8 @@
 
 @endsection
 @section('second_js_scripts')
+    <script>
+        let coodinates = JSON.parse(@json($coordinates));
+    </script>
     <script src="{{asset('/js/maps/all-estates.js')}}"></script>
 @endsection

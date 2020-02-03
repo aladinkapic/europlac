@@ -29892,6 +29892,7 @@ try {
 
 var lastOne = null,
     rest_menu_open = 0;
+var current_page = 1;
 $(document).ready(function () {
   var hideAll = function hideAll() {
     $(".my-select-wrapper").each(function () {
@@ -30008,7 +30009,7 @@ $(document).ready(function () {
    *
    ******************************************************************************************************************/
 
-  $(".search-button").click(function () {
+  var searchIt = function searchIt() {
     var url = '/nekretnine';
     var index = 0;
     $(".my-select-wrapper").each(function () {
@@ -30027,9 +30028,13 @@ $(document).ready(function () {
     });
 
     if (url !== '/nekretnine') {
-      url += '&limit=12';
+      url += '&limit=12&page=' + current_page;
       window.location = url;
-    } else window.location = url;
+    } else window.location = url + '?&page=' + current_page;
+  };
+
+  $(".search-button").click(function () {
+    searchIt();
   });
   /*******************************************************************************************************************
    *
@@ -30108,6 +30113,10 @@ $(document).ready(function () {
         sublinks[i].style.height = '0px'; //arrow[i].className = "fas fa-icon fa-angle-down";
       }
     }
+  });
+  $(".single-page").click(function () {
+    current_page = $(this).attr('page');
+    searchIt();
   });
 });
 /** open and close left menu **/

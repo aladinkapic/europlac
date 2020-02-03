@@ -133,3 +133,9 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
 Route::group([ 'namespace' => 'Upload', 'prefix' => '/upload/',], function(){
     Route::post('upload-fajlova',                       'UploadController@uploadFajlova')->name('upload-fajlova');
 });
+
+
+Route::group(['namespace' => 'Old', 'prefix' => '/old/'], function(){
+    Route::get('/',                            'OldController@index')->name('old.index');
+    Route::get('/delete-images',               'OldController@deleteImages')->name('old.delete-images');
+});

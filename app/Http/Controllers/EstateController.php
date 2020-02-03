@@ -16,9 +16,16 @@ class EstateController extends Controller{
         $estates = Filter::filter($estates);
         $filters = $this->estateFilters;
 
-//        dd($estates->total()); // Number of pages
+        $coordinates = array();
 
-        return view('pages.real-estates.index', compact('estates', 'filters'));
+        foreach($estates as $estate){
+            array_push($coordinates, array('category' => $estate->vrsta, 'y' => $estate->y_koordinata, 'x' => $estate->x_koordinata, 'title' => $estate->naziv));
+        }
+        $coordinates = json_encode($coordinates);
+
+        isset($_GET['page']) ? $current_page = $_GET['page']: $current_page = 1;
+
+        return view('pages.real-estates.index', compact('estates', 'filters', 'current_page', 'coordinates'));
     }
 
     public function preview($id){
