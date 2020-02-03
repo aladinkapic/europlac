@@ -30133,6 +30133,27 @@ function show_sublinks(index) {}
 
 /***/ }),
 
+/***/ "./resources/js/pages/estates/contact-about.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/pages/estates/contact-about.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var selected_estate_id = 1;
+$("body").on('click', '.schedule', function () {
+  var date = $(".swiper-slide-active .calendar-date").val();
+  var week_day = $(".swiper-slide-active .calendar-day").val();
+  selected_estate_id = $("#estate-full-id").val();
+  var time_from = $("#calendar-time-from").text(),
+      time_to = $("#calendar-time-to").text();
+  $("#wanted-message").val("Poštovani, zakazao bih posjetu / pregled nekretnine (" + $("#estate-full-name").text() + "), " + date + " (" + week_day + ") u periodu od " + time_from + "-" + time_to + '. \n\n');
+  console.log(selected_estate_id);
+  $(".my-prefered-option").trigger("click"); // Trigger click event
+});
+
+/***/ }),
+
 /***/ "./resources/sass/administracija/style.scss":
 /*!**************************************************!*\
   !*** ./resources/sass/administracija/style.scss ***!
@@ -30156,14 +30177,15 @@ function show_sublinks(index) {}
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/menu/menu.js ./resources/sass/style.scss ./resources/sass/administracija/style.scss ***!
-  \**************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/menu/menu.js ./resources/js/pages/estates/contact-about.js ./resources/sass/style.scss ./resources/sass/administracija/style.scss ***!
+  \************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\menu\menu.js */"./resources/js/menu/menu.js");
+__webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\pages\estates\contact-about.js */"./resources/js/pages/estates/contact-about.js");
 __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\sass\style.scss */"./resources/sass/style.scss");
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\sass\administracija\style.scss */"./resources/sass/administracija/style.scss");
 

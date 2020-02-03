@@ -6,6 +6,8 @@ use App\Http\Controllers\Administracija\Filter;
 use App\Models\Administracija\Blog\Blog;
 use App\Models\Administracija\Estates\Estate;
 use App\Models\Administracija\FilesRelationships;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
 
 class EstateController extends Controller{
@@ -55,6 +57,9 @@ class EstateController extends Controller{
         $blog = Blog::take(3)->get();
         $footerEstate = $this->footerEstate;
 
-        return view('pages.real-estates.preview', compact('estate', 'images', 'filters', 'files', 'blog', 'footerEstate'));
+        $ranges = CarbonPeriod::create(Carbon::now(), Carbon::now()->addDays(7)); // get next 30 days
+        $times = $this->times;
+
+        return view('pages.real-estates.preview', compact('estate', 'images', 'filters', 'files', 'blog', 'footerEstate', 'ranges', 'times'));
     }
 }

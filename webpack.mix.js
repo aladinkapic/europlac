@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js([
     'resources/js/app.js',
     'resources/js/menu/menu.js',
+    'resources/js/pages/estates/contact-about.js'
 ], 'public/js')
 
 mix.js([

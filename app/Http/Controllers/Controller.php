@@ -21,6 +21,10 @@ class Controller extends BaseController{
         'broj_soba' => array()
     );
     public $footerEstate = null;
+    private $months = array('JAN', 'FEB', 'MAR', 'APR', 'MAJ', 'JUN', 'JUL', 'AUG', 'SEP', 'OKT', 'NOV', 'DEC');
+    private $weekDays = array('PON', 'UTO', 'SRI', 'ČET', 'PET', 'SUB', 'NED');
+    private $weekDaysFull = array('Ponedjeljak', 'Utorak', 'Srijeda', 'Četvrtak', 'Petak', 'Subota', 'Nedjelja');
+    public $times = array("08:00", "08:30", "09:00","09:30","10:00","10:30","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30");
 
     public function __construct(){
         // Grad
@@ -46,5 +50,15 @@ class Controller extends BaseController{
             ->with('brojSlika')
             ->with('userRel')
             ->first();
+    }
+
+    public static function getShortMonth($month){
+        return (new self)->months[(int)$month - 1];
+    }
+    public static function getWeekDay($day){
+        return (new self)->weekDays[(int)$day];
+    }
+    public static function getFullWeekDay($day){
+        return (new self)->weekDaysFull[(int)$day];
     }
 }

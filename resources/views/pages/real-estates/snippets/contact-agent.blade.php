@@ -4,7 +4,7 @@
             <h4>{{$estate->userRel->name ?? '/'}}</h4>
         </div>
         <div class="agent-image">
-            <img src="{{asset('/images/users/'.$estate->userRel->photo ?? '/')}}" class="desktop-version" alt="">
+            <img src="{{asset('/images/users/'.$estate->userRel->photo ?? '/')}}" class="" alt="">
         </div>
 
         <div class="agent-details">
@@ -79,7 +79,7 @@
             </div>
 
             <div class="select-values">
-                <div class="my-option" value="0">Zakažite posjetu nekretnine</div>
+                <div class="my-option my-prefered-option" value="0">Zakažite posjetu nekretnine</div>
                 <div class="my-option" value="1">Želim dodatne informacije</div>
             </div>
         </div>
@@ -93,7 +93,7 @@
             <input type="text" name="phone" placeholder="Vaš broj telefona" autocomplete="off">
         </div>
         <div class="other-first other-text">
-            <textarea name="mesasge" id="" placeholder="Vaša poruka"></textarea>
+            <textarea name="mesasge" id="wanted-message" placeholder="Vaša poruka"></textarea>
         </div>
 
         <div class="send-button">

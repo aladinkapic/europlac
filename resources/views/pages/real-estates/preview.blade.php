@@ -36,11 +36,12 @@
                 </div>
             </div>
             <div class="estate-header">
-                <h1>{{$estate->naziv ?? '/'}}</h1>
+                <h1 id="estate-full-name">{{$estate->naziv ?? '/'}}</h1>
+                <input type="hidden" id="estate-full-id" value="{{$estate->id ?? '/'}}">
                 <p>{{$estate->adresa ?? '/'}}, {{$estate->drzavaRel->name ?? '/'}}</p>
             </div>
             <div class="price">
-                <h2>{{$estate->cijena ?? '/'}} BAM</h2>
+                <h2>{{$estate->cijena ?? '/'}} {{$estate->valutaRel->name ?? '/'}}</h2>
             </div>
             <div class="basic-info">
                 <div class="single-of-basic">
@@ -130,169 +131,9 @@
             @include('pages.real-estates.snippets.contact-agent')
         </div>
 
+        <!-- Sidebar -->
+        @include('pages.real-estates.snippets.sidebar')
 
-        <div class="sidebar">
-            <!-- Agent preview -->
-            <div class="agent-preview">
-                <div class="agent-image">
-                    <img src="{{asset('/images/slider/albin.jpg')}}" class="desktop-version" alt="">
-                </div>
-
-                <div class="just-header">
-                    <h4>Albin Ćoralić</h4>
-                    <p>Direktor</p>
-                </div>
-
-                <div class="agent-details">
-                    <div class="single-agent-detail">
-                        <i class="fas fa-phone"></i>
-                        <p>0038761/536-889</p>
-                    </div>
-                    <div class="single-agent-detail">
-                        <i class="fas fa-phone"></i>
-                        <p>0038761/856-899</p>
-                    </div>
-                    <div class="single-agent-detail">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <p>info@europlac-nekretnine.com</p>
-                    </div>
-                    <div class="single-agent-detail">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Lojićka bb, 77220 Cazin</p>
-                    </div>
-                </div>
-                <div class="agent-social">
-                    <a target="_blank" href="" title="Posjetite našu Facebook stranicu">
-                        <div class="single-social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </div>
-                    </a>
-                    <a target="_blank" href="" title="Posjetite našu LinkedIN stranicu">
-                        <div class="single-social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                    </a>
-                    <a target="_blank" href="" title="Posjetite našu Instagram stranicu">
-                        <div class="single-social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </a>
-                    <a target="_blank" href="" title="Posjetite naš YouTube kanal">
-                        <div class="single-social-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                    </a>
-                    <a target="_blank" href="" title="Posjetite našu Twitter stranicu">
-                        <div class="single-social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Request showing -->
-            <div class="get-date">
-                <div class="get-date-header">
-                    <h4>Zakažite posjetu</h4>
-                </div>
-                <div class="swiper-container request-showing swiper-init" data-initial-slide="2">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" day="22" month="12" year="2019">
-                            <div class="date-header">
-                                <p>NED</p>
-                            </div>
-                            <h4>
-                                22
-                            </h4>
-                            <h5>
-                                DEC
-                            </h5>
-                        </div>
-                        <div class="swiper-slide" day="23" month="12" year="2019">
-                            <div class="date-header">
-                                <p>PON</p>
-                            </div>
-                            <h4>
-                                23
-                            </h4>
-                            <h5>
-                                DEC
-                            </h5>
-                        </div>
-                        <div class="swiper-slide" day="24" month="12" year="2019">
-                            <div class="date-header">
-                                <p>UTO</p>
-                            </div>
-                            <h4>
-                                24
-                            </h4>
-                            <h5>
-                                DEC
-                            </h5>
-                        </div>
-                    </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-
-                <div class="get-date-header">
-                    <h5>Izaberite vrijeme</h5>
-                </div>
-
-                <div class="select-dates">
-                    <div class="my-select-wrapper" title="Odaberite razlog kontaktiranja" id="request_showing_from" value="0">
-                        <div class="my-select-value">
-                            <p>09:00</p>
-                            <div class="select-arrow">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-
-                        <div class="select-values">
-                            <div class="my-option" value="0">09:00</div>
-                            <div class="my-option" value="1">09:30</div>
-                        </div>
-                    </div>
-                    <p class="to">DO</p>
-                    <div class="my-select-wrapper" title="Odaberite razlog kontaktiranja" id="request_showing_to" value="0">
-                        <div class="my-select-value">
-                            <p>09:00</p>
-                            <div class="select-arrow">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-
-                        <div class="select-values">
-                            <div class="my-option" value="0">09:00</div>
-                            <div class="my-option" value="1">09:30</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule">
-                    <p>ZAKAŽITE POSJETU</p>
-                </div>
-
-                <script>
-                    var swiper = new Swiper('.request-showing', {
-                        effect: 'coverflow',
-                        grabCursor: true,
-                        centeredSlides: true,
-                        slidesPerView: 3,
-                        initialSlide: 1,
-                        coverflowEffect: {
-                            rotate: 50,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 1,
-                        }
-                    });
-
-                    //$('.swiper-slide-active img').attr('src')
-                </script>
-            </div>
-        </div>
     </div>
 @endsection
 @section('second_js_scripts')
