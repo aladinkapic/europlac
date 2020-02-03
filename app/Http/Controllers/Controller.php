@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Administracija\Estates\Estate;
 use App\Models\Administracija\Sifarnici;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -19,6 +20,7 @@ class Controller extends BaseController{
         'broj_kupatila' => array(),
         'broj_soba' => array()
     );
+    public $footerEstate = null;
 
     public function __construct(){
         // Grad
@@ -37,6 +39,12 @@ class Controller extends BaseController{
         array_push($this->estateFilters['broj_kupatila'], Sifarnici::where('type', 'broj_kupatila')->get()->pluck('name', 'value'));
 
 
-
+        $this->footerEstate = Estate::where('izdvojeno', 2)->inRandomOrder()
+            ->with('gradRel')
+            ->with('drzavaRel')
+            ->with('valutaRel')
+            ->with('brojSlika')
+            ->with('userRel')
+            ->first();
     }
 }

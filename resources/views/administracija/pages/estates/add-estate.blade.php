@@ -76,6 +76,16 @@
                 </div>
             </div>
         </div>
+
+        <div class="single-one single-one-with-padding">
+            <div class="input-row">
+                <div class="input-col">
+                    {!! Form::label('opis', __('Detaljan opis').' :', ['class' => 'form-label']) !!}
+                    {!! Form::textarea('opis', '', ['class' => 'form-input', 'autocomplete' => 'off', 'style' => 'height:220px; padding-top:10px;']) !!}
+                </div>
+            </div>
+        </div>
+
         <div class="single-one single-one-with-padding">
             <div class="input-row">
                 <div class="input-col">
@@ -118,6 +128,7 @@
                 </div>
             </div>
 
+
             <!------------------------------------------ Ostale informacije ------------------------------------------->
             <br><br><br>
             <div class="input-row">
@@ -159,6 +170,27 @@
                 <div class="input-col">
                     {!! Form::label('parking', __('Parking mjesto / a').' :', ['class' => 'form-label']) !!}
                     {!! Form::select('parking', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-col">
+                    {!! Form::label('ostava', __('Ostava').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('ostava', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                </div>
+                <div class="input-col">
+                    {!! Form::label('namjestaj', __('Namještaj').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('namjestaj', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-col">
+                    {!! Form::label('kablovska', __('Kablovska').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('kablovska', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
+                </div>
+                <div class="input-col">
+                    {!! Form::label('videonadzor', __('Video nadzor').' :', ['class' => 'form-label']) !!}
+                    {!! Form::select('videonadzor', $daNe, '', ['class' => 'form-input', 'autocomplete' => 'off']) !!}
                 </div>
             </div>
 

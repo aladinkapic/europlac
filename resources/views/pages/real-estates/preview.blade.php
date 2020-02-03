@@ -87,12 +87,7 @@
 
             <!-- Long story short -->
             <div class="details-about">
-                <p>
-                    Stunning Urban Contemporary. For those seeking the best of Urban Living!! Bright, airy open floor plan with 3 full bedrooms and 2 baths. Corner residence with 2 decks facing NorthEast and SouthEast. Contemporary European style kitchen featuring Caesar style counter tops, Fisher & Paykel dual drawer dishwasher and refrigerator. Ge Profile oven, electric range and microwave. Tandem parking for 2 cars. Come see what makes Aria Residence 303 so desirable.
-                </p>
-                <p>
-                    Stunning Urban Contemporary. For those seeking the best of Urban Living!! Bright, airy open floor plan with 3 full bedrooms and 2 baths. Corner residence with 2 decks facing NorthEast and SouthEast. Contemporary European style kitchen featuring Caesar style counter tops, Fisher & Paykel dual drawer dishwasher and refrigerator. Ge Profile oven, electric range and microwave. Tandem parking for 2 cars.
-                </p>
+                <p>{!! nl2br(e($estate->opis ?? '/')) !!}</p>
             </div>
 
             <!-- Features -->

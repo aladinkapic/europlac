@@ -43,13 +43,13 @@
                             <i class="fas fa-home"></i>
                         </div>
                         <div class="analytics-wrapper">
-                            <div class="single-analytics" title="120 000 KM">
+                            <div class="single-analytics" title="{{$estate->cijena ?? '/'}} {{$estate->valutaRel->name ?? '/'}}">
                                 <i class="far fa-heart"></i>
                             </div>
-                            <div class="single-analytics" title="Kontaktirajte nas u vezi ove nekretnine">
-                                <i class="far fa-envelope"></i>
+                            <div class="single-analytics" title="{{count($estate->brojSlika)}} slika/e u galeriji">
+                                <i class="fas fa-images"></i>
                             </div>
-                            <div class="single-analytics" title="2190 pregleda">
+                            <div class="single-analytics" title="{{$estate->broj_pregleda ?? '/'}} pregleda">
                                 <i class="fas fa-chart-bar"></i>
                             </div>
                         </div>
@@ -72,9 +72,9 @@
                     <p>{{$estate->broj_kupatila ?? '/'}} kupatilo / la </p>
                 </div>
                 <div class="posted-by">
-                    <p>Albin Ćoralić</p>
+                    <p>{{$footerEstate->userRel->name ?? '/'}}</p>
                     <div class="img-wrapper">
-                        <img src="{{asset('/images/slider/agent.jpg')}}" alt="">
+                        <img src="{{asset('/images/users/'.$footerEstate->userRel->photo ?? '/')}}" alt="">
                     </div>
                 </div>
                 <div class="posted-by posted-by-2">

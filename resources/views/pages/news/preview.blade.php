@@ -34,7 +34,7 @@
                 <div class="right-one">
                     <h2>{{$elem->text->header ?? '/'}}</h2>
 
-                    <p>{{nl2br(stripcslashes($elem->text->description ?? '/'))}}</p>
+                    <p>{!! nl2br(e($elem->text->description ?? '/')) !!}</p>
                 </div>
             </div>
         @elseif($elem->what == 'image_part')

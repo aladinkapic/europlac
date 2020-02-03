@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Administracija\Blog\Blog;
 use App\Models\Administracija\Estates\Estate;
 use App\Models\Administracija\Homepage\Slider;
 use App\User;
@@ -26,7 +27,10 @@ class HomeController extends Controller{
             ->with('brojSlika')
             ->get();
 
-        return view('pages.home', compact('filters', 'slider', 'number_of_estates', 'total_money', 'estates'));
+        $blog = Blog::take(3)->get();
+        $footerEstate = $this->footerEstate;
+
+        return view('pages.home', compact('filters', 'slider', 'number_of_estates', 'total_money', 'estates', 'blog', 'footerEstate'));
     }
 
     public function signIn(){
