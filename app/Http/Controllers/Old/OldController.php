@@ -8,6 +8,7 @@ use App\Models\Administracija\Files;
 use App\Models\Administracija\FilesRelationships;
 use App\Models\Administracija\Sifarnici;
 use App\Models\Old\EstateOld;
+use File;
 use Illuminate\Http\Request;
 
 class OldController extends Controller{
@@ -143,6 +144,21 @@ class OldController extends Controller{
 
     /********* DELETE IMAGES *************/
     public function deleteImages(){
+        $files = File::files(public_path());
+        $files = File::allFiles(public_path().'\images\estates');
 
+        $counter = 1;
+        foreach($files as $file){
+            try{
+                $file = Files::where('file_name', $file->getFileName())->firstOrFail();
+            }catch (\Exception $e){
+                // if image was not in db, then delete it !!
+                try{
+                    unlink(public_path().'\images\estates'.'\\'.$file->getFileName());
+                }catch (\Exception $e){echo $e->getMessage().'<br><br>';}
+            }
+
+            $counter++;
+        }
     }
 }

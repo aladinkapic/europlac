@@ -3,9 +3,10 @@
         <div class="first-one">
             <img src="{{asset('/images/estates/'.$estates[0]->photo ?? '/')}}" alt="">
             <div class="wrapper">
-                <div class="status sell">
-                    <p>PRODAJA</p>
+                <div class="status {{($estates[0]->svrha == 1) ? 'sell' : 'rent'}}">
+                    <p>{{($estates[0]->svrha == 1) ? 'PRODAJA' : 'IZNAJMLJIVANJE'}}</p>
                 </div>
+
                 <div class="details-about">
                     <h4>{{$estates[0]->naziv ?? '/'}}</h4>
                     <p>{{$estates[0]->adresa ?? '/'}}</p>
@@ -37,9 +38,10 @@
             <img src="{{asset('/images/estates/'.$estates[1]->photo ?? '/')}}" alt="">
             <a href="{{route('estate-preview', ['id' => $estates[1]->id])}}">
                 <div class="wrapper">
-                    <div class="status rent">
-                        <p>IZNAJMLJIVANJE</p>
+                    <div class="status {{($estates[1]->svrha == 1) ? 'sell' : 'rent'}}">
+                        <p>{{($estates[1]->svrha == 1) ? 'PRODAJA' : 'IZNAJMLJIVANJE'}}</p>
                     </div>
+
                     <div class="details-about">
                         <h4>{{$estates[1]->naziv ?? '/'}}</h4>
                         <p>{{$estates[1]->adresa ?? '/'}}</p>
@@ -70,9 +72,10 @@
             <img src="{{asset('/images/estates/'.$estates[2]->photo ?? '/')}}" alt="">
             <a href="{{route('estate-preview', ['id' => $estates[2]->id])}}">
                 <div class="wrapper">
-                    <div class="status sold">
-                        <p>PRODANO</p>
+                    <div class="status {{($estates[2]->svrha == 1) ? 'sell' : 'rent'}}">
+                        <p>{{($estates[2]->svrha == 1) ? 'PRODAJA' : 'IZNAJMLJIVANJE'}}</p>
                     </div>
+
                     <div class="details-about">
                         <h4>{{$estates[2]->naziv ?? '/'}}</h4>
                         <p>{{$estates[2]->adresa ?? '/'}}</p>

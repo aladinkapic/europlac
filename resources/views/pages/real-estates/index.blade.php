@@ -28,9 +28,17 @@
                 <div class="image-part">
                     <img src="{{asset('/images/estates/'.$estate->photo ?? '/')}}" alt="">
                     <div class="details">
-                        <div class="status sell">
-                            <p>PRODAJA</p>
+                        <div class="estate-buttons">
+                            @if($estate->akcija == 'Da')
+                                <div class="status sale">
+                                    <p>AKCIJA</p>
+                                </div>
+                            @endif
+                            <div class="status {{($estate->svrha == 1) ? 'sell' : 'rent'}}">
+                                <p>{{($estate->svrha == 1) ? 'PRODAJA' : 'IZNAJMLJIVANJE'}}</p>
+                            </div>
                         </div>
+
                         <div class="left-home-icon">
                             <i class="fas fa-home"></i>
                         </div>

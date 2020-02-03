@@ -156,31 +156,41 @@
                     }
                 }
                 .left-home-icon:hover{background: #000; cursor: pointer}
-                .status{
+                .estate-buttons{
                     position:absolute;
                     right:15px;
                     top:15px;
                     height:22px;
-                    background: #00C0CD;
-                    padding-left:15px;
-                    padding-right:15px;
-                    border-radius:3px;
-                    p{
-                        color:#fff;
-                        font-weight:bold;
-                        margin:0px;
-                        font-size:12px;
-                        padding-top:3px;
+                    width: calc(100% - 30px);
+                    display: inline-flex;
+                    justify-content: flex-end;
+                    .status{
+                        position:relative;
+                        right:0px;
+                        top:0px;
+                        height:22px;
+                        background: #00C0CD;
+                        padding-left:15px;
+                        padding-right:15px;
+                        border-radius:3px;
+                        margin-left:15px;
+                        p{
+                            color:#fff;
+                            font-weight:bold;
+                            margin:0px;
+                            font-size:12px;
+                            padding-top:3px;
+                        }
                     }
-                }
-                .sell{
-                    background: #F6B753;
-                }
-                .rent{
-                    background: #0097D6;
-                }
-                .sold{
-                    background: #FF6501;
+                    .sell{
+                        background: #F6B753;
+                    }
+                    .rent{
+                        background: #0097D6;
+                    }
+                    .sale{
+                        background: #FF6501;
+                    }
                 }
             }
         }

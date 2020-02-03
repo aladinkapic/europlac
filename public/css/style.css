@@ -1284,8 +1284,8 @@ a {
   background: #0097D6;
 }
 
-.home-estates .first-one .wrapper .sold,
-.home-estates .second-one .wrapper .sold {
+.home-estates .first-one .wrapper .sale,
+.home-estates .second-one .wrapper .sale {
   background: #FF6501;
 }
 
@@ -3559,18 +3559,31 @@ footer .bottom-footer .bottom-elements .copy p {
   cursor: pointer;
 }
 
-.all-estates .single-estate .image-part .details .status {
+.all-estates .single-estate .image-part .details .estate-buttons {
   position: absolute;
   right: 15px;
   top: 15px;
+  height: 22px;
+  width: calc(100% - 30px);
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.all-estates .single-estate .image-part .details .estate-buttons .status {
+  position: relative;
+  right: 0px;
+  top: 0px;
   height: 22px;
   background: #00C0CD;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 3px;
+  margin-left: 15px;
 }
 
-.all-estates .single-estate .image-part .details .status p {
+.all-estates .single-estate .image-part .details .estate-buttons .status p {
   color: #fff;
   font-weight: bold;
   margin: 0px;
@@ -3578,15 +3591,15 @@ footer .bottom-footer .bottom-elements .copy p {
   padding-top: 3px;
 }
 
-.all-estates .single-estate .image-part .details .sell {
+.all-estates .single-estate .image-part .details .estate-buttons .sell {
   background: #F6B753;
 }
 
-.all-estates .single-estate .image-part .details .rent {
+.all-estates .single-estate .image-part .details .estate-buttons .rent {
   background: #0097D6;
 }
 
-.all-estates .single-estate .image-part .details .sold {
+.all-estates .single-estate .image-part .details .estate-buttons .sale {
   background: #FF6501;
 }
 
