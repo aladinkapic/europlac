@@ -22,6 +22,12 @@ a{text-decoration: none; color:#222;}
     outline: 1px solid slategrey;
     border-radius: 3px;
 }
+#loading-gif{
+    position:fixed; left:0px; top:0px; width:100%; height:100%; background: rgba(255,255,255,0.4); z-index: 10000; display: none;
+    img{
+        position:absolute; left:0px; top:0px; right:0px; bottom:0px; margin:auto;
+    }
+}
 
 @import "layout/includes/sign-in";
 @import "layout/menu";

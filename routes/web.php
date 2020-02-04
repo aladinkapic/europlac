@@ -139,3 +139,19 @@ Route::group(['namespace' => 'Old', 'prefix' => '/old/'], function(){
     Route::get('/',                            'OldController@index')->name('old.index');
     Route::get('/delete-images',               'OldController@deleteImages')->name('old.delete-images');
 });
+
+
+/*
+ |----------------------------------------------------------------------------------------------------------------------
+ |      Email controller
+ |----------------------------------------------------------------------------------------------------------------------
+ |
+ |      Controller for emailing, using email system
+ |
+ */
+Route::group(['prefix' => '/email/'], function(){
+    Route::post('/estate',                   'EmailController@estate')->name('email.estate');
+    Route::post('/contact',                  'EmailController@contact')->name('email.contact');
+});
+
+

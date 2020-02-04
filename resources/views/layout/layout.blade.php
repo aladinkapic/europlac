@@ -27,10 +27,10 @@
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
 <body>
-    {{--<!-- Loading gifs that covers most of page -->--}}
-    {{--<div id="loading-gif">--}}
-    {{--    {!! Html::image(asset('/images/icons/lo-ading.gif')) !!}--}}
-    {{--</div>--}}
+    <!-- Loading gifs that covers most of page -->
+    <div id="loading-gif">
+        {!! Html::image(asset('/images/icons/loadingg.gif')) !!}
+    </div>
     @include('layout/menu/top-menu')
     @yield('content')
     @include('pages.includes.footer.footer')

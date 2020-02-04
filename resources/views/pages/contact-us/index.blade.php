@@ -54,19 +54,19 @@
                 </div>
 
                 <div class="other-first">
-                    <input type="text" name="name" placeholder="Vaše ime" autocomplete="off">
+                    <input type="text" name="name" id="your_name" placeholder="Vaše ime" autocomplete="off">
                 </div>
                 <div class="other-first">
-                    <input type="text" name="email" placeholder="Vaš email" autocomplete="off">
+                    <input type="text" name="email" id="your_email" placeholder="Vaš email" autocomplete="off">
                 </div>
                 <div class="other-first">
-                    <input type="text" name="phone" placeholder="Vaš broj telefona" autocomplete="off">
+                    <input type="text" name="phone" id="your_phone" placeholder="Vaš broj telefona" autocomplete="off">
                 </div>
                 <div class="other-first other-text">
-                    <textarea name="mesasge" id="" placeholder="Vaša poruka"></textarea>
+                    <textarea name="mesasge" id="wanted-message" placeholder="Vaša poruka"></textarea>
                 </div>
 
-                <div class="send-button" title="Pošaljite poruku!">
+                <div class="send-button send-us-a-message" title="Pošaljite poruku!">
                     <p>POŠALJITE PORUKU</p>
                 </div>
             </div>

@@ -30847,6 +30847,11 @@ var selected_estate_id = 1; // $("body").on('click', '.schedule', function ()  {
 // });
 
 $(document).ready(function () {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
   $(".schedule").click(function () {
     var date = $(".swiper-slide-active .calendar-date").val();
     var week_day = $(".swiper-slide-active .calendar-day").val();
@@ -30858,8 +30863,85 @@ $(document).ready(function () {
     $(".my-prefered-option").trigger("click"); // Trigger click event
   }); // Send email from estate
 
-  $(".send-button").click(function () {
-    $.notify("Vaša poruka je uspješno poslana !", "success");
+  $(".send-estate-message").click(function () {
+    var name = $("#your_name").val();
+    var email = $("#your_email").val();
+    var phone = $("#your_phone").val();
+    var message = $("#wanted-message").val();
+    var id = $("#estate-full-id").val();
+    var purpose = $("#request_showing_of_estate").attr('value');
+
+    if (name === '' || email === '' || phone === '' || message === '') {
+      $.notify("Molimo popunite sva polja prije slanja poruke !!", "warning");
+      return;
+    }
+
+    $("#loading-gif").fadeIn();
+    $.ajax({
+      type: 'POST',
+      url: '/email/estate',
+      data: {
+        id: id,
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+        purpose: purpose
+      },
+      success: function success(data) {
+        var response = JSON.parse(data);
+
+        if (response['code'] === '0000') {
+          $.notify(response['message'], "success");
+          $("#your_name").val('');
+          $("#your_email").val('');
+          $("#your_phone").val('');
+          $("#wanted-message").val('');
+        } else {
+          $.notify(response['message'], "warning");
+        }
+
+        $("#loading-gif").fadeOut();
+      }
+    });
+  });
+  $(".send-us-a-message").click(function () {
+    var name = $("#your_name").val();
+    var email = $("#your_email").val();
+    var phone = $("#your_phone").val();
+    var message = $("#wanted-message").val();
+
+    if (name === '' || email === '' || phone === '' || message === '') {
+      $.notify("Molimo popunite sva polja prije slanja poruke !!", "warning");
+      return;
+    }
+
+    $("#loading-gif").fadeIn();
+    $.ajax({
+      type: 'POST',
+      url: '/email/contact',
+      data: {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+      },
+      success: function success(data) {
+        var response = JSON.parse(data);
+
+        if (response['code'] === '0000') {
+          $.notify(response['message'], "success");
+          $("#your_name").val('');
+          $("#your_email").val('');
+          $("#your_phone").val('');
+          $("#wanted-message").val('');
+        } else {
+          $.notify(response['message'], "warning");
+        }
+
+        $("#loading-gif").fadeOut();
+      }
+    });
   });
 });
 
