@@ -50,6 +50,7 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::post('spremite-sifarnik',              'AdministracijaController@saveKeyword')->name('save-new-keyword');
     Route::get('pregled-jednog-sifarnika/{id}',   'AdministracijaController@singleKeywordPreview')->name('admin.single-keyword-preview');
     Route::get('obrisi-sifarnik/{id}',            'AdministracijaController@deleteKeyword')->name('admin.delete-keyword');
+    Route::post('azuriraj-sifarnik',              'AdministracijaController@updateKeyword')->name('update-keyword');
 
     // Photo upload
     Route::get('/photo/galerija/{id}',            'Photos@photoGallery')->name('photos.photo-gallery');

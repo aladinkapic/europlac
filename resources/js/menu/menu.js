@@ -126,10 +126,17 @@ $(document).ready(function() {
         let url = '/nekretnine';
 
         let index = 0;
+
+        let name = $("#menu_name_of_estate").val();
+        if(name !== ''){
+            if(index++ === 0) url += '?';
+            else url += '&';
+            url += 'filter%5B%5D=naziv&filter_values%5B%5D=' + name;
+        }
+
         $(".my-select-wrapper").each(function () {
             //console.log($(this).attr('id') + ': ' + $(this).attr('value'));
             if($(this).attr('value') !== "0"){
-                console.log("Found this : " + $(this).attr('id') + ':: value ' + $(this).attr('value'));
                 if(index++ === 0) url += '?';
                 else url += '&';
                 url += 'filter%5B%5D='+$(this).attr('id')+'&filter_values%5B%5D=' + $(this).attr('value');
@@ -183,10 +190,26 @@ $(document).ready(function() {
         if(i % 2 === 0) {
             odd = mySubString.replace();
             odd = odd.split('%20').join(" ");
-
+            odd = odd.split('%C5%A1').join("š");
+            odd = odd.split('%C5%A0').join("Š");
+            odd = odd.split('%C4%87').join("ć");
+            odd = odd.split('%C4%86').join("Ć");
+            odd = odd.split('%C4%91').join("đ");
+            odd = odd.split('%C4%90').join("Đ");
+            odd = odd.split('%C5%BE').join("ž");
+            odd = odd.split('%C5%BD').join("Ž");
+            odd = odd.split('%C4%8D').join("č");
+            odd = odd.split('%C4%8C').join("Č");
             searched_results.push(new Array(even,  odd));
+
+            if(even === 'naziv'){
+                // Pretraga po nazivu nekretnine
+                $("#menu_name_of_estate").val(odd)
+            }
         }
         else even = mySubString;
+
+        console.log(searched_results);
     }
 
     $(".my-select-wrapper").each(function () {

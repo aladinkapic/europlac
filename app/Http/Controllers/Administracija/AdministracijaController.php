@@ -68,6 +68,15 @@ class AdministracijaController extends Controller{
 
         return redirect()->route('single-keyword', ['key' => $key]);
     }
+    public function updateKeyword(Request $request){
+        try{
+            $sifarnik = Sifarnici::where('id', $request->id)->first()->update([
+                'name' => $request->name
+            ]);
+        }catch (\Exception $e){}
+
+        return back();
+    }
 
     /*********************************************** ALL ESTATES ******************************************************/
 

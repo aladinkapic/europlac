@@ -45,7 +45,6 @@ function init() {
             icon: '/images/icons/' + category
         });
 
-        console.log(coodinates[i]);
     }
 
 

@@ -124,7 +124,7 @@
                 <div class="search-icon">
                     <i class="fas fa-search"></i>
                 </div>
-                <input type="text" name="name_of" placeholder="Pretraga po nazivu .." autocomplete="off">
+                <input type="text" name="name_of" id="menu_name_of_estate" placeholder="Pretraga po nazivu .." autocomplete="off">
             </div>
             <div class="other-first">
                 <div class="my-select-wrapper" title="Odaberite željeni grad" id="gradRel.name" value="0">

@@ -94,7 +94,7 @@
                 <p>{{$i + 1}}</p>
             </div>
         @endfor
-        <div class="single-page next-one">
+        <div class="single-page next-one" page="{{$current_page + 1}}">
             <p>Sljedeća stranica</p>
         </div>
     </div>

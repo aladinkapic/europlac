@@ -245,7 +245,6 @@ function init() {
       title: coodinates[i]['title'],
       icon: '/images/icons/' + category
     });
-    console.log(coodinates[i]);
   } // // Let's also add a marker while we're at it
   // var marker = new google.maps.Marker({
   //     position: new google.maps.LatLng(40.6700, -73.9400),

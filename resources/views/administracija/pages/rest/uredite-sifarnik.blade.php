@@ -14,7 +14,7 @@
 @section('other_css_links') <link rel="stylesheet" href="{{asset('/css/bootstrap.css')}}"> @endsection
 
 @section('content')
-    {!! Form::open(array('route' => 'save-new-keyword', 'action' => 'AdministracijaController@saveKeyword')) !!}
+    {!! Form::open(array('route' => 'update-keyword', 'action' => 'AdministracijaController@updateKeyword')) !!}
 
     @csrf
     <section>
