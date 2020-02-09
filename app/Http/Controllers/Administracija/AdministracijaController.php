@@ -54,6 +54,20 @@ class AdministracijaController extends Controller{
 
         return redirect()->route('single-keyword', $request->type);
     }
+    public function singleKeywordPreview($id){
+        $sifarnik = Sifarnici::where('id', $id)->first();
+
+        return view('administracija.pages.rest.uredite-sifarnik', compact('sifarnik'));
+    }
+    public function deleteKeyword($id){
+        try{
+            $sifarnik = Sifarnici::where('id', $id)->first();
+            $key = $sifarnik->type;
+            $sifarnik->delete();
+        }catch (\Exception $e){}
+
+        return redirect()->route('single-keyword', ['key' => $key]);
+    }
 
     /*********************************************** ALL ESTATES ******************************************************/
 

@@ -17,14 +17,14 @@
         </thead>
         <tbody>
         @php $counter = 1; @endphp
-        @foreach($sifarnici as $user)
+        @foreach($sifarnici as $sifarnik)
             <tr>
                 <td>{{$counter++}}.</td>
-                <td>{{$user->name ?? '/'}}</td>
-                <td>{{$user->type ?? '/'}}</td>
-                <td>{{$user->value ?? '/'}}</td>
+                <td>{{$sifarnik->name ?? '/'}}</td>
+                <td>{{$sifarnik->type ?? '/'}}</td>
+                <td>{{$sifarnik->value ?? '/'}}</td>
                 <td>
-                    <a href="">
+                    <a href="{{route('admin.single-keyword-preview', ['id' => $sifarnik->id ?? '/'])}}">
                         <button class="btn my-button">Pregled</button>
                     </a>
                 </td>
