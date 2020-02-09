@@ -46,29 +46,23 @@
         <div class="side-bar">
             <h4>Kategorije</h4>
 
-            <a href="">
-                <p>Naše usluge (5)</p>
-            </a>
-            <a href="">
-                <p>Tržišno stanje nekretnina (3)</p>
-            </a>
-            <a href="">
-                <p>Poslovni prijedlozi (1)</p>
-            </a>
+            @foreach($categories as $category)
+                <a href="/novosti?filter%5B%5D=category&filter_values%5B%5D={{$category->value ?? '/'}}&page=1">
+                    <p>{{$category->name ?? '/'}} ({{ App\Models\Administracija\Blog\Blog::where('category' , $category->value ?? '1')->get()->count() }})</p>
+                </a>
+            @endforeach
         </div>
     </div>
 
 
     <div class="pages">
-        <div class="single-page focus">
-            <p>1</p>
-        </div>
-        <div class="single-page">
-            <p>2</p>
-        </div>
-        <div class="single-page">
-            <p>3</p>
-        </div>
+        @for($i=0; $i<((int)($posts->total() / 12) + 1); $i++)
+            <div class="single-blog-page {{($i+1 == $current_page) ? 'focus' : ''}}" page="{{$i + 1}}">
+                <a href="{{$actual_link}}{{$i + 1}}">
+                    <p>{{$i + 1}}</p>
+                </a>
+            </div>
+        @endfor
         <div class="single-page next-one">
             <p>Sljedeća stranica</p>
         </div>

@@ -3773,7 +3773,8 @@ footer .bottom-footer .bottom-elements .copy p {
   display: inline-flex;
 }
 
-.pages .single-page {
+.pages .single-page,
+.pages .single-blog-page {
   position: relative;
   left: 0px;
   top: 0px;
@@ -3785,7 +3786,8 @@ footer .bottom-footer .bottom-elements .copy p {
   border-right: 1px solid #fff;
 }
 
-.pages .single-page p {
+.pages .single-page p,
+.pages .single-blog-page p {
   margin-top: 9px;
   font-weight: bold;
 }
