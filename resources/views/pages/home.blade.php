@@ -3,7 +3,6 @@
 @section('title') Dobro došli na www.europlac-nekretnine.com @stop
 @section('other_js_links')     <script src="{{asset('/js/swiper/swiper.min.js')}}"></script> @endsection
 @section('content')
-
     <!-- Main slider with images -->
     @include('pages.snippets.homepage.slider')
 
@@ -37,3 +36,5 @@
         </div>
     </div>
 @endsection
+
+

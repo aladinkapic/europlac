@@ -15,7 +15,8 @@ mix.js([
     'resources/js/app.js',
     'resources/js/menu/menu.js',
     'resources/js/pages/estates/contact-about.js',
-    'resources/js/libraries/notify.js'
+    'resources/js/libraries/notify.js',
+    'resources/js/libraries/chart.js'
 ], 'public/js')
 
 mix.js([
