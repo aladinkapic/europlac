@@ -30,13 +30,15 @@
                 <h3>77220 Cazin, Bosna i Hercegovina</h3>
                 <br>
                 <p><span>NAŠ EMAIL</span></p>
+                <p><a href="mailto:europlac-nekretnine@hotmail.com" title="Kliknite ovdje da pošaljete email!">@ europlac-nekretnine@hotmail.com</a></p>
                 <p><a href="mailto:info@europlac-nekretnine.com" title="Kliknite ovdje da pošaljete email!">@ info@europlac-nekretnine.com</a></p>
                 <br>
             </div>
             <div class="split-again">
                 <h4>POZOVITE NAS</h4>
-                <h3>+38761/786-860</h3>
-                <h3>+38760/35-74-103</h3>
+                <h3>+387 / 61-786860</h3>
+                <h3>+387 / 60-357 4103</h3>
+                <h3>+387 / 37-516 096</h3>
                 <br>
                 <p><span>RADNO VRIJEME</span></p>
                 <p>Ponedjeljak - Petak : 9:00 - 17:00</p>

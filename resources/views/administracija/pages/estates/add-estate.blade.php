@@ -1,5 +1,5 @@
 @extends('administracija.layout.master')
-@section('title') Dodajte novog uposlenika  @endsection
+@section('title') Dodajte novu nekretninu  @endsection
 
 @section('page-icon') <i class="fas fa-plus"></i> @endsection
 @section('page-header') Dodajte novu nekretninu @endsection

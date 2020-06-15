@@ -14,7 +14,7 @@
                 <a href="{{route('all-estates')}}">Nekretnine</a>
             </div>
             <div class="single-link">
-                <a href="{{route('news')}}">Blog</a>
+                <a href="{{route('news')}}">Usluge</a>
             </div>
             <div class="single-link">
                 <a href="{{route('about-us')}}">O nama</a>

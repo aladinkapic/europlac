@@ -43,10 +43,11 @@
 
             <ul>
                 <li>Iden. broj: 4263773310004, Kantonalni ured USK-a Žiro račun br:3385202206686374 Bosna Bank International broj tekućeg 1414765320025698</li>
-                <li>Tel: Direktor +387 61 786-860 (Viber,WhatsApp)</li>
-                <li>Servis kućanskih aparata +387 61 996 154</li>
-                <li>E-mail: info@europlac-nekretnine.com, europlac-nekretnine@hotmail.com</li>
-                <li>Facebook: REAL ESTATE AGENCY "EURO-PLAC" CAZIN</li>
+                <li>Tel: Direktor +387 / 61-786-860 (Viber,WhatsApp)</li>
+                <li>Fiksni tel: +387 / 37-516 096</li>
+                <li>Servis kućanskih aparata +387 / 60-354 6103</li>
+                <li>E-mail: europlac-nekretnine@hotmail.com, info@europlac-nekretnine.com</li>
+                <li>Facebook: <a href="https://www.facebook.com/europlac.nekretnine/" target="_blank">REAL ESTATE AGENCY "EURO-PLAC" CAZIN</a></li>
                 <li>KUPUJETE? PRODAJETE? MIJENJATE? NA PRAVOM STE MJESTU!</li>
             </ul>
 
@@ -70,7 +71,7 @@
                 <li>Vaša nekretnina je konstantno pristutna na tržištu, dok mi brinemo o njenoj promociji i prezentaciji prema potencijalnim kupcima.</li>
                 <li>Pored objavljivanja oglasa na našoj web stranici koja je zadržala visoku dnevnu posjećenost, istu nekretninu objavljujemo na stranicama partnerskih agencija, oglasnika i portala sa kojima naša Agencija ima suradnju, kako na nivou BiH, tako i u inozemstvu. Redovnu promociju Vaše nekretnine vršimo i putem društvenih mreža koje imaju veliku posjećenost.</li>
                 <li>Kupce dovodimo u posjetu tek nakon svih objašnjenja o nekretnini, onda kada klijent iskaže potpuno interesovanje za tu nekretninu. Kupci koji dolaze preko naše Agencije su provjereni i pouzdani, o čemu brine naš tim.</li>
-                <li>Agencija sa prodavcima sklapa ugovor o posredovanju pri prodaji nekretnina. Tim ugovorom definišu se prava i obaveze između Agencije kao posrednika i prodavca nekretnine. Ugovorom se između ostalog, definiše posrednička provizija koja pretežno iznosi 3-4 % od stvarno postignute cijene ili provizija po međusobnom dogovoru koja inače zavisivisi od vrijednosti nekretnine i postignutog rezulatata prilikom prodaje nekretnine.</li>
+                <li>Agencija sa prodavcima sklapa ugovor o posredovanju pri prodaji nekretnina. Tim ugovorom definišu se prava i obaveze između Agencije kao posrednika i prodavca nekretnine. Ugovorom se između ostalog, definiše posrednička provizija koja iznosi 3.5 % (sa PDV-om) od stvarno postignute cijene ili provizija po međusobnom dogovoru koja inače zavisivisi od vrijednosti nekretnine i postignutog rezulatata prilikom prodaje nekretnine.</li>
             </ol>
         </div>
     </div>

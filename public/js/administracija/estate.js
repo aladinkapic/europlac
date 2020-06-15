@@ -149,7 +149,6 @@ function init() {
   ;
   var mapOptions = {
     zoom: 13,
-    disableDefaultUI: true,
     center: new google.maps.LatLng(lat, lan),
     // New York
     styles: [{
@@ -294,8 +293,8 @@ function init() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\administracija\maps\map.js */"./resources/js/administracija/maps/map.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\europlac\resources\js\administracija\includes\upload-image.js */"./resources/js/administracija/includes/upload-image.js");
+__webpack_require__(/*! E:\Web apps\europlac\resources\js\administracija\maps\map.js */"./resources/js/administracija/maps/map.js");
+module.exports = __webpack_require__(/*! E:\Web apps\europlac\resources\js\administracija\includes\upload-image.js */"./resources/js/administracija/includes/upload-image.js");
 
 
 /***/ })
