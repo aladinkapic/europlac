@@ -13,7 +13,7 @@ class UploadController extends Controller{
 
         try{
             request()->file->move(public_path($request->path), $fileName);
-        }catch (\Exception $e){}
+        }catch (\Exception $e){dd($e);}
 
 //        dd(request()->file->getClientOriginalName());
 //        dd($request->file('files')->getClientOriginalName());
