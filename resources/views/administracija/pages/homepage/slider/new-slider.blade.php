@@ -3,7 +3,21 @@
 
 @section('page-icon')<i class="{{ isset($slider) ? 'fas fa-sliders-h' : 'fas fa-plus' }}"></i> @endsection
 @section('page-header') {{ isset($slider) ? $slider->header : 'Unesite novi uzorak slidera' }}  @endsection
-@section('page-desc') Unos / uređivanje novog slidera za naslovnu stranicu. Unesite sliku i potrebne informacije! @endsection
+@section('page-desc')
+    Unos / uređivanje novog slidera za naslovnu stranicu. Unesite sliku i potrebne informacije!
+
+    @if(isset($slider))
+        / <a href="#" class="trigger-to-delete">OBRIŠITE</a>
+    @endif
+@endsection
+
+@if(isset($slider))
+    <!-- Deleting items -->
+    @section("delete-url") {{route('admin.homepage.slider-delete', ['id' => $slider->id ?? ''])}} @endsection
+    <!-- END OF DELETING ITEMS -->
+@endif
+
+
 @section('page-links')
     <a href=""> Naslovna </a> /
     <a href="{{Route('admin.homepage.slider-preview')}}"> Pregled slidera </a> /

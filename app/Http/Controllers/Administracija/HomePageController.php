@@ -41,6 +41,13 @@ class HomePageController extends Controller{
         return redirect()->route('admin.homepage.slider-preview');
     }
 
+    public function sliderDelete($id){
+        try{
+            $slider = Slider::where('id', $id)->delete();
+        }catch (\Exception $e){}
+
+        return redirect()->route('admin.homepage.slider-preview');
+    }
 
     /*************************************************** ESTATES ******************************************************/
     public function allEstates(){
