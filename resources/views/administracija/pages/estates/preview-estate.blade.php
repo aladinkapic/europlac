@@ -84,7 +84,7 @@
                         <form action="">
                             <label for="photo-input">
                                 <div class="input-image-shadow">
-                                    <i class="fas fa-camera"></i>
+                                    <h2>640 x 480</h2>
                                 </div>
                             </label>
                             <input type="file" id="photo-input" class="photo-input" source="/images/estates/" foto-name="photo-preview" name="photo-input" url="{{route('photos.estates.save-image')}}">

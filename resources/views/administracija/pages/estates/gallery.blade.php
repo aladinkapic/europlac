@@ -20,6 +20,7 @@
                         <div id="upload-files-label">
                             <i class="fas fa-cloud-upload-alt"></i>
                             <p>{{__('IZABERITE DATOTEKU')}}</p>
+                            <p>{{__('640 x 480')}}</p>
                         </div>
                     </label>
                 @endif
