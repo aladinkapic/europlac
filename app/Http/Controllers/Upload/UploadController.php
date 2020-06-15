@@ -10,7 +10,10 @@ use Illuminate\Http\Request;
 class UploadController extends Controller{
     public function uploadFajlova(Request $request){
         $fileName = md5(time()).'.'.request()->file->getClientOriginalExtension();
-        request()->file->move(public_path($request->path), $fileName);
+
+        try{
+            request()->file->move(public_path($request->path), $fileName);
+        }catch (\Exception $e){}
 
 //        dd(request()->file->getClientOriginalName());
 //        dd($request->file('files')->getClientOriginalName());

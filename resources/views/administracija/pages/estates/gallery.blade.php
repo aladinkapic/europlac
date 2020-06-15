@@ -28,6 +28,7 @@
                     <div id="all-uploaded-files-at-once">
                         <!-- All uploaded files come here -->
 
+                        @php $counter = 1; @endphp
                         @foreach($images as $image)
                             <div class="single-saved-file">
                                 <div class="single-saved-file-image">
@@ -36,7 +37,7 @@
                                 <div class="single-saved-file-details">
                                     <div class="single-saved-file-details-name">
                                         <a href="{{asset('/images/estates/'.$image->file->file_name)}}" target="_blank">
-                                            <p>{{$image->file->real_name}}</p>
+                                            <p>{{($image->file->real_name != null) ? $image->file->real_name : 'Fotografija-'.$counter++.'.jpg'}}</p>
                                         </a>
 
 
