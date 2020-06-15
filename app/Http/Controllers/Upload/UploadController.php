@@ -15,8 +15,6 @@ class UploadController extends Controller{
             request()->file->move(public_path($request->path), $fileName);
         }catch (\Exception $e){dd($e);}
 
-//        dd(request()->file->getClientOriginalName());
-//        dd($request->file('files')->getClientOriginalName());
         try{
             $file = Files::create([
                 'file_name' => $fileName,
