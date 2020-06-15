@@ -43,59 +43,62 @@
             <div class="colum-header">
                 <h3>IZDVOJENE NEKRETNINE</h3>
             </div>
-            <div class="footer-estate">
-                <div class="image-part">
-                    <img src="{{asset('/images/estates/'.$footerEstate->photo ?? '/')}}" alt="">
-                    <div class="details">
-                        <div class="status {{($footerEstate->svrha == 1) ? 'sell' : 'rent'}}">
-                            <p>{{($footerEstate->svrha == 1) ? 'PRODAJA' : 'IZNAJMLJIVANJE'}}</p>
-                        </div>
-                        <div class="left-home-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <div class="analytics-wrapper">
-                            <div class="single-analytics" title="{{$footerEstate->cijena ?? '/'}} {{$footerEstate->valutaRel->name ?? '/'}}">
-                                <i class="far fa-heart"></i>
+            <a href="{{route('estate-preview', ['id' => $footerEstate->id ?? ''])}}">
+                <div class="footer-estate">
+                    <div class="image-part">
+                        <img src="{{asset('/images/estates/'.$footerEstate->photo ?? '/')}}" alt="">
+                        <div class="details">
+                            <div class="status {{($footerEstate->svrha == 1) ? 'sell' : 'rent'}}">
+                                <p>{{($footerEstate->svrha == 1) ? 'PRODAJA' : 'IZNAJMLJIVANJE'}}</p>
                             </div>
-                            <div class="single-analytics" title="{{count($footerEstate->brojSlika) ?? '/'}} slika/e u galeriji">
-                                <i class="far fa-images"></i>
+                            <div class="left-home-icon">
+                                <i class="fas fa-home"></i>
                             </div>
-                            <div class="single-analytics" title="{{$footerEstate->broj_pregleda ?? '/'}} pregleda"">
-                                <i class="fas fa-chart-bar"></i>
+                            <div class="analytics-wrapper">
+                                <div class="single-analytics" title="{{$footerEstate->cijena ?? '/'}} {{$footerEstate->valutaRel->name ?? '/'}}">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                                <div class="single-analytics" title="{{count($footerEstate->brojSlika) ?? '/'}} slika/e u galeriji">
+                                    <i class="far fa-images"></i>
+                                </div>
+                                <div class="single-analytics" title="{{$footerEstate->broj_pregleda ?? '/'}} pregleda">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="rest-part">
-                    <div class="split-it">
-                        <p>{{$footerEstate->naziv ?? '/'}}</p>
+                    <div class="rest-part">
+                        <div class="split-it">
+                            <p>{{$footerEstate->naziv ?? '/'}}</p>
+                        </div>
+                        <div class="split-it split-it-second">
+                            <p>{{$footerEstate->cijena ?? '/'}} {{$footerEstate->valutaRel->name ?? '/'}}</p>
+                            <!-- <p>Od 300 KM / mjesečno</p> -->
+                        </div>
                     </div>
-                    <div class="split-it split-it-second">
-                        <p>{{$footerEstate->cijena ?? '/'}} {{$footerEstate->valutaRel->name ?? '/'}}</p>
-                        <!-- <p>Od 300 KM / mjesečno</p> -->
+                    <div class="address">
+                        <p>{{$footerEstate->adresa ?? '/'}}, {{$footerEstate->drzavaRel->name ?? '/'}}</p>
+                    </div>
+                    <div class="detailss">
+                        <p>{{$footerEstate->povrsina ?? '/'}} m<span>2</span> </p>
+                        <p>{{$footerEstate->broj_soba ?? '/'}} soba/e </p>
+                        <p>{{$footerEstate->broj_kupatila ?? '/'}} kupatilo / la </p>
+                    </div>
+                    <div class="posted-by">
+                        <p>{{$footerEstate->userRel->name ?? '/'}}</p>
+                        <div class="img-wrapper">
+                            <img src="{{asset('/images/users/'.$footerEstate->userRel->photo ?? '/')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="posted-by posted-by-2">
+                        <p>Objavio / la</p>
+                        <p class="who">
+                            Agencija
+                        </p>
                     </div>
                 </div>
-                <div class="address">
-                    <p>{{$footerEstate->adresa ?? '/'}}, {{$footerEstate->drzavaRel->name ?? '/'}}</p>
-                </div>
-                <div class="detailss">
-                    <p>{{$footerEstate->povrsina ?? '/'}} m<span>2</span> </p>
-                    <p>{{$footerEstate->broj_soba ?? '/'}} soba/e </p>
-                    <p>{{$footerEstate->broj_kupatila ?? '/'}} kupatilo / la </p>
-                </div>
-                <div class="posted-by">
-                    <p>{{$footerEstate->userRel->name ?? '/'}}</p>
-                    <div class="img-wrapper">
-                        <img src="{{asset('/images/users/'.$footerEstate->userRel->photo ?? '/')}}" alt="">
-                    </div>
-                </div>
-                <div class="posted-by posted-by-2">
-                    <p>Objavio / la</p>
-                    <p class="who">
-                        Agencija
-                    </p>
-                </div>
-            </div>
+            </a>
+
         </div>
         <div class="footer-column column-forth">
             <div class="colum-header">
