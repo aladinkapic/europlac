@@ -25,7 +25,7 @@
                     <img src="{{asset('/images/blog/'.$post->image ?? '/')}}" class="desktop-version" alt="">
 
                     <h2>{{$post->header ?? '/'}}</h2>
-                    <h5>Prije 5 sati u kategoriji {{$post->categoryRel->name ?? '/'}}</h5>
+                    <h5>Objavljeno {{$post->date() }} u {{$post->time() }} u kategoriji {{$post->categoryRel->name ?? ''}}</h5>
                     <p>{{$post->short_desc ?? '/'}}</p>
 
                     <div class="view-more" title="Pročitajte više">

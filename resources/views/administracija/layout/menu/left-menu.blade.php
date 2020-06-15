@@ -18,6 +18,7 @@
                 Nekretnine
             </p>
         </div>
+        <!--
         <div class="small-one" value="organisation">
             <i class="fas fa-envelope-open-text"></i>
             <p>
@@ -30,6 +31,7 @@
                 Statistika
             </p>
         </div>
+        -->
     </div>
 
     <div class="left-huge">

@@ -66,6 +66,7 @@ class BlogController extends Controller{
         $post = Blog::where('id', $id)
             ->with('posts.text')
             ->with('posts.imagRel')
+            ->with('categoryRel')
             ->first();
 
         return view('administracija.pages.blog.blog-details', compact('post'));
@@ -165,5 +166,25 @@ class BlogController extends Controller{
         $image->delete();
 
         return redirect()->route('admin.blog.blog-details', ['id' => $blog_id]);
+    }
+
+
+    public function blogTextDelete($post, $id){
+        try{
+            $rel  = BlogRel::where('blog_id', $post)->where('element_id', $id)->where('what', 'text_part')->delete();
+            $text = BlogText::where('id', $id)->delete();
+        }catch (\Exception $e){}
+        return back();
+    }
+    public function blogImageDelete($post, $id){
+        try{
+            $rel   = BlogRel::where('blog_id', $post)->where('element_id', $id)->where('what', 'image_part')->delete();
+            $image = BlogImage::where('id', $id)->first();
+            try{
+                unlink("images/blog/all-images/".$image->image); // First, delete image
+            }catch (\Exception $e){}
+            $image = BlogImage::where('id', $id)->delete();
+        }catch (\Exception $e){}
+        return back();
     }
 }

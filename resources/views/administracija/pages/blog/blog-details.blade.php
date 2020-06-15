@@ -43,6 +43,11 @@
                             <i class="fas fa-edit"></i>
                         </div>
                     </a>
+                    <a href="{{route('admin.blog.blog-text-delete', ['post' => $post->id, 'id' => $elem->text->id])}}">
+                        <div class="post-part delete-post" title="Izbrišite ovaj post">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="left-one"><div class="just-line"></div></div>
@@ -60,6 +65,12 @@
                             <i class="fas fa-edit"></i>
                         </div>
                     </a>
+
+                    <a href="{{route('admin.blog.blog-image-delete', ['post' => $post->id, 'id' => $elem->imagRel->id])}}">
+                        <div class="post-part delete-post" title="Izbrišite ovaj post">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="left-one"><div class="just-line"></div></div>
@@ -74,7 +85,7 @@
         <div class="left-one"></div>
         <div class="right-one">
             <div class="final-part">
-                <h5>Prije 5 sati u kategoriji Posao, <span>objavio / la Albin Ćoralić</span></h5>
+                <h5>Objavljeno {{$post->date() }} u {{$post->time() }} u kategoriji {{$post->categoryRel->name ?? ''}}, <span>objavio / la {{$post->user->name ?? ''}}</span></h5>
             </div>
         </div>
     </div>
