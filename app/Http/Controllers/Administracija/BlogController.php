@@ -187,4 +187,26 @@ class BlogController extends Controller{
         }catch (\Exception $e){}
         return back();
     }
+
+    public function delete($id){
+        $post = Blog::where('id', $id)
+            ->with('posts.text')
+            ->with('posts.imagRel')
+            ->with('categoryRel')
+            ->first();
+
+        foreach($post->posts as $elem){
+            if($elem->what == 'text_part'){
+                $this->blogTextDelete($id, $elem->text->id);
+            }else if($elem->what == 'image_part'){
+                $this->blogImageDelete($id, $elem->imagRel->id);
+            }
+        }
+
+        try{
+            unlink("images/blog/".$post->image); // First, delete image
+            $post->delete();
+        }catch (\Exception $e){}
+        return redirect()->route('admin.blog.index');
+    }
 }

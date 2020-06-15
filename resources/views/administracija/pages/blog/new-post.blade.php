@@ -6,10 +6,20 @@
     @if(isset($post))
         Pregledajte / uredite post -
         <a href="{{route('admin.blog.blog-details', ['id' => $post->id])}}">Pregled sadržaja</a>
+
+        / <a href="#" class="trigger-to-delete">OBRIŠITE</a>
     @else
         Unos novog posta u blog sekciju
     @endif
 @endsection
+
+@if(isset($post))
+    <!-- Deleting items -->
+@section("delete-url") {{route('admin.blog.blog-delete', ['id' => $post->id ?? ''])}} @endsection
+<!-- END OF DELETING ITEMS -->
+@endif
+
+
 @section('page-links') <a href=""> Naslovna </a> / <a href="{{Route('admin.blog.index')}}"> Pregled svih postova </a> @endsection
 
 @section('content')

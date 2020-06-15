@@ -107,6 +107,7 @@ Route::group(['namespace' => 'Administracija', 'prefix' => '/administracija/', '
     Route::get('blog-details/{id}',               'BlogController@blogDetails')->name('admin.blog.blog-details');
     Route::get('blog-text-delete/{post}/{id}',    'BlogController@blogTextDelete')->name('admin.blog.blog-text-delete');
     Route::get('blog-image-delete/{post}/{id}',   'BlogController@blogImageDelete')->name('admin.blog.blog-image-delete');
+    Route::get('blog-delete/{id}',                'BlogController@delete')->name('admin.blog.blog-delete');
 
 
     // Tekst
