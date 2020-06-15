@@ -51,7 +51,7 @@
         <div class="left-one"></div>
         <div class="right-one">
             <div class="final-part">
-                <h5>Prije 5 sati u kategoriji {{$post->categoryRel->name ?? '/'}}, <span>objavio / la Albin Ćoralić</span></h5>
+                <h5>Objavljeno {{$post->date() }} godine, u {{$post->time() }}h u kategoriji {{$post->categoryRel->name ?? ''}}, <span>objavio / la {{$post->user->name ?? ''}}</span></h5>
             </div>
         </div>
     </div>
